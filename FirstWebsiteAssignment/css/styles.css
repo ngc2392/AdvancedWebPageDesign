@@ -1,0 +1,95 @@
+* { /* Get rid of initial stuff */
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	/*Font-family: 'Lato*/
+
+	
+}
+
+
+.container {
+	background: gray;
+	padding: 15px;
+}
+
+header {
+	background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/caleb-martin-405446-unsplash.jpg); 
+	background-attachment: fixed;
+	height: 100vh;
+}
+
+h1, 
+h2, 
+h3 {
+		font-weight: 300;
+		text-transform: uppercase;
+}
+
+h1 {
+	color: #fff;
+}
+
+h2 {
+	font-size: 180%;
+}
+
+.hero-text-box {
+
+}
+
+
+
+/*
+.main-nav {
+	padding: 15px;
+	background-color: red;
+}
+*/
+
+.section-about {
+	text-align: center;
+	color: black;
+/*	background-color: #212529;*/
+
+}
+
+
+.section-categories {
+	text-align: center;
+/*	background-color: red;*/
+	/*background-color: white;*/
+}
+
+.section-categories h2 {
+	color: black;
+}
+
+.categories-grid {
+	width: 300px;
+	margin: 0 auto; /*center the grid*/
+	border: 2px solid red;
+	overflow: auto;
+}
+
+.categories-grid div {
+	width: 98px;
+	height: 48px;
+	border: 1px solid black;
+	float: left;
+	margin-top: 15px;
+	/*margin-right:20px;*/ /*moves divs down*/
+}
+/*
+.categories-grid div:nth-child(odd) {
+	background-color: blue;
+}
+*/
+
+
+
