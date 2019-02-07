@@ -71,9 +71,28 @@ h2 {
 }
 
 .categories-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr; /* can also be written as repeat(3, 1fr)*/ /*20px repeat(6, 1fr) 20px; - grid with 8 tracks.   grid-template-columns: repeat(5, 1fr 2fr);
+	*my grid will consist of 10 tracks, a 1fr track, and then followed by a 2fr track. This pattern will be repeated five times/
+	border: 2px solid #f76707;
+	border-radius: 5px;
+	background-color: #fff4e6;
+}
+
+.box {
+	border: 2px solid #ffa94d;
+	border-radius: 5px;
+	background-color: #ffd8a8;
+	padding: 1em;
+	color: #d9480f;
+}
+
+/*
+
+.categories-grid {
 	width: 300px;
 	margin: 0 auto; /*center the grid*/
-	border: 2px solid red;
+/*	border: 2px solid red;
 	overflow: auto;
 }
 
@@ -84,7 +103,9 @@ h2 {
 	float: left;
 	margin-top: 15px;
 	/*margin-right:20px;*/ /*moves divs down*/
-}
+/*}
+
+*/
 /*
 .categories-grid div:nth-child(odd) {
 	background-color: blue;
