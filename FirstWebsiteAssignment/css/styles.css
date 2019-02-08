@@ -72,13 +72,15 @@ h2 {
 
 .categories-grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr; /* can also be written as repeat(3, 1fr)*/ /*20px repeat(6, 1fr) 20px; - grid with 8 tracks.   grid-template-columns: repeat(5, 1fr 2fr);
+	/*grid-template-columns: 1fr 1fr 1fr;*/ /* can also be written as repeat(3, 1fr)*/ /*20px repeat(6, 1fr) 20px; - grid with 8 tracks.   grid-template-columns: repeat(5, 1fr 2fr);
 	*my grid will consist of 10 tracks, a 1fr track, and then followed by a 2fr track. This pattern will be repeated five times */
+	grid-template-columns: auto auto auto;
 	border: 2px solid #f76707;
 	border-radius: 5px;
 	grid-gap: 75px;
 	
 	background-color: #fff4e6;
+	justify-content: center;
 }
 
 .box {
