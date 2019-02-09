@@ -1,32 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500');
-
-* { /* Get rid of initial stuff */
+* {
+	/* Get rid of initial stuff */
 	margin: 0;
 	padding: 0;
 }
 
-html,
-body {
+html, body {
 	/*Font-family: 'Lato*/
 	background-color: #fff;
 	color: #555;
 	font-weight: 300;
 	font-size: 20px;
-
 }
 
 .main-nav {
 	float: right;
 	list-style: none;
-	
 }
 
 .main-nav li {
 	display: inline;
 }
 
-.main-nav li a:link, 
-.main-nav li a:visited {
+.main-nav li a:link, .main-nav li a:visited {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #fff;
@@ -41,27 +37,24 @@ body {
 header {
 	background-size: cover;
 	background-position: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/caleb-martin-405446-unsplash.jpg); 
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/caleb-martin-405446-unsplash.jpg);
 	background-attachment: fixed;
 	height: 100vh;
 }
 
 header i {
 	position: absolute;
-
 	bottom: 0;
 	/*Put in middle of header*/
 	left: 50%;
 	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);  
+	transform: translateX(-50%);
 	font-size: 450%;
 }
 
-h1, 
-h2, 
-h3 {
-		font-weight: 300;
-		text-transform: uppercase;
+h1, h2, h3 {
+	font-weight: 300;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -74,15 +67,12 @@ h2 {
 
 .hero-text-box {
 	position: absolute;
-	
 	/*position in center of the header element*/
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
-
-
 
 /*
 .main-nav {
@@ -94,13 +84,11 @@ h2 {
 .section-about {
 	text-align: center;
 	color: black;
-/*	background-color: #212529;*/
-
+	/*	background-color: #212529;*/
 }
 
-
 .section-categories {
-/*	background-color: red;*/
+	/*	background-color: red;*/
 	/*background-color: white;*/
 	text-align: center;
 	border: 2px solid #f76707;
@@ -109,23 +97,23 @@ h2 {
 .section-categories h2 {
 	color: black;
 	margin-bottom: 65px;
-
 }
 
 .categories-grid {
 	display: grid;
-	/*grid-template-columns: 1fr 1fr 1fr;*/ /* can also be written as repeat(3, 1fr)*/ /*20px repeat(6, 1fr) 20px; - grid with 8 tracks.   grid-template-columns: repeat(5, 1fr 2fr);
+	/*grid-template-columns: 1fr 1fr 1fr;*/
+	/* can also be written as repeat(3, 1fr)*/
+	/*20px repeat(6, 1fr) 20px; - grid with 8 tracks.   grid-template-columns: repeat(5, 1fr 2fr);
 	*my grid will consist of 10 tracks, a 1fr track, and then followed by a 2fr track. This pattern will be repeated five times */
 	grid-template-columns: auto auto auto;
-	
 	grid-gap: 75px;
-
 	/* help in seeing the box model
 	border: 2px solid #f76707;
 	border-radius: 5px;
 	background-color: #fff4e6;
 	*/
-	justify-content: center; /*Center the grid in the middle of the page*/
+	justify-content: center;
+	/*Center the grid in the middle of the page*/
 }
 
 .box {
@@ -142,33 +130,33 @@ h2 {
 }
 
 .box-text {
-	position: absolute; /*Position relative to its first positioned ancestor element.  So .box needs a non-static position, or .box-test will position relative to .categories-grid because categories-grid would be its closest positioned ancestor element */
+	position: absolute;
+	/*Position relative to its first positioned ancestor element.  So .box needs a non-static position, or .box-test will position relative to .categories-grid because categories-grid would be its closest positioned ancestor element */
 	bottom: 0;
-	left: 50%; /*https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/*/
+	left: 50%;
+	/*https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/*/
 	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%); 
-	z-index: 9999; /*Make it go on top of the photo*/
+	transform: translateX(-50%);
+	z-index: 9999;
+	/*Make it go on top of the photo*/
 	font-family: 'Oswald', sans-serif;
-	font-size: 100%; /* 20px */
+	font-size: 100%;
+	/* 20px */
 	text-transform: uppercase;
 }
 
-.box-1 img{
+.box-1 img {
 	width: 100%;
 	height: 100%;
 	/*filter: brightness(50%);*/
 }
 
-.box-1 svg, 
-.box-2 svg, 
-.box-3 svg,
-.box-4 svg, 
-.box-5 svg, 
-.box-5 svg,
-.box-6 svg {
+.box-1 svg, .box-2 svg, .box-3 svg, .box-4 svg, .box-5 svg, .box-5 svg, .box-6 svg {
 	position: absolute;
-	display: block; /*SVG is inline by default*/
-	border: 2px solid red; /*help to visualize box model*/
+	display: block;
+	/*SVG is inline by default*/
+	border: 2px solid red;
+	/*help to visualize box model*/
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -178,9 +166,7 @@ h2 {
 	fill: #fff;
 }
 
-
-
-.box-2 img{
+.box-2 img {
 	width: 100%;
 	height: 100%;
 	/*filter: brightness(50%);*/
@@ -196,7 +182,6 @@ h2 {
 	width: 100%;
 	height: 100%;
 	filter: brightness(50%);
-
 }
 
 .box-5 img {
@@ -212,41 +197,60 @@ h2 {
 }
 
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade*/
-.history-overlay{
+
+.history-overlay {
 	position: absolute;
 	display: block;
 	left: 0;
 	top: 0;
+	/* Make sure that overlay is overtop of .box-text*/
+	z-index: 10000;
+	opacity: 0;
+
+	/*Start - For fill in effect*/
+
+	/*
+	transition: .5s ease;
 	height: 100%;
 	width: 100%;
-	z-index: 10000; /* Make sure that overlay is overtop of .box-text*/
-	opacity: 0;
-	transition: .5s ease;
+	*/
+	/*END - For fill in effect*/
+
 	/*background: rgba( 0, 0, 0, 0.9 );*/
 	background-color: #008CBA;
+	
+	/*Start - for sliding effect*/
+	width: 0px;
+	height: 0px;
+	transition: width 2s ease;
 
-
+	/*END - For sliding effect*/
 }
 
 .box-2:hover .history-overlay {
+	/* START - For sliding effect*/
+	width: 100%;
+	height: 100%;
+	/*END - For sliding effect*/
+	
 	opacity: 1;
 }
 
 .box-2 .history-overlay .text {
 	color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
-
 
 /*
 .categories-grid {
 	width: 300px;
 	margin: 0 auto; /*center the grid*/
+
 /*	border: 2px solid red;
 	overflow: auto;
 }
@@ -257,15 +261,16 @@ h2 {
 	border: 1px solid black;
 	float: left;
 	margin-top: 15px;
-	/*margin-right:20px;*/ /*moves divs down*/
+	/*margin-right:20px;*/
+
+/*moves divs down*/
+
 /*}
 
 */
+
 /*
 .categories-grid div:nth-child(odd) {
 	background-color: blue;
 }
 */
-
-
-
