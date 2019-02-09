@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500');
+
 * { /* Get rid of initial stuff */
 	margin: 0;
 	padding: 0;
@@ -6,6 +8,10 @@
 html,
 body {
 	/*Font-family: 'Lato*/
+	background-color: #fff;
+	color: #555;
+	font-weight: 300;
+	font-size: 20px;
 
 	
 }
@@ -61,7 +67,6 @@ h2 {
 
 
 .section-categories {
-	text-align: center;
 /*	background-color: red;*/
 	/*background-color: white;*/
 }
@@ -75,22 +80,40 @@ h2 {
 	/*grid-template-columns: 1fr 1fr 1fr;*/ /* can also be written as repeat(3, 1fr)*/ /*20px repeat(6, 1fr) 20px; - grid with 8 tracks.   grid-template-columns: repeat(5, 1fr 2fr);
 	*my grid will consist of 10 tracks, a 1fr track, and then followed by a 2fr track. This pattern will be repeated five times */
 	grid-template-columns: auto auto auto;
+	
+	grid-gap: 75px;
+
+	/* help in seeing the box model
 	border: 2px solid #f76707;
 	border-radius: 5px;
-	grid-gap: 75px;
-	
 	background-color: #fff4e6;
-	justify-content: center;
+	*/
+	justify-content: center; /*Center the grid in the middle of the page*/
 }
 
 .box {
-	border: 2px solid #ffa94d;
+	position: relative;
+	/*border: 2px solid #ffa94d;
 	border-radius: 5px;
 	background-color: #ffd8a8;
-	/*padding: 1em;*/
 	color: #d9480f;
+	*/
+	/*padding: 1em;*/
+	color: #fff;
 	width: 200px;
 	height: 250px;
+}
+
+.box-text {
+	position: absolute; /*Position relative to its first positioned ancestor element.  So .box needs a non-static position, or .box-test will position relative to .categories-grid because categories-grid would be its closest positioned ancestor element */
+	bottom: 0;
+	left: 50%; /*https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/*/
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%); 
+	z-index: 9999; /*Make it go on top of the photo*/
+	font-family: 'Oswald', sans-serif;
+	font-size: 100%; /* 20px */
+	text-transform: uppercase;
 }
 
 .box-1 img{
@@ -112,15 +135,22 @@ h2 {
 }
 
 .box-4 img {
+	width: 100%;
+	height: 100%;
+	filter: brightness(50%);
 
 }
 
 .box-5 img {
-
+	width: 100%;
+	height: 100%;
+	filter: brightness(50%);
 }
 
 .box-6 img {
-
+	width: 100%;
+	height: 100%;
+	filter: brightness(50%);
 }
 
 
