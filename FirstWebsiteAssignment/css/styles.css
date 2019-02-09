@@ -13,13 +13,29 @@ body {
 	font-weight: 300;
 	font-size: 20px;
 
+}
+
+.main-nav {
+	float: right;
+	list-style: none;
 	
 }
 
+.main-nav li {
+	display: inline;
+}
+
+.main-nav li a:link, 
+.main-nav li a:visited {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 90%;
+}
 
 .container {
 	background: gray;
-	padding: 15px;
+	padding: 40px;
 }
 
 header {
@@ -46,7 +62,13 @@ h2 {
 }
 
 .hero-text-box {
-
+	position: absolute;
+	
+	/*position in center of the header element*/
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 
@@ -69,10 +91,14 @@ h2 {
 .section-categories {
 /*	background-color: red;*/
 	/*background-color: white;*/
+	text-align: center;
+	border: 2px solid #f76707;
 }
 
 .section-categories h2 {
 	color: black;
+	margin-bottom: 65px;
+
 }
 
 .categories-grid {
@@ -120,6 +146,19 @@ h2 {
 	width: 100%;
 	height: 100%;
 	filter: brightness(50%);
+}
+
+.box-1 .svg {
+	position: absolute;
+	display: block; /*SVG is inline by default*/
+	border: 2px solid red; /*help to visualize box model*/
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 50%;
+	fill: #fff !important;
 }
 
 .box-2 img{
