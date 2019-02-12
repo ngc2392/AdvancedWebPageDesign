@@ -117,6 +117,8 @@ h2 {
 }
 
 .box {
+
+	/*All of the absolutely positioned children of box will be positioned relative to .box*/
 	position: relative;
 	/*border: 2px solid #ffa94d;
 	border-radius: 5px;
@@ -163,7 +165,8 @@ h2 {
 	transform: translate(-50%, -50%);
 	width: 50%;
 	height: 50%;
-	fill: #fff;
+	/*fill: #fff;*/
+	fill: #E5E5E5;
 }
 
 .box-2 img {
@@ -196,25 +199,21 @@ h2 {
 	filter: brightness(50%);
 }
 
-/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade*/
 
-.history-overlay {
-	position: absolute;
+
+
+
+
+.box-overlay-left-to-right-transition {
 	display: block;
+	/*We want to start from the most left side of the div.  It will be positioned relative to '.box'*/
+	position: absolute;
 	left: 0;
 	top: 0;
 	/* Make sure that overlay is overtop of .box-text*/
 	z-index: 10000;
+	/*We don't want the text to be shown until hover*/
 	opacity: 0;
-
-	/*Start - For fill in effect*/
-
-	/*
-	transition: .5s ease;
-	height: 100%;
-	width: 100%;
-	*/
-	/*END - For fill in effect*/
 
 	/*background: rgba( 0, 0, 0, 0.9 );*/
 	background-color: #008CBA;
@@ -227,18 +226,19 @@ h2 {
 	/*END - For sliding effect*/
 }
 
-.box-2:hover .history-overlay {
+
+.box-2:hover .box-overlay-left-to-right-transition {
 	/* START - For sliding effect*/
 	width: 100%;
 	height: 100%;
 	/*END - For sliding effect*/
-	
 	opacity: 1;
 }
 
-.box-2 .history-overlay .text {
+.box-2 .box-overlay-left-to-right-transition .text {
 	color: white;
 	position: absolute;
+	/* Center text */
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -246,31 +246,57 @@ h2 {
 	text-align: center;
 }
 
-/*
-.categories-grid {
-	width: 300px;
-	margin: 0 auto; /*center the grid*/
 
-/*	border: 2px solid red;
-	overflow: auto;
+/* FADE IN */
+
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade*/
+.box-fade-in-overlay {
+	display: block;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left: 0;
+	right:0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;	
+	transition: .5s ease;
+	background-color: #008CBA;
+	/* Make sure that overlay is overtop of .box-text*/
+	z-index: 10001;
+
+	
+	
+	/*background: rgba( 0, 0, 0, 0.9 );*/
+	
+
 }
 
-.categories-grid div {
-	width: 98px;
-	height: 48px;
-	border: 1px solid black;
-	float: left;
-	margin-top: 15px;
-	/*margin-right:20px;*/
+.box-1:hover .box-fade-in-overlay {
+	opacity: 1;
+}
 
-/*moves divs down*/
 
-/*}
+.box-1 .box-fade-in-overlay .text {
+	color: white;
+	position: absolute;
+	/* Center text */
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
 
-*/
+/* LIGHT UP* /
 
+/* Make the image darker and SVG brighter when a grid item is*/
 /*
-.categories-grid div:nth-child(odd) {
-	background-color: blue;
+.box-1:hover img{
+	filter: brightness(35%);
+}
+
+.box-1:hover svg{
+	fill: #fff;
 }
 */
