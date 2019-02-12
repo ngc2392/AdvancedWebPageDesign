@@ -1,0 +1,17 @@
+/* Queries have to go from large to small */
+
+
+/* Go to 2 columns */
+@media(max-width: 700px) {
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Go to 1 column */
+@media(max-width: 500px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
