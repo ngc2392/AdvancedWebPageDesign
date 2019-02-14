@@ -303,3 +303,35 @@ h2 {
 	COMMENT ------ END:Center text -------- 
 }
 /* ----------------------------------------------- */
+
+
+/* ECONOMY PAGE */
+
+/*https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items*/
+.economy-overview-row {
+	display: flex;
+	margin: 0 -50px;
+}
+
+.overview-box {
+	width: 33%;
+	height: 250px;
+	margin: 0 50px;
+}
+
+.agriculture-box-overview {
+	/* background-color: black; */
+}
+
+.manufacturing-box-overview {
+	background-color: red;
+}
+
+.mining-box-overview {
+	background-color: blue;
+}
+
+.overview-box img {
+	width: 100%;
+	height: 100%;
+}
