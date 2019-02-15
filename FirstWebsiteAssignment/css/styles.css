@@ -308,6 +308,10 @@ h2 {
 
 /* ECONOMY PAGE */
 
+.overview-section {
+	background-color: #AAB9CF;
+}
+
 /*https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items*/
 .economy-overview-row {
 	display: flex;
@@ -318,7 +322,8 @@ h2 {
 	position: relative; /* button will be positioned relative to this container */
 	border: 2px solid blue;
 	width: 33%;
-	height: auto;
+	height: 450px;
+	/*height: auto;*/
 	margin: 0 50px;
 }
 
@@ -345,10 +350,20 @@ h2 {
 	text-align: center;
 }
 
+
+.txt {
+	padding-left: 20px;
+  }
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
 .btn {
+	
 	position: absolute;
 	bottom: 0;
-
 
 	background-color: #4CAF50; /* Green */
 	border: none;
@@ -364,6 +379,8 @@ h2 {
 	color: black; 
 	border: 2px solid #4CAF50;
 }
+
+
 footer {
 	background-color: #333;
 	padding: 50px;
