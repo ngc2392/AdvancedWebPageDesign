@@ -315,6 +315,7 @@ h2 {
 }
 
 .overview-box {
+	position: relative; /* button will be positioned relative to this container */
 	border: 2px solid blue;
 	width: 33%;
 	height: auto;
@@ -326,11 +327,11 @@ h2 {
 }
 
 .manufacturing-box-overview {
-	background-color: red;
+	/* background-color: red; */
 }
 
 .mining-box-overview {
-	background-color: blue;
+	/* background-color: blue; */
 }
 
 .overview-box img {
@@ -341,12 +342,17 @@ h2 {
 .under-overview-box {
 	font-family: 'Staatliches', cursive;
 	color: red;
+	text-align: center;
 }
 
-.button1 {
+.btn {
+	position: absolute;
+	bottom: 0;
+
+
 	background-color: #4CAF50; /* Green */
 	border: none;
-	color: white;
+	color: black;;
 	padding: 15px 32px;
 	text-align: center;
 	text-decoration: none;
