@@ -315,16 +315,25 @@ h2 {
 /*https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items*/
 .economy-overview-row {
 	display: flex;
-	margin: 0 -50px;
+	/* margin: 0 -50px; */
+	/*Comment out justify-content:space-between, change width to 33%, and uncomment the margins*/
+	/* justify-content: space-between; */
+	/*space-between, but add margins on the side*/
+	justify-content: space-around; 
 }
 
 .overview-box {
 	position: relative; /* button will be positioned relative to this container */
 	border: 2px solid blue;
-	width: 33%;
+	flex-basis: 30%;
 	height: 450px;
 	/*height: auto;*/
-	margin: 0 50px;
+	/* margin: 0 50px; */
+}
+
+.economy-overview-row:first-child {
+	margin-left: 5%;
+
 }
 
 .agriculture-box-overview {
