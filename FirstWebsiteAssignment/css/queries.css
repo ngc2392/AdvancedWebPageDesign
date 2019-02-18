@@ -27,15 +27,17 @@
 @media only screen and (max-width: 650px) {
     .economy-overview-row {
         border: 2px solid red;
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
+        text-align: center; 
+    
     }
 
     .economy-overview-row img {
+        border: 2px solid blue;
         width: 50%;
-        
+    }
+
+    .btn {
+        bottom: 10%;
     }
 }
