@@ -313,6 +313,11 @@ h2 {
 	background-color: #AAB9CF;
 }
 
+.overview-section h2 {
+	text-align: center;
+	margin-bottom: 2%;
+}
+
 /*https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items*/
 .economy-overview-row {
 	display: flex;
