@@ -88,6 +88,7 @@ h1 {
 	color: #fff;
 }
 
+
 h2 {
 	font-size: 180%;
 }
@@ -388,6 +389,43 @@ h2 {
 	color: black; 
 	border: 2px solid #4CAF50;
 }
+
+
+/*government.html*/
+
+.header-intro-txt {
+	margin-top: 3%;
+	text-align: center;
+}
+
+.header-intro-txt::after {
+    content: ' ';
+    /* Whenever we do a psuedo after class, we need to specify its content */
+    display: block;
+    width: 100px;
+    background-color: blue;
+    /*border: 2px solid #d0d0d0;*/
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 2px;
+    /*padding-bottom: 30px;*/
+    margin-bottom: 30px;
+}
+
+.header-exp-txt {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+
+	border: 2px solid red;
+	display: block;
+	width: 50%;
+
+}
+
+/* FOOTER */
 
 
 footer {
