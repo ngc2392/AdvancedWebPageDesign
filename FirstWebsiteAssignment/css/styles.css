@@ -325,13 +325,14 @@ h2 {
 
 .overview-box {
 	position: relative; /* button will be positioned relative to this container */
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 	flex-basis: 30%;
 	height: 450px;
 	/*height: auto;*/
 	/* margin: 0 50px; */
 }
 
+/*does this work?*/
 .economy-overview-row:first-child {
 	margin-left: 5%;
 
@@ -365,12 +366,46 @@ h2 {
 	padding-left: 20px;
   }
 
-.btn-container {
+.btn-row {
+	/* border: 2px solid purple; */
 	display: flex;
 	justify-content: center;
 }
 
 .btn {
+	display: block;
+	bottom: 0;
+	height:60px;
+  line-height:60px;
+  overflow:hidden;
+  position: absolute;
+  text-align:center;
+  background-color:#16a756;
+  color:white;
+  border-radius:2px;
+  transition:0.3s;
+}
+
+.btn:hover {background:#19c664;}
+
+/* BUTTON UP */
+.label-up {
+	/* border: 2px solid pink; */
+	display: block;
+  margin:0px 30px;
+  height:100%;
+  position:relative;
+  top:0%;
+  transition:0.3s;
+}
+
+.btn:hover .label-up {
+  top:-100%;
+}
+
+
+
+.btn2 {
 	
 	position: absolute;
 	bottom: 0;

@@ -1,5 +1,6 @@
 /* Queries have to go from large to small */
 
+/*For index.html*/
 
 /* Go to 2 columns */
 @media(max-width: 700px) {
@@ -15,3 +16,26 @@
     }
 }
 
+
+
+/*For economy.html*/
+
+/*https://stackoverflow.com/a/16647547*/
+
+/*Width of the ipad is 768.  We want this to target all phones that are smaller than the ipad */
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 650px) {
+    .economy-overview-row {
+        border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .economy-overview-row img {
+        width: 50%;
+        
+    }
+}
