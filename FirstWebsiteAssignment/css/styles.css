@@ -412,7 +412,7 @@ h2 {
 }
 
 
-
+/*Isn't used anywhere*/
 .btn2 {
 	
 	position: absolute;
@@ -480,21 +480,51 @@ h2 {
 /*https://stackoverflow.com/questions/48464444/how-to-display-3-items-per-row-in-flexbox*/
 
 .symbol {
-	border: 2px solid red; 
+
+	/* border: 2px solid red;  */
 	/*flex-grow, flex-shrink, flex-basis*/
 	/* flex: 0 0 33%; */
 	flex-basis: 30%;
 }
 
+/*Center the image*/
+.image-container {
+	display: flex;
+	justify-content: center;
+}
+
 .symbol-title-text {
-	border:2px solid red;
+	/* border:2px solid blue; */
+	display: block;
+	text-align: center;
+}
+
+.symbol-name-text {
+	font-size: 50%;
+	text-align: center;
+}
+
+.symbol-name-text {
+
 }
 
 .symbols-row img {
 	width: auto;
-	height: 250px;
+	height: 200px;
 }
 
+.bird,
+.deer,
+.fish {
+	/* border: 2px solid blue; */
+	margin-bottom: 10px;
+}
+
+.tree,
+.plant,
+.flag {
+	margin-bottom: 10px;
+}
 
 /* FOOTER */
 
