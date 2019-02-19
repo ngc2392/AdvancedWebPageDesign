@@ -490,6 +490,53 @@ h2 {
 }
 
 
+.section-nat-reps img {
+	width: 215px;
+	height: 188px; 
+}
+
+
+/*How far across the container*/
+.slider {
+	border: 2px solid green;
+	width: 60%;
+	margin: 50px auto;
+}
+
+/*https://stackoverflow.com/questions/23337972/slick-carousel-arrows-do-not-appear-and-work-as-they-ought-to*/
+.slick-prev:before, .slick-next:before { 
+	color:red !important;
+}
+
+/*put space between each slide*/
+.slick-slide {
+	margin: 0px 20px;
+	}
+	
+.slick-slide img {
+	border: 2px solid red;
+	width: 100%;
+
+
+}
+
+
+.slick-slide {
+transition: all ease-in-out .3s;
+opacity: .2;
+}
+
+.slick-active {
+opacity: .5;
+}
+
+.slick-current {
+opacity: 1;
+}
+
+
+
+
 
 /* Symbols.html  */
 
