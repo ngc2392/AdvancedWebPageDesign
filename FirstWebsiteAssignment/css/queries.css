@@ -43,5 +43,6 @@
 
     .btn {
         bottom: 10%;
+        box-shadow: none;
     }
 }

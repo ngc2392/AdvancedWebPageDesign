@@ -309,11 +309,11 @@ h2 {
 
 /* ECONOMY PAGE */
 
-.overview-section {
+.section-economy-overview {
 	background-color: #AAB9CF;
 }
 
-.overview-section h2 {
+.section-economy-overview h2 {
 	text-align: center;
 	margin-bottom: 2%;
 }
@@ -388,7 +388,10 @@ h2 {
   background-color:#16a756;
   color:white;
   border-radius:2px;
-  transition:0.3s;
+	transition:0.3s;
+	
+	margin-bottom: 10px;
+	box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
 
 .btn:hover {background:#19c664;}
@@ -465,7 +468,37 @@ h2 {
 
 }
 
+/* Symbols.html  */
+
+.symbols-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/*https://stackoverflow.com/questions/29546550/flexbox-4-items-per-row*/
+/*https://stackoverflow.com/questions/48464444/how-to-display-3-items-per-row-in-flexbox*/
+
+.symbol {
+	border: 2px solid red; 
+	/*flex-grow, flex-shrink, flex-basis*/
+	/* flex: 0 0 33%; */
+	flex-basis: 30%;
+}
+
+.symbol-title-text {
+	border:2px solid red;
+}
+
+.symbols-row img {
+	width: auto;
+	height: 250px;
+}
+
+
 /* FOOTER */
+
+
 
 
 footer {
