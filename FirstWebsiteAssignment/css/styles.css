@@ -496,7 +496,7 @@ h2 {
 }
 
 
-/*How far across the container*/
+/*slider container*/
 .slider {
 	border: 2px solid green;
 	width: 60%;
@@ -508,24 +508,20 @@ h2 {
 	color:red !important;
 }
 
-/*put space between each slide*/
 .slick-slide {
+	/*put space between each slide*/
+
 	margin: 0px 20px;
+	transition: all ease-in-out .3s;
+opacity: .2;
 	}
 	
 .slick-slide img {
 	border: 2px solid red;
 	width: 100%;
-
-
 }
 
-
-.slick-slide {
-transition: all ease-in-out .3s;
-opacity: .2;
-}
-
+/* slick item that is not the current one */
 .slick-active {
 opacity: .5;
 }
@@ -533,9 +529,6 @@ opacity: .5;
 .slick-current {
 opacity: 1;
 }
-
-
-
 
 
 /* Symbols.html  */
@@ -549,7 +542,10 @@ opacity: 1;
 /*https://stackoverflow.com/questions/29546550/flexbox-4-items-per-row*/
 /*https://stackoverflow.com/questions/48464444/how-to-display-3-items-per-row-in-flexbox*/
 
-.symbol {
+.symbol-box {
+
+	/*So we can position .popup relative to this container */
+	position: relative;
 
 	/* border: 2px solid red;  */
 	/*flex-grow, flex-shrink, flex-basis*/
@@ -595,6 +591,22 @@ opacity: 1;
 .flag {
 	margin-bottom: 10px;
 }
+
+
+.popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background: #eee;
+	border-radius: 8px;
+	box-shadow: 0 0 10px #999;
+}
+
 
 /* FOOTER */
 
