@@ -602,6 +602,7 @@ opacity: 1;
 	width: 200px;
 	height: 50px;
 	margin: 0 auto;
+	padding: 15px;
 	margin-top: 50px;
 	background: #eee;
 	border-radius: 8px;
@@ -609,7 +610,9 @@ opacity: 1;
 }
 
 .fa-times {
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 2%;
 }
 
 .fa-times:hover {
