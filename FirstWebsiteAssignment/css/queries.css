@@ -1,5 +1,17 @@
 /* Queries have to go from large to small */
 
+/* For mobile navigation */
+@media only screen and (max-width: 767px) {
+    .main-nav {
+        display: none;
+    }
+    .mobile-nav-icon {
+        display: inline-block;
+        color: white;
+    }
+}
+
+
 /*For index.html*/
 
 /* Go to 2 columns */

@@ -1,9 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 @import url('https://fonts.googleapis.com/css?family=Staatliches');
-
-
 * {
 	/* Get rid of initial stuff */
 	margin: 0;
@@ -19,7 +16,9 @@ html, body {
 }
 
 /* ----------------------------------------------- */
+
 /* NAVIGATION */
+
 /* ----------------------------------------------- */
 
 .main-nav {
@@ -44,17 +43,65 @@ html, body {
 }
 
 /* ----------------------------------------------- */
+
 /* MOBILE NAVIGATION */
-/* ----------------------------------------------- */
-
-/*
-
-TO DO
-
-*/
 
 /* ----------------------------------------------- */
+
+.mobile-nav-icon {
+	position: absolute;
+	right: 5%;
+	margin-top: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+.mobile-nav-icon i {
+	color: white;
+	font-size: 150%;
+}
+
+.overlay {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+	color: #f1f1f1;
+}
+
+.overlay .fa-times {
+	position: absolute;
+	font-size: 100%;
+	top: 0;
+	right: 0;
+}
+
+/* ----------------------------------------------- */
+
 /* HEADER */
+
 /* ----------------------------------------------- */
 
 header {
@@ -76,7 +123,9 @@ header i {
 }
 
 /* ----------------------------------------------- */
+
 /* HEADINGS */
+
 /* ----------------------------------------------- */
 
 h1, h2, h3 {
@@ -87,7 +136,6 @@ h1, h2, h3 {
 h1 {
 	color: #fff;
 }
-
 
 h2 {
 	font-size: 180%;
@@ -103,7 +151,9 @@ h2 {
 }
 
 /* ----------------------------------------------- */
+
 /* SECTIONS */
+
 /* ----------------------------------------------- */
 
 .section-about {
@@ -112,6 +162,7 @@ h2 {
 	color: black;
 	height: 50vh;
 }
+
 .section-about h2 {
 	/*Visualize the box model*/
 	/*border: 2px solid red;*/
@@ -135,7 +186,9 @@ h2 {
 }
 
 /* ----------------------------------------------- */
+
 /* GRID */
+
 /* ----------------------------------------------- */
 
 .categories-grid {
@@ -144,7 +197,7 @@ h2 {
 	grid-gap: 75px;
 	justify-content: center;
 	/*Justify the grid items along the row axis */
-	justify-items: center; 
+	justify-items: center;
 	/* help in seeing the box model
 	border: 2px solid #f76707;
 	border-radius: 5px;
@@ -153,7 +206,9 @@ h2 {
 }
 
 /* ----------------------------------------------- */
+
 /* GRID ITEMS */
+
 /* ----------------------------------------------- */
 
 .box {
@@ -180,13 +235,7 @@ h2 {
 	text-transform: uppercase;
 }
 
-.box-1 svg, 
-.box-2 svg, 
-.box-3 svg, 
-.box-4 svg, 
-.box-5 svg, 
-.box-5 svg, 
-.box-6 svg {
+.box-1 svg, .box-2 svg, .box-3 svg, .box-4 svg, .box-5 svg, .box-5 svg, .box-6 svg {
 	position: absolute;
 	/*SVG is inline by default*/
 	display: block;
@@ -201,12 +250,7 @@ h2 {
 	fill: #E5E5E5;
 }
 
-.box-1 img, 
-.box-2 img,
-.box-3 img,
-.box-4 img,
-.box-5 img, 
-.box-6 img {
+.box-1 img, .box-2 img, .box-3 img, .box-4 img, .box-5 img, .box-6 img {
 	width: 100%;
 	height: 100%;
 	/*Make the images a little dark so the svgs can be seen better*/
@@ -216,21 +260,22 @@ h2 {
 /* START - FADE IN EFFECT */
 
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade*/
+
 .box-fade-in-overlay {
 	display: block;
 	position: absolute;
-	top:0;
-	bottom:0;
+	top: 0;
+	bottom: 0;
 	left: 0;
-	right:0;
+	right: 0;
 	height: 100%;
 	width: 100%;
-	opacity: 0;	
+	opacity: 0;
 	transition: .5s ease;
 	/*background-color: #008CBA;*/
 	/* Make sure that overlay is overtop of .box-text*/
 	z-index: 10001;
-	background: rgba( 0, 0, 0, 0.9 );
+	background: rgba( 0, 0, 0, 0.9);
 }
 
 .box:hover .box-fade-in-overlay {
@@ -249,7 +294,9 @@ h2 {
 }
 
 /* ----------------------------------------------- */
+
 /* STUFF I WAS MESSING AROUND WITH, BUT DECIDED NOT TO USE */
+
 /* ----------------------------------------------- */
 
 /* END - FADE IN EFFECT */
@@ -259,6 +306,7 @@ h2 {
 /* Lighting Up Effect */
 
 /*Makes the image darker when hovering, and the svg brighter*/
+
 /*
 .box-1:hover img{
 	filter: brightness(35%);
@@ -267,10 +315,13 @@ h2 {
 	fill: #fff;
 }
 */
+
 /* ----------------------------------------------- */
 
 /* ----------------------------------------------- */
+
 /* Left to Right Fill Effect */
+
 /*
 .box-overlay-left-to-right-transition {
 	display: block;
@@ -306,7 +357,6 @@ h2 {
 }
 /* ----------------------------------------------- */
 
-
 /* ECONOMY PAGE */
 
 .section-economy-overview {
@@ -319,17 +369,19 @@ h2 {
 }
 
 /*https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items*/
+
 .economy-overview-row {
 	display: flex;
 	/* margin: 0 -50px; */
 	/*Comment out justify-content:space-between, change width to 33%, and uncomment the margins*/
 	/* justify-content: space-between; */
 	/*space-between, but add margins on the side*/
-	justify-content: space-around; 
+	justify-content: space-around;
 }
 
 .overview-box {
-	position: relative; /* button will be positioned relative to this container */
+	position: relative;
+	/* button will be positioned relative to this container */
 	/* border: 2px solid blue; */
 	flex-basis: 30%;
 	height: 450px;
@@ -338,9 +390,9 @@ h2 {
 }
 
 /*does this work?*/
+
 .economy-overview-row:first-child {
 	margin-left: 5%;
-
 }
 
 .agriculture-box-overview {
@@ -366,10 +418,9 @@ h2 {
 	text-align: center;
 }
 
-
 .txt {
 	padding-left: 20px;
-  }
+}
 
 .btn-container {
 	/* border: 2px solid purple; */
@@ -380,47 +431,49 @@ h2 {
 .btn {
 	display: block;
 	bottom: 0;
-	height:60px;
-  line-height:60px;
-  overflow:hidden;
-  position: absolute;
-  text-align:center;
-  background-color:#16a756;
-  color:white;
-  border-radius:2px;
-	transition:0.3s;
-	
+	height: 60px;
+	line-height: 60px;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	background-color: #16a756;
+	color: white;
+	border-radius: 2px;
+	transition: 0.3s;
 	margin-bottom: 10px;
-	box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+	box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
 }
 
-.btn:hover {background:#19c664;}
+.btn:hover {
+	background: #19c664;
+}
 
 /* BUTTON UP */
+
 .label-up {
 	/* border: 2px solid pink; */
 	display: block;
-  margin:0px 30px;
-  height:100%;
-  position:relative;
-  top:0%;
-  transition:0.3s;
+	margin: 0px 30px;
+	height: 100%;
+	position: relative;
+	top: 0%;
+	transition: 0.3s;
 }
 
 .btn:hover .label-up {
-  top:-100%;
+	top: -100%;
 }
 
-
 /*Isn't used anywhere*/
+
 .btn2 {
-	
 	position: absolute;
 	bottom: 0;
-
-	background-color: #4CAF50; /* Green */
+	background-color: #4CAF50;
+	/* Green */
 	border: none;
-	color: black;;
+	color: black;
+	;
 	padding: 15px 32px;
 	text-align: center;
 	text-decoration: none;
@@ -428,11 +481,10 @@ h2 {
 	font-size: 16px;
 	margin: 4px 2px;
 	cursor: pointer;
-	background-color: white; 
-	color: black; 
+	background-color: white;
+	color: black;
 	border: 2px solid #4CAF50;
 }
-
 
 /*government.html*/
 
@@ -442,17 +494,17 @@ h2 {
 }
 
 .header-intro-txt::after {
-    content: ' ';
-    /* Whenever we do a psuedo after class, we need to specify its content */
-    display: block;
-    width: 100px;
-    background-color: blue;
-    /*border: 2px solid #d0d0d0;*/
-    margin: 0 auto;
-    margin-top: 30px;
-    height: 2px;
-    /*padding-bottom: 30px;*/
-    margin-bottom: 30px;
+	content: ' ';
+	/* Whenever we do a psuedo after class, we need to specify its content */
+	display: block;
+	width: 100px;
+	background-color: blue;
+	/*border: 2px solid #d0d0d0;*/
+	margin: 0 auto;
+	margin-top: 30px;
+	height: 2px;
+	/*padding-bottom: 30px;*/
+	margin-bottom: 30px;
 }
 
 .header-exp-txt {
@@ -460,43 +512,28 @@ h2 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
-
 	border: 2px solid red;
 	display: block;
 	width: 50%;
-
 }
 
-.section-state-governor {
-	
+.section-state-governor {}
 
-}
+.section-nat-senators {}
 
-.section-nat-senators {
+.section-nat-reps {}
 
-}
+.section-state-sens {}
 
-.section-nat-reps{
-
-}
-
-.section-state-sens {
-
-}
-
-.section-state-reps{
-
-}
-
+.section-state-reps {}
 
 .section-nat-reps img {
 	width: 215px;
-	height: 188px; 
+	height: 188px;
 }
 
-
 /*slider container*/
+
 .slider {
 	border: 2px solid green;
 	width: 60%;
@@ -504,32 +541,32 @@ h2 {
 }
 
 /*https://stackoverflow.com/questions/23337972/slick-carousel-arrows-do-not-appear-and-work-as-they-ought-to*/
-.slick-prev:before, .slick-next:before { 
-	color:red !important;
+
+.slick-prev:before, .slick-next:before {
+	color: red !important;
 }
 
 .slick-slide {
 	/*put space between each slide*/
-
 	margin: 0px 20px;
 	transition: all ease-in-out .3s;
-opacity: .2;
-	}
-	
+	opacity: .2;
+}
+
 .slick-slide img {
 	border: 2px solid red;
 	width: 100%;
 }
 
 /* slick item that is not the current one */
+
 .slick-active {
-opacity: .5;
+	opacity: .5;
 }
 
 .slick-current {
-opacity: 1;
+	opacity: 1;
 }
-
 
 /* Symbols.html  */
 
@@ -540,14 +577,13 @@ opacity: 1;
 }
 
 /*https://stackoverflow.com/questions/29546550/flexbox-4-items-per-row*/
+
 /*https://stackoverflow.com/questions/48464444/how-to-display-3-items-per-row-in-flexbox*/
 
 .symbol-box {
 	border: 2px solid green;
-
 	/*So we can position .popup relative to this container */
 	position: relative;
-
 	/* border: 2px solid red;  */
 	/*flex-grow, flex-shrink, flex-basis*/
 	/* flex: 0 0 33%; */
@@ -555,6 +591,7 @@ opacity: 1;
 }
 
 /*Center the image*/
+
 .image-container {
 	display: flex;
 	justify-content: center;
@@ -571,28 +608,21 @@ opacity: 1;
 	text-align: center;
 }
 
-.symbol-name-text {
-
-}
+.symbol-name-text {}
 
 .symbols-row img {
 	width: auto;
 	height: 200px;
 }
 
-.bird,
-.deer,
-.fish {
+.bird, .deer, .fish {
 	/* border: 2px solid blue; */
 	margin-bottom: 10px;
 }
 
-.tree,
-.plant,
-.flag {
+.tree, .plant, .flag {
 	margin-bottom: 10px;
 }
-
 
 .popup {
 	border: 2px solid red;
@@ -612,13 +642,13 @@ opacity: 1;
 	z-index: 2;
 }
 
-.fa-times {
+.popup .fa-times {
 	position: absolute;
 	top: 0;
 	right: 2%;
 }
 
-.fa-times:hover {
+.popup .fa-times:hover {
 	color: #D54444;
 }
 
@@ -631,11 +661,7 @@ opacity: 1;
 	height: 80%;
 }
 
-
 /* FOOTER */
-
-
-
 
 footer {
 	background-color: #333;
