@@ -543,6 +543,7 @@ opacity: 1;
 /*https://stackoverflow.com/questions/48464444/how-to-display-3-items-per-row-in-flexbox*/
 
 .symbol-box {
+	border: 2px solid green;
 
 	/*So we can position .popup relative to this container */
 	position: relative;
@@ -605,6 +606,14 @@ opacity: 1;
 	background: #eee;
 	border-radius: 8px;
 	box-shadow: 0 0 10px #999;
+}
+
+.fa-times {
+	float: right;
+}
+
+.fa-times:hover {
+	color: #D54444;
 }
 
 

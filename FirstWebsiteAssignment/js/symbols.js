@@ -4,7 +4,8 @@ $('.symbol-box').click(function() {
     var child = $(this).find('img').attr('src');
     console.log(child);
 
-    
+    // close any other popups that are currently up before we open the new one
+    $('.popup').hide();
 
 
     //get unique class of clicked element
@@ -14,6 +15,7 @@ $('.symbol-box').click(function() {
         console.log(classes[i]);
     }
 
+    // If we don't have this line, then all popups will show.  We only want the one that we clicked on 
     var uniqueClass = "." + classes[1];
 
     $(uniqueClass + " " + ".popup").show();
@@ -22,6 +24,13 @@ $('.symbol-box').click(function() {
 
 });
 
+
+$('.fa-times').click(function () {
+  console.log("clicking...")
+
+  $('.popup').hide();
+
+});
 
 
 
