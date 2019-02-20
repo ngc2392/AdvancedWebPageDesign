@@ -595,18 +595,21 @@ opacity: 1;
 
 
 .popup {
+	border: 2px solid red;
 	position: absolute;
 	left: 0;
 	top: 0;
 	display: none;
 	width: 200px;
-	height: 50px;
+	height: 200px;
 	margin: 0 auto;
 	padding: 15px;
 	margin-top: 50px;
 	background: #eee;
 	border-radius: 8px;
 	box-shadow: 0 0 10px #999;
+	overflow: hidden;
+	z-index: 2;
 }
 
 .fa-times {
@@ -617,6 +620,15 @@ opacity: 1;
 
 .fa-times:hover {
 	color: #D54444;
+}
+
+.popup p {
+	font-size: 50%;
+}
+
+.popup img {
+	width: 50%;
+	height: 80%;
 }
 
 

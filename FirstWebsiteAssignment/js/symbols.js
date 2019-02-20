@@ -1,3 +1,4 @@
+/*
 $('.symbol-box').click(function() {
 
     //.children() will return only direct descendants where .find() will search through all elements underneath; children, grandchildren, etc
@@ -23,8 +24,37 @@ $('.symbol-box').click(function() {
     //console.log(classes);
 
 });
+*/
+
+$('img').click(function () {
+  var parent = $(this).parents()
+  console.log(parent);
+
+  var classes = parent[1].classList;
+  console.log(classes);
+
+  for (var i = 0; i < classes.length; i++) {
+    console.log(classes[i]);
+  }
+
+  var uniqueClass = "." + classes[1];
+  console.log(uniqueClass);
+
+  $(uniqueClass + " " + ".popup").show();
+});
 
 
+// https://api.jquery.com/category/events/event-object/
+// Clicking outside the div  closes the pop up window
+$(document).mouseup(function (e) {
+  var container = $(".popup");
+
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    container.hide();
+  }
+});
+
+// Clicking the 'x' hides the pop up
 $('.fa-times').click(function () {
   console.log("clicking...")
 
@@ -34,14 +64,14 @@ $('.fa-times').click(function () {
 
 
 
-$(".profile1").click(function() {
-    $(".profile1 .popup").show();
-  })
-  
-  $(".profile2").click(function() {
-    $(".popup").show();
-  })
-  
-  $("#close").click(function() {
-    $(".profile1 .popup").hide();
-  })
+$(".profile1").click(function () {
+  $(".profile1 .popup").show();
+})
+
+$(".profile2").click(function () {
+  $(".popup").show();
+})
+
+$("#close").click(function () {
+  $(".profile1 .popup").hide();
+})
