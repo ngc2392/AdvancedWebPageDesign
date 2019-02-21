@@ -6,9 +6,54 @@
     
         <script>
 
+            /*
+                $("#opener-fpu2").on("click", function() {
+                    alert("h");
+                    //("#dialog-fpu").dialog("open");
+                });
+*/
+
+
+/*
+
+$( function() {
+    $("#opener-fpu2").click(function() {
+        alert("hi");
+        ("#dialog-fpu").dialog("open");
+    });  } );
+
+*/
                 $( function() {
                     $( "#tabs" ).tabs();
                   } );
+                
+                
+                $(function() {
+                    $("#accordion-cpu").accordion({
+                        collapsible: true,
+                        heightStyle: "content",
+                        active: false
+                    });
+                });
+
+                $( function() {
+                    $( "#dialog-fpu" ).dialog({
+                      autoOpen: false,
+                      show: {
+                        effect: "blind",
+                        duration: 1000
+                      },
+                      hide: {
+                        effect: "explode",
+                        duration: 1000
+                      }
+                    });
+                 
+                    $( "#opener-fpu" ).on( "click", function() {
+                      $( "#dialog-fpu" ).dialog( "open" );
+                    });
+                  } );
+               
         </script>
     
     </head>
@@ -17,24 +62,49 @@
 
     <div id="tabs">
             <ul>
-              <li><a href="#tabs-1"></a>CPU</li>
+              <li><a href="#tabs-1">CPU</a></li>
               <li><a href="#tabs-2">Motherboard</a></li>
               <li><a href="#tabs-3">RAM</a></li>
             </ul>
             <div id="tabs-1">
-              <p>The CPU is one of the most important parts of a computer.</p>
+              <p>The CPU is one of the most important parts of a computer.  There multiple parts 
+                  to this part.  
+
+                  <div id="accordion-cpu">
+                        <h3>The Scheduler</h3>
+
+                        <div>
+                            <p>The scheduler takes incoming instructions from the memory and decodes them.  It sends the data to other parts the system which will then execute the instruction.  On a multi-core CPU, there is a scheduler in each core as well as a thread dispatcher that overssees each individual scheduler.  These instructions are read from an instruciton cache, which reads instructions from the RAM.   
+                            </p>
+                        </div>
+
+                        <h3>ALU</h3>
+
+                        <div>
+                            <p>The Arithmetic Logic Unit is what does all of the math.  Surprisingly, it only does integer math.  This may come as a suprise since the kinds of calculations a computer can do in such small amounts of time is mind blowing.  The ALU only has instructions that tells it how to add, subtract, multiply, and divide integers, as well as instrucitons to compare them.</p>
+
+                            The FPU, or Floating Point Unit is the companion to the ALU.  Click <span id="opener-fpu">here</span> if you want to learn more about it.
+
+                            <div id="dialog-fpu" title="The FPU">
+                                <p>The FPU does floating-point math.  Floating-point is a way to represent decimals in computers.</p>
+
+                            </div>
+                        </div>
+
+                        <h3>Registers</h3>
+
+                        <div>
+                            A register is a small bit of memory that is used to store a number that is currently being operated on by one of the CPUs other components.  CPUs typically have dozens of registers.  Some are deisgned for special purposes.
+                        </div>
+                  </div>
+              </p>
             </div>
             <div id="tabs-2">
-              <p></p>
+              <p>The Motherboard is the main component of a computer.</p>
             </div>
             <div id="tabs-3">
-              <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-              <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                <p>RAM is what gives speed.</p>
             </div>
           </div>
-
-
-
-
 
 </html>
