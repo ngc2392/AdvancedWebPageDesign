@@ -38,6 +38,8 @@ html, body {
 }
 
 .container {
+	position: sticky;
+	top: 0;
 	background: gray;
 	padding: 40px;
 }
@@ -71,7 +73,7 @@ html, body {
 	position: fixed;
 	/*Can still hover over svgs.  Bottom margin box text also appear.  We need this higher*/
 	/* z-index: 9999; */
-	z-index: 99999;
+	z-index: 999999;
 	/*start at top left of viewport*/
 	top: 0;
 	left: 0;
@@ -230,7 +232,7 @@ h2 {
 	/*https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/*/
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
-	z-index: 9999;
+	z-index: 950;
 	/*Make it go on top of the photo*/
 	font-family: 'Oswald', sans-serif;
 	font-size: 100%;
@@ -277,7 +279,7 @@ h2 {
 	transition: .5s ease;
 	/*background-color: #008CBA;*/
 	/* Make sure that overlay is overtop of .box-text*/
-	z-index: 10001;
+	z-index: 951;
 	background: rgba( 0, 0, 0, 0.9);
 }
 
@@ -616,6 +618,7 @@ h2 {
 .symbols-row img {
 	width: auto;
 	height: 200px;
+	cursor: pointer;
 }
 
 .bird, .deer, .fish {
@@ -634,7 +637,8 @@ h2 {
 	top: 0;
 	display: none;
 	width: 200px;
-	height: 200px;
+	/*have the div expand as its content gets bigger*/
+	/* height: 200px; */
 	margin: 0 auto;
 	padding: 15px;
 	margin-top: 50px;

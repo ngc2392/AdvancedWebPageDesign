@@ -49,10 +49,25 @@ $('img').click(function () {
 $(document).mouseup(function (e) {
   var container = $(".popup");
 
+  // If we don't have this, then clicking text inside the popup will make it close
+  var childrenOfPopup = $(".popup").children();
+  var image = $('.symbols-row img')[0];
+  console.log(image);
+
+    
+  if (!container.is(e.target) && !childrenOfPopup.is(e.target)) {
+    container.hide();
+  }
+
+
+
+  /*
   if (!container.is(e.target) && container.has(e.target).length === 0) {
     container.hide();
   }
+  */
 });
+
 
 // Clicking the 'x' hides the pop up
 $('.fa-times').click(function () {
