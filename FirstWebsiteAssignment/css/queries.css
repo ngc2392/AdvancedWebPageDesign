@@ -57,4 +57,15 @@
         bottom: 10%;
         box-shadow: none;
     }
+
+    .footer-nav {
+        flex-direction: column;
+    }
+
+    .footer-nav li a:link, 
+.footer-nav li a:visited {
+
+    border-right: none;
+  
+}
 }

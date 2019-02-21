@@ -24,7 +24,7 @@ $(function() {
       $('body').css('overflow', 'hidden');
 
       $('#myNav').click(function(e) {
-         if(e.target.id == '1' || e.target.id == '2' || e.target.id == '3' || e.target.id == '4') {
+         if(e.target.id == 'mobile-nav-econ' || e.target.id == 'mobile-nav-hist' || e.target.id == 'mobile-nav-govt' || e.target.id == 'mobile-nav-sym' || e.target.id == 'mobile-nav-geo' || e.target.id == 'mobile-nav-cen') {
   
          } else {
             document.getElementById("myNav").style.width = "0%";

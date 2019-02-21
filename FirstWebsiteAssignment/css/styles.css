@@ -28,6 +28,8 @@ html, body {
 
 .main-nav li {
 	display: inline;
+	/*So we can absolutely position li::after*/
+	position: relative;
 }
 
 .main-nav li a:link, .main-nav li a:visited {
@@ -42,6 +44,25 @@ html, body {
 	top: 0;
 	background: gray;
 	padding: 40px;
+}
+
+/*Underline nav bar elements*/
+
+.main-nav li::after {
+	background-color: red;
+	content:"";
+	width: 0;
+	height: 3px;
+	top: 30px;
+	left: 0;
+	right: 0;
+	transition: width 0.35s ease 0s;
+	position: absolute;
+	bottom: 0;
+}
+
+.main-nav li:hover::after {
+	width: 100%;
 }
 
 /* ----------------------------------------------- */
@@ -598,6 +619,7 @@ h2 {
 /*Center the image*/
 
 .image-container {
+	border: 2px solid red;
 	display: flex;
 	justify-content: center;
 }
@@ -671,7 +693,70 @@ h2 {
 /* FOOTER */
 
 footer {
-	background-color: #333;
-	padding: 50px;
-	font-size: 80%;
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav {
+	list-style: none;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.row {
+    position: relative;
+}
+
+.contact-me {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.contact-me a:link, 
+.contact-me a:visited {
+    text-decoration: none;
+    color: #888;
+    /*top and bottom, right and left */
+    padding: 0px 5px;
+  
+}
+
+.contact-me a:hover, 
+.contact-me a:active {
+    color: #ddd;
+}
+
+
+
+.footer-nav li  {
+    /* border: 2px solid red; */
+    /* display: inline-block; */
+}
+
+.footer-nav li a:link, 
+.footer-nav li a:visited {
+    text-decoration: none;
+    color: #888;
+    border-right: 1px solid blue;
+    /*top and bottom, right and left */
+    padding: 0px 5px;
+  
+}
+
+/* Remove right border from last link */
+.footer-nav li:last-child a {
+    border-right: none;
+}
+
+
+.footer-nav li a:hover, 
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+footer .copy-right {
+    text-align: center;
 }

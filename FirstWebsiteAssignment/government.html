@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/queries.css">
 	<link rel="stylesheet" type="text/css" href="css/government.css" <link rel="stylesheet" type="text/css"
 		href="css/queries.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
@@ -18,21 +19,34 @@
 
 <body>
 
+<!-- I originally had this inside .container, but the z index wasn't working-->
+<div id="myNav" class="overlay"> 
+		<!-- <i class="fas fa-times"></i> -->
+		
+		<a id="mobile-nav-econ" href="economy.html">Economy</a>
+		<a id="mobile-nav-hist" href="history.html">History</a>
+		<a id="mobile-nav-govt" href="government.html">Government</a>
+		<a id="mobile-nav-symb" href="symbols.html">Symbols</a>
+		<a id="mobile-nav-geo" href="geography.html">Geography</a>
+		<a id="mobile-nav-cen" href="census.html">Census</a>
+</div>
+
 	<header>
 		<div class="container">
 			<nav>
 				<ul class="main-nav">
-					<li><a href="#">Economy</a></li>
-					<li><a href="#">History</a></li>
-					<li><a href="#">Government</a></li>
-					<li><a href="#">Symbols</a></li>
-					<li><a href="#">Geography</a></li>
-					<li><a href="#">Census</a></li>
+					<li><a href="economy.html">Economy</a></li>
+					<li><a href="history.html">History</a></li>
+					<li><a href="government.html">Government</a></li>
+					<li><a href="symbols.html">Symbols</a></li>
+					<li><a href="geography.html">Geography</a></li>
+					<li><a href="census.html">Census</a></li>
 
 				</ul>
+
+				<a class="mobile-nav-icon js--nav-icon"><i id="mobile-icon" class="fas fa-bars"></i></a>
 			</nav>
 		</div>
-
 		<h1 class="header-intro-txt">LEARN ABOUT THSOE WHO REPRESENT YOU</h1>
 
 		<h5 class="header-exp-txt">As a citizen of PA, you should know who represents you.
@@ -125,7 +139,31 @@
 
 	<footer>
 
+			<div class="row" >
+<!-- https://www.w3schools.com/cssref/sel_link.asp -->
+<ul class="footer-nav">
+	<li><a href="index.html">Home</a></li>
+	<li><a href="economy.html">Economy</a></li>
+	<li><a href="history.html">History</a></li>
+	<li><a href="government.html">Government</a></li>
+	<li><a href="symbols.html">State Symbols</a></li>
+	<li><a href="geography.html">Geography</a></li>
+	<li><a href="census.html">Census</a></li>
+
+</ul>
+
+<div class="contact-me"><a href="contact.html"">contact me</a></div> 
+
+			</div>
+		
+
+
+			<div class="copy-right">
+					<p>Copyright &copy; 2019 by Logan Phillips.  All rights reserved.</p>
+			</div>
+
 	</footer>
+
 
 
 
@@ -137,6 +175,8 @@
 
 	<!-- Our own scripts should always be the last ones we call -->
 	<script src="js/government.js"></script>
+	<script src="js/script.js"></script>
+
 </body>
 
 </html>
