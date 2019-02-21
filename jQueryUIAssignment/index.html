@@ -1,110 +1,218 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
-        <script src="jquery-3.3.1.min.js" ></script>
-        <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    
-        <script>
 
-            /*
-                $("#opener-fpu2").on("click", function() {
-                    alert("h");
-                    //("#dialog-fpu").dialog("open");
-                });
-*/
+<head>
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+  <title>Parts of a Computer</title>
+
+  <style>
+    img {
+      width: 25%;
+    }
+  </style>
+
+  <script>
+
+    $(function () {
+      $("#image").resizable();
+    });
 
 
-/*
 
-$( function() {
-    $("#opener-fpu2").click(function() {
-        alert("hi");
-        ("#dialog-fpu").dialog("open");
-    });  } );
+    $(function () {
+      $("#tabs").tabs();
+    });
 
-*/
-                $( function() {
-                    $( "#tabs" ).tabs();
-                  } );
-                
-                
-                $(function() {
-                    $("#accordion-cpu").accordion({
-                        collapsible: true,
-                        heightStyle: "content",
-                        active: false
-                    });
-                });
 
-                $( function() {
-                    $( "#dialog-fpu" ).dialog({
-                      autoOpen: false,
-                      show: {
-                        effect: "blind",
-                        duration: 1000
-                      },
-                      hide: {
-                        effect: "explode",
-                        duration: 1000
-                      }
-                    });
-                 
-                    $( "#opener-fpu" ).on( "click", function() {
-                      $( "#dialog-fpu" ).dialog( "open" );
-                    });
-                  } );
-               
-        </script>
-    
-    </head>
+    $(function () {
+      $("#accordion-cpu").accordion({
+        collapsible: true,
+        heightStyle: "content",
+        active: false
+      });
+    });
 
-    Parts of a Computer
 
-    <div id="tabs">
-            <ul>
-              <li><a href="#tabs-1">CPU</a></li>
-              <li><a href="#tabs-2">Motherboard</a></li>
-              <li><a href="#tabs-3">RAM</a></li>
-            </ul>
-            <div id="tabs-1">
-              <p>The CPU is one of the most important parts of a computer.  There multiple parts 
-                  to this part.  
+    $(function () {
+      $("#accordion-board").accordion({
+        collapsible: true,
+        heightStyle: "content",
+        active: false
+      });
+    });
 
-                  <div id="accordion-cpu">
-                        <h3>The Scheduler</h3>
 
-                        <div>
-                            <p>The scheduler takes incoming instructions from the memory and decodes them.  It sends the data to other parts the system which will then execute the instruction.  On a multi-core CPU, there is a scheduler in each core as well as a thread dispatcher that overssees each individual scheduler.  These instructions are read from an instruciton cache, which reads instructions from the RAM.   
-                            </p>
-                        </div>
 
-                        <h3>ALU</h3>
+    $(function () {
+      $("#dialog-fpu").dialog({
+        autoOpen: false,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
 
-                        <div>
-                            <p>The Arithmetic Logic Unit is what does all of the math.  Surprisingly, it only does integer math.  This may come as a suprise since the kinds of calculations a computer can do in such small amounts of time is mind blowing.  The ALU only has instructions that tells it how to add, subtract, multiply, and divide integers, as well as instrucitons to compare them.</p>
+      $("#opener-fpu").on("click", function () {
+        $("#dialog-fpu").dialog("open");
+      });
+    });
 
-                            The FPU, or Floating Point Unit is the companion to the ALU.  Click <span id="opener-fpu">here</span> if you want to learn more about it.
 
-                            <div id="dialog-fpu" title="The FPU">
-                                <p>The FPU does floating-point math.  Floating-point is a way to represent decimals in computers.</p>
+    $(function () {
+      $("#dialog-memory").dialog({
+        autoOpen: false,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
 
-                            </div>
-                        </div>
+      $("#opener-memory").on("click", function () {
+        $("#dialog-memory").dialog("open");
+      });
+    });
 
-                        <h3>Registers</h3>
 
-                        <div>
-                            A register is a small bit of memory that is used to store a number that is currently being operated on by one of the CPUs other components.  CPUs typically have dozens of registers.  Some are deisgned for special purposes.
-                        </div>
-                  </div>
-              </p>
-            </div>
-            <div id="tabs-2">
-              <p>The Motherboard is the main component of a computer.</p>
-            </div>
-            <div id="tabs-3">
-                <p>RAM is what gives speed.</p>
-            </div>
-          </div>
+
+  </script>
+
+</head>
+
+<body>
+
+Parts of a Computer
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">CPU</a></li>
+    <li><a href="#tabs-2">Motherboard</a></li>
+    <li><a href="#tabs-3">RAM</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>The CPU is one of the most important parts of a computer. There multiple parts
+      to this part. </p>
+
+    <div id="accordion-cpu">
+      <h3>The Scheduler</h3>
+
+      <div>
+        <p>The scheduler takes incoming instructions from the memory and decodes them. It sends the data to other parts
+          the system which will then execute the instruction. On a multi-core CPU, there is a scheduler in each core as
+          well as a thread dispatcher that overssees each individual scheduler. These instructions are read from an
+          instruciton cache, which reads instructions from the RAM.
+        </p>
+      </div>
+
+      <h3>ALU</h3>
+
+      <div>
+        <p>The Arithmetic Logic Unit is what does all of the math. Surprisingly, it only does integer math. This may
+          come as a suprise since the kinds of calculations a computer can do in such small amounts of time is mind
+          blowing. The ALU only has instructions that tells it how to add, subtract, multiply, and divide integers, as
+          well as instrucitons to compare them.</p>
+
+        The FPU, or Floating Point Unit is the companion to the ALU. Click <span id="opener-fpu">here</span> if you want
+        to learn more about it.
+
+        <div id="dialog-fpu" title="The FPU">
+          <p>The FPU does floating-point math. Floating-point is a way to represent decimals in computers.</p>
+
+        </div>
+      </div>
+
+      <h3>Registers</h3>
+
+      <div>
+        A register is a small bit of memory that is used to store a number that is currently being operated on by one of
+        the CPUs other components. CPUs typically have dozens of registers. Some are deisgned for special purposes.
+      </div>
+    </div>
+    <p>Source: https://www.quora.com/What-are-the-different-internal-parts-of-a-CPU-and-their-functions</p>
+  </div>
+  <div id="tabs-2">
+    <p>The Motherboard is what allows all the different parts of a computer to communicate with eachother. It is what
+      brings everything together.</p>
+
+    <div id="accordion-board">
+      <h3>Processor Socket</h3>
+
+      <div>
+        <p>
+          This part of the motherboard is typically located at the center of the board. This is where the CPU is
+          installed.
+        </p>
+      </div>
+
+      <h3>Power Connectors</h3>
+
+      <div>
+        <p>
+          This is where the power supply's main connect gets attached to the motherbaord, allowing all of the components
+          to recieve power. The power connect is typically a 20 or 24 pin connector and is typically near the right edge
+          of the motherboard or somewhere close to the processor socket.
+        </p>
+      </div>
+
+
+      <h3>Memory Slots</h3>
+
+      <div>
+        <p>
+          The memory slots are typically located in the upper-right part of a motherboard. This is where the computer's
+          memory modules are attached. A motherboard can hold up to 8 memory modules.
+
+          Click <span id="opener-memory">here</span> to learn about different kinds of memory.
+        </p>
+
+        <div id="dialog-memory">
+          <p>The different kinds of memory are DDR3, DDR4 and DDR5</p>
+        </div>
+      </div>
+
+
+      <h3>Video Card Slot</h3>
+
+      <div>
+        <p>
+          This is where the video card is attached to the computer. On newer motherboards, this slot is a PCI Express
+          slot. Some older computers don't have this slot, which means you have to rely on the integrated video card,
+          which is not going to achieve any kind of performance close to the kind you can get with an external one.
+        </p>
+      </div>
+
+
+      <h3>Expansion Slot</h3>
+
+      <div>
+        <p>
+          Expansion slots allow you to install additional components to enhance the functionality of a PC. For example,
+          these slots can be used to install a better video card or sound card.
+        </p>
+      </div>
+
+      Source: https://blog.udemy.com/motherboard-parts-and-functions/
+
+    </div>
+
+  </div>
+  <div id="tabs-3">
+    <p>RAM serves as the computers working memory. More RAM available, the more a computer can do at the same time.</p>
+
+    <img id="image" src="liam-briese-1128307-unsplash.jpg" />
+
+  </div>
+</div>
+
+</body>
 
 </html>
