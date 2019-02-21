@@ -9,16 +9,29 @@ $(document).ready(function() {
         slidesToScroll: 1
       });
 
-      $('.slick-slide').on('mouseenter')
+      //$('.slick-slide').on('mouseenter');
 
 
       $("img").click(function() {
 
         var srcAttribute = $(this).attr('src');
 
-        alert("source of the image is " + srcAttribute);
+       // alert("source of the image is " + srcAttribute);
       });
 
-
 });
+
+$(function() {
+  tippy("#bob", {
+    placement: 'right',
+    content: 'hello there', 
+    animation: 'fade',
+    duration: 0,
+    arrow: true,
+    delay: [20, 20]
+  });
+
+  
+});
+
 

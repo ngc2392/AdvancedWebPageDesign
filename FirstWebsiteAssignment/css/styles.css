@@ -558,6 +558,20 @@ h2 {
 	height: 188px;
 }
 
+.senators-row {
+	display: flex;
+	justify-content: space-around;
+	flex-basis: 50%;
+}
+
+/*So the images change on resize of window*/
+.senators-row img {
+	width: 20%;
+	height: 20%;
+}
+
+
+
 /*slider container*/
 
 .slider {
