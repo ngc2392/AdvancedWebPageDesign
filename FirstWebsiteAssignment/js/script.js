@@ -15,3 +15,17 @@ $('.js--nav-icon').click(function() {
 
    
 });
+
+// Clicking anywhere on the div, except the links, will close the mobiel nav window
+$(function() {
+   if($('#myNav').is(':visible')) {
+
+      $('#myNav').click(function(e) {
+         if(e.target.id == '1' || e.target.id == '2' || e.target.id == '3' || e.target.id == '4') {
+  
+         } else {
+            document.getElementById("myNav").style.width = "0%";
+         }
+      });
+   }
+});

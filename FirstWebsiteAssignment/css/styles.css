@@ -69,7 +69,9 @@ html, body {
 	height: 100%;
 	width: 0;
 	position: fixed;
-	z-index: 1;
+	/*Can still hover over svgs.  Bottom margin box text also appear.  We need this higher*/
+	/* z-index: 9999; */
+	z-index: 99999;
 	/*start at top left of viewport*/
 	top: 0;
 	left: 0;
