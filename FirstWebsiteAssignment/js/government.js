@@ -31,7 +31,16 @@ $(function() {
     delay: [20, 20]
   });
 
-  
+});
+
+$(function() {
+  tippy(".section-state-reps img", {
+    placement: 'top',
+    animation: 'fade',
+    duration: 0,
+    arrow: true,
+    delay: [20,20]
+  });
 });
 
 
