@@ -190,8 +190,6 @@ h2 {
 }
 
 .section-about h2 {
-	/*Visualize the box model*/
-	/*border: 2px solid red;*/
 	padding-top: 35px;
 }
 
@@ -203,7 +201,6 @@ h2 {
 	text-align: center;
 	margin-top: 50px;
 	margin-bottom: 50px;
-	/*border: 2px solid #f76707; help visual box model */
 }
 
 .section-categories h2 {
@@ -224,11 +221,6 @@ h2 {
 	justify-content: center;
 	/*Justify the grid items along the row axis */
 	justify-items: center;
-	/* help in seeing the box model
-	border: 2px solid #f76707;
-	border-radius: 5px;
-	background-color: #fff4e6;
-	*/
 }
 
 /* ----------------------------------------------- */
@@ -257,7 +249,6 @@ h2 {
 	/*Make it go on top of the photo*/
 	font-family: 'Oswald', sans-serif;
 	font-size: 100%;
-	/* 20px */
 	text-transform: uppercase;
 }
 
@@ -265,8 +256,6 @@ h2 {
 	position: absolute;
 	/*SVG is inline by default*/
 	display: block;
-	/*help to visualize box model
-	border: 2px solid red;*/
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -286,7 +275,6 @@ h2 {
 /* START - FADE IN EFFECT */
 
 /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade*/
-
 .box-fade-in-overlay {
 	display: block;
 	position: absolute;
@@ -298,7 +286,6 @@ h2 {
 	width: 100%;
 	opacity: 0;
 	transition: .5s ease;
-	/*background-color: #008CBA;*/
 	/* Make sure that overlay is overtop of .box-text*/
 	z-index: 951;
 	background: rgba( 0, 0, 0, 0.9);
@@ -383,7 +370,14 @@ h2 {
 }
 /* ----------------------------------------------- */
 
+
+
+
+/* ----------------------------------------------- */
+
 /* ECONOMY PAGE */
+
+/* ----------------------------------------------- */
 
 .section-economy-overview {
 	background-color: #AAB9CF;
@@ -744,11 +738,7 @@ footer {
 }
 
 
-
-.footer-nav li  {
-    /* border: 2px solid red; */
-    /* display: inline-block; */
-}
+.footer-nav li  {}
 
 .footer-nav li a:link, 
 .footer-nav li a:visited {

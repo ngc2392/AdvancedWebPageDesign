@@ -1,166 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <!--https://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working-->
-        <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/economy.css">
-        <link rel="stylesheet" type="text/css" href="css/queries.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<head>
+    <meta charset="utf-8">
+    <!--https://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working-->
+    <meta name="viewport" content="width=device-width">
 
-    </head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/economy.css">
+    <link rel="stylesheet" type="text/css" href="css/queries.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <body>
+</head>
 
-        <!-- I originally had this inside .container, but the z index wasn't working-->
-	<div id="myNav" class="overlay"> 
-            <!-- <i class="fas fa-times"></i> -->
-            
-            <a id="mobile-nav-econ" href="economy.html">Economy</a>
-            <a id="mobile-nav-hist" href="history.html">History</a>
-            <a id="mobile-nav-govt" href="government.html">Government</a>
-            <a id="mobile-nav-symb" href="symbols.html">Symbols</a>
-            <a id="mobile-nav-geo" href="geography.html">Geography</a>
-            <a id="mobile-nav-cen" href="census.html">Census</a>
+<body>
+
+
+    <!--  ********  MOBILE NAVIGATION ********  -->
+
+
+    <!-- I originally had this inside .container, but the z index wasn't working-->
+    <div id="myNav" class="overlay">
+        <!-- <i class="fas fa-times"></i> -->
+
+        <a id="mobile-nav-econ" href="economy.html">Economy</a>
+        <a id="mobile-nav-hist" href="history.html">History</a>
+        <a id="mobile-nav-govt" href="government.html">Government</a>
+        <a id="mobile-nav-symb" href="symbols.html">Symbols</a>
+        <a id="mobile-nav-geo" href="geography.html">Geography</a>
+        <a id="mobile-nav-cen" href="census.html">Census</a>
     </div>
-    
-        <header>
-            <div class="container">
-                <nav>
-                    <ul class="main-nav">
-                        <li><a href="economy.html">Economy</a></li>
-                        <li><a href="history.html">History</a></li>
-                        <li><a href="government.html">Government</a></li>
-                        <li><a href="symbols.html">Symbols</a></li>
-                        <li><a href="geography.html">Geography</a></li>
-                        <li><a href="census.html">Census</a></li>
-    
-                    </ul>
-    
-                    <a class="mobile-nav-icon js--nav-icon"><i id="mobile-icon" class="fas fa-bars"></i></a>
-                </nav>
-            </div>
-    
-            <div class="hero-text-box">
-                <h1>Economy</h1>
-            </div>
-    
-            <i class="fas fa-sort-down"></i>
-    
-        </header>
 
-        <section class="section-economy-overview">
-                <h2>Overview</h2>
 
-            <div class="economy-overview-row">
-                <div class="overview-box agriculture-box-overview">
-                    <!-- THis pushes the text outside of the div-->
-                    <img src="img/agriculture-box.jpg"> 
-                    <p class="under-overview-box">Learn About agriculture in PA</p>
-                    <p class="txt">PA is a great place to grow various crops.  If it comes from PA, 
-                        it's the best around!</p>
 
-                        <!-- <div class="btn-container">
+    <!--  ********  MAIN NAVIGATION, HEADER IMAGE, HEADER TEXT   ********  -->
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="economy.html">Economy</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="government.html">Government</a></li>
+                    <li><a href="symbols.html">Symbols</a></li>
+                    <li><a href="geography.html">Geography</a></li>
+                    <li><a href="census.html">Census</a></li>
+
+                </ul>
+
+                <a class="mobile-nav-icon js--nav-icon"><i id="mobile-icon" class="fas fa-bars"></i></a>
+            </nav>
+        </div>
+
+        <div class="hero-text-box">
+            <h1>Economy</h1>
+        </div>
+
+        <i class="fas fa-sort-down"></i>
+
+    </header>
+
+
+    <!--  ********  ECONOMY OVERVIEW SECTION   ********  -->
+
+    <section class="section-economy-overview">
+        <h2>Overview</h2>
+
+        <div class="economy-overview-row">
+            <div class="overview-box agriculture-box-overview">
+                <!-- THis pushes the text outside of the div-->
+                <img src="img/agriculture-box.jpg">
+                <p class="under-overview-box">Learn About agriculture in PA</p>
+                <p class="txt">PA is a great place to grow various crops. If it comes from PA,
+                    it's the best around!</p>
+
+                <!-- <div class="btn-container">
                                 <div class="btn">Learn more</div>
                         </div> -->
 
-                        <div class="btn-container">
+                <div class="btn-container">
 
-                                <div class="btn">
-    
-                                        <span class="label-up">LEARN MORE</span>
-                                        <span class="label-up">TAKE ME DOWN</span>
-            
-                                    </div>
-    
-                        </div>
-    
-                </div>
-                <div class="overview-box manufacturing-box-overview">
-                    <img src="img/manufacturing-box.jpg">
-                    <p class="under-overview-box">Learn About manufacturing in PA</p>
-                    <p class="txt">Metal.  Copper.  Steel. My God.  This is nice.
-                    </p>
-                    <!-- <div class="btn-container">
-                            <div class="btn">Learn more</div>
-                    </div> -->
+                    <div class="btn">
 
-                    <div class="btn-container">
-
-                            <div class="btn">
-
-                                    <span class="label-up">LEARN MORE</span>
-                                    <span class="label-up">TAKE ME DOWN</span>
-        
-                                </div>
-
-                    </div>
-
-                  
-                </div>
-                <div class="overview-box mining-box-overview">
-                    <img src="img/mining-box.jpg">
-                    <p class="under-overview-box">Learn About manufacturing in PA</p>
-                    <p class="txt">Metal.  Copper.  Steel. My God.  This is nice.
-                    </p>
-                    <!-- <div class="btn-container">
-                            <div class="btn">Learn more</div>
-                    </div> -->
-
-                    <div class="btn-container">
-
-                            <div class="btn">
-
-                                    <span class="label-up">LEARN MORE</span>
-                                    <span class="label-up">TAKE ME DOWN</span>
-        
-                                </div>
+                        <span class="label-up">LEARN MORE</span>
+                        <span class="label-up">TAKE ME DOWN</span>
 
                     </div>
 
                 </div>
+
             </div>
+            <div class="overview-box manufacturing-box-overview">
+                <img src="img/manufacturing-box.jpg">
+                <p class="under-overview-box">Learn About manufacturing in PA</p>
+                <p class="txt">Metal. Copper. Steel. My God. This is nice.
+                </p>
+                <!-- <div class="btn-container">
+                            <div class="btn">Learn more</div>
+                    </div> -->
 
-        </section>
+                <div class="btn-container">
 
-        <footer>
+                    <div class="btn">
 
-                <div class="row" >
-      <!-- https://www.w3schools.com/cssref/sel_link.asp -->
-      <ul class="footer-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="economy.html">Economy</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="government.html">Government</a></li>
-            <li><a href="symbols.html">State Symbols</a></li>
-            <li><a href="geography.html">Geography</a></li>
-            <li><a href="census.html">Census</a></li>
-    
-        </ul>
-    
-        <div class="contact-me"><a href="contact.html"">contact me</a></div> 
+                        <span class="label-up">LEARN MORE</span>
+                        <span class="label-up">TAKE ME DOWN</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="overview-box mining-box-overview">
+                <img src="img/mining-box.jpg">
+                <p class="under-overview-box">Learn About manufacturing in PA</p>
+                <p class="txt">Metal. Copper. Steel. My God. This is nice.
+                </p>
+                <!-- <div class="btn-container">
+                            <div class="btn">Learn more</div>
+                    </div> -->
+
+                <div class="btn-container">
+
+                    <div class="btn">
+
+                        <span class="label-up">LEARN MORE</span>
+                        <span class="label-up">TAKE ME DOWN</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--  ********  FOOTER LINKS   ********  -->
+
+    <footer>
+
+        <div class="row">
+            <!-- https://www.w3schools.com/cssref/sel_link.asp -->
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="economy.html">Economy</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="government.html">Government</a></li>
+                <li><a href="symbols.html">State Symbols</a></li>
+                <li><a href="geography.html">Geography</a></li>
+                <li><a href="census.html">Census</a></li>
+
+            </ul>
+
+            <div class="contact-me"><a href="contact.html"">contact me</a></div> 
     
                 </div>
               
     
     
-                <div class="copy-right">
-                    <p>Copyright &copy; 2019 by Logan Phillips.  All rights reserved.</p>
-                </div>
-    
-            </footer>
-    
-        <script src="js/script.js"></script>
+                <div class=" copy-right">
+                    <p>Copyright &copy; 2019 by Logan Phillips. All rights reserved.</p>
+            </div>
 
-    </body>
-    
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
 </html>
-
-
-
-
 
 </html>
