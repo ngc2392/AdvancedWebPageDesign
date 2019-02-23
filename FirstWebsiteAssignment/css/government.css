@@ -6,3 +6,7 @@ h1 {
 h5 {
     color: #fff;
 }
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(158, 77, 77, 0.7)), url(../img//katie-moum-623907-unsplash.jpg);
+}
