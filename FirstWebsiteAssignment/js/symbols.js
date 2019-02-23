@@ -33,18 +33,12 @@ $('img').click(function () {
     console.log("Image", image);
   
     var clickedElement = e.target;
-      
+  
+    //!clickedElement.is(container) does not work
     if (!container.is(clickedElement) && !childrenOfPopup.is(clickedElement)) {
       container.hide();
     }
-  
-    /*
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-      container.hide();
-    }
-    */
   });
-  
   
   // Clicking the 'x' hides the pop up
   $('.fa-times').click(function () {

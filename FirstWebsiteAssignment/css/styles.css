@@ -23,14 +23,18 @@ html, body {
 
 
 .main-nav {
-	float: right;
+	display: flex;
+	justify-content: flex-end;
+
+	/*float: right;*/
 	list-style: none;
 }
 
 .main-nav li {
-	display: inline;
+	/*display: inline;*/
 	/*So we can absolutely position li::after*/
 	position: relative;
+	margin-right: 5px;
 }
 
 .main-nav li a:link, .main-nav li a:visited {
@@ -41,10 +45,12 @@ html, body {
 }
 
 .container {
-	position: sticky;
+	/* position: sticky; */
+    position: fixed;
+	width: 100%; 
 	top: 0;
 	background: gray;
-	padding: 40px; 
+	padding: 30px; 
 }
 
 /*Underline nav bar elements*/
@@ -75,7 +81,7 @@ html, body {
 .mobile-nav-icon {
 	position: absolute;
 	right: 5%;
-	margin-top: 30px;
+	margin-top: 20px;
 	cursor: pointer;
 	display: none;
 }
@@ -512,7 +518,7 @@ h2 {
 
 .header-intro-txt {
 	position: relative;
-	top: 10%;
+	top: 20%;
 	text-align: center;
 }
 
@@ -600,12 +606,15 @@ h2 {
 	margin-top: 20px;
 }
 
+.section-nat-reps img {
 
+}
 
 /*slider container*/
 .slider {
 	border: 2px solid green;
 	width: 60%;
+	/*horizontally center*/
 	margin: 0 auto;
 }
 
@@ -619,6 +628,7 @@ h2 {
 	margin: 0px 20px;
 	transition: all ease-in-out .3s;
 	opacity: .2;
+	border: 2px solid blue;
 }
 
 .slick-slide img {
