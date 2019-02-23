@@ -21,6 +21,7 @@ html, body {
 
 /* ----------------------------------------------- */
 
+
 .main-nav {
 	float: right;
 	list-style: none;
@@ -43,7 +44,7 @@ html, body {
 	position: sticky;
 	top: 0;
 	background: gray;
-	padding: 40px;
+	padding: 40px; 
 }
 
 /*Underline nav bar elements*/
@@ -518,7 +519,7 @@ h2 {
 	/* Whenever we do a psuedo after class, we need to specify its content */
 	display: block;
 	width: 100px;
-	background-color: blue;
+	background-color: #eee;
 	/*border: 2px solid #d0d0d0;*/
 	margin: 0 auto;
 	margin-top: 30px;
@@ -532,24 +533,52 @@ h2 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border: 2px solid red;
 	display: block;
 	width: 50%;
 }
 
-.section-state-governor {}
+.header-intro-txt {
+	color: #eee;;
+}
 
-.section-nat-senators {}
+.section-state-governor {
+	padding-bottom: 20px;
+	background-color: #BEC5AD;
+}
 
-.section-nat-reps {}
+.section-nat-senators {
+	padding-bottom: 20px;
+	background-color: #F2F4F3; 
+}
 
-.section-state-sens {}
+.section-nat-reps {
+	padding-bottom: 20px;
+	background-color: #8693AB;
+}
 
-.section-state-reps {}
+.section-state-sens {
+	padding-bottom: 20px;
+	background-color: #F4FAFF;
+}
+
+.section-state-reps {
+	padding-bottom: 20px;
+	background-color: #BEC5AD;
+}
 
 .section-nat-reps img {
-	width: 215px;
-	height: 188px;
+	
+}
+
+.governor-row {
+	display: flex;
+	justify-content: center;
+}
+
+.governor-row img {
+	
+	width: 20%;
+	height: 20%;
 }
 
 .senators-row {
@@ -564,18 +593,21 @@ h2 {
 	height: 20%;
 }
 
+.governor-row img, 
+.senators-row img {
+	margin-top: 20px;
+}
+
 
 
 /*slider container*/
-
 .slider {
 	border: 2px solid green;
 	width: 60%;
-	margin: 50px auto;
+	margin: 0 auto;
 }
 
 /*https://stackoverflow.com/questions/23337972/slick-carousel-arrows-do-not-appear-and-work-as-they-ought-to*/
-
 .slick-prev:before, .slick-next:before {
 	color: red !important;
 }
@@ -600,6 +632,10 @@ h2 {
 
 .slick-current {
 	opacity: 1;
+}
+
+.center {
+	margin-top: 20px;
 }
 
 /* Symbols.html  */
