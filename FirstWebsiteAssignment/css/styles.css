@@ -23,6 +23,7 @@ html, body {
 
 
 .main-nav {
+	
 	display: flex;
 	justify-content: flex-end;
 

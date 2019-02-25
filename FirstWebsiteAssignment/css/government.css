@@ -10,3 +10,9 @@ h5 {
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(158, 77, 77, 0.7)), url(../img//katie-moum-623907-unsplash.jpg);
 }
+
+/*https://stackoverflow.com/questions/19576175/how-do-you-decrease-navbar-height-in-bootstrap-3*/
+nav {
+    padding-top: 0;
+    padding-bottom: 0;
+}

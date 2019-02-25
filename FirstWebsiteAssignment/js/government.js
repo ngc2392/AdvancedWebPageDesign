@@ -20,6 +20,12 @@ $(document).ready(function() {
       });
  
  });
+
+$(function() {
+// Enables popover
+$("[data-toggle=popover]").popover();
+});
+
  
  $(function() {
   tippy("#bob", {
@@ -43,3 +49,39 @@ $(document).ready(function() {
   });
  });
  
+
+ // JQuery UI dialog
+
+
+
+$(function() {
+  $(".dialog-box").dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 1000
+    }, 
+    hide: {
+      effect: "explode",
+      duration: 1000
+    }
+  });
+});
+
+
+$(".section-nat-reps img").on("click", function() {
+  //$($(this)+"" + '.dialog-box').dialog("open");
+  // $('.dialog-box').dialog("open");
+ //console.log($('.dialog-box'));
+
+  //traverses a single level up the DOM tree
+//  var parentOfImage = $(this).parent('div');
+//  console.log(parentOfImage);
+//  var childrenOfContaining = parentOfImage.children();
+// console.log(childrenOfContaining);
+
+
+
+
+});
+
