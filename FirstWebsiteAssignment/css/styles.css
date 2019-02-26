@@ -597,6 +597,7 @@ h2 {
 }
 
 .senators-row .senator-container {
+	display: relative;
 	flex-basis: 30%;
 	margin-top: 20px;
 	/*https://stackoverflow.com/questions/5657964/css-why-doesn-t-percentage-height-work*/
@@ -668,16 +669,12 @@ h2 {
 
 /* The Modal (background) */
 
-.wrapper {
-	position: relative;
-}
-
 .modal {
 	position: absolute;
+	top: 50%;
 	border: 2px solid cyan;
 	display: none; /* Hidden by default */
 	z-index: 999999;
-	top: 50%;
   }
   
   /* Modal Content */
@@ -694,7 +691,8 @@ h2 {
 	animation-name: animatetop;
 	animation-duration: 0.4s
   }
-  
+	
+	
   /* Add Animation */
   @-webkit-keyframes animatetop {
 	from {top:-300px; opacity:0} 

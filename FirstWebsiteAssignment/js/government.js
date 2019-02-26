@@ -50,10 +50,9 @@ $("[data-toggle=popover]").popover();
   });
  });
  
-
- // JQuery UI dialog
-
-
+ $("img").on("click", function(e) {
+  $( "#dialog" ).dialog();
+ });
 
 $(function() {
   $(".dialog-box").dialog({
@@ -80,19 +79,19 @@ $('.close').on("click", function() {
   
   $(".modal").css("display", "none");
 });
-
+/*
 $("img").on("click", function(e) {
 
 var idOfContainer = "#" + $(this).parent('div').attr("id");
-// var reference = $(idOfContainer);
-// var popper = document.querySelector('.modal');
-// var popperInstance = new Popper(reference, popper, {
-//   // popper options here
-//   placement: "right",
-// });
-//console.log(idOfContainer + "" + ".modal")
+var reference = $(idOfContainer);
+var popper = document.querySelector('.modal');
+var popperInstance = new Popper(reference, popper, {
+  // popper options here
+  placement: "right",
+});
+console.log(idOfContainer + "" + ".modal")
 $(idOfContainer + " " + " .modal").css('display', 'block');
-
 
 });
 
+*/
