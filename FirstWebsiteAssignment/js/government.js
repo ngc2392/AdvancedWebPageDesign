@@ -51,7 +51,13 @@ $("[data-toggle=popover]").popover();
  });
  
  $("img").on("click", function(e) {
-  $( "#dialog" ).dialog();
+
+  var clickedImageID = $(this).attr("id");
+
+  console.log("DIALOG WHERE U AT", "dialog-" + clickedImageID);
+
+  //$("#dialog-" + clickedImageID).dialog("open");
+
  });
 
 $(function() {
@@ -68,16 +74,58 @@ $(function() {
   });
 });
 
+var dataResponse;
 
 $(function() {
-
-
+  var data = $.ajax({
+    type: "GET",
+    url: 'http://awd.examples.icu/data.json',
+    dataType: 'json', 
+    async: false,
+    success: function(data) {
+      console.log("SUCCESS");
+      //console.log(data);
+      dataResponse = data;
+    }, 
+    error: function() {
+      console.log("ERROR");
+    }
+  });
+ 
 
 });
 
 $('.close').on("click", function() {
   
   $(".modal").css("display", "none");
+});
+
+$("img").on("click", function(e) {
+
+  var clickedImageID = $(this).attr("id");
+
+  for(var i = 0; i < dataResponse.length; i++) {
+    var offical = dataResponse[i];
+
+    var fullName = offical.firstName.toLowerCase() + "_" + offical.lastName.toLowerCase();
+    //console.log(fullName);
+
+    if(clickedImageID === fullName) {
+      console.log("FOUND!")
+
+      var divContentHTML = "<p>" + offical.firstName + "</p>";
+
+      $(divContentHTML).dialog(); 
+      
+  
+
+    }
+
+  }
+
+
+
+
 });
 /*
 $("img").on("click", function(e) {
