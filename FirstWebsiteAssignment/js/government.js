@@ -50,30 +50,6 @@ $("[data-toggle=popover]").popover();
   });
  });
  
- $("img").on("click", function(e) {
-
-  var clickedImageID = $(this).attr("id");
-
-  console.log("DIALOG WHERE U AT", "dialog-" + clickedImageID);
-
-  //$("#dialog-" + clickedImageID).dialog("open");
-
- });
-
-$(function() {
-  $(".dialog-box").dialog({
-    autoOpen: false,
-    show: {
-      effect: "blind",
-      duration: 1000
-    }, 
-    hide: {
-      effect: "explode",
-      duration: 1000
-    }
-  });
-});
-
 var dataResponse;
 
 $(function() {
@@ -115,18 +91,23 @@ $("img").on("click", function(e) {
 
       var divContentHTML = "<p>" + offical.firstName + "</p>";
 
-      $(divContentHTML).dialog(); 
+      $(divContentHTML).dialog({
+        autoOpen: true,
+        title: offical.firstName + " " + offical.lastName,
+        show: {
+          effect: "blind",
+          duration: 1000
+        }, 
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      }); 
       
-  
-
     }
-
   }
-
-
-
-
 });
+
 /*
 $("img").on("click", function(e) {
 
