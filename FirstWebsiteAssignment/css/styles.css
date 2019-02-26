@@ -584,26 +584,36 @@ h2 {
 	justify-content: center;
 }
 
+
 .governor-row img {
-	
 	width: 20%;
 	height: 20%;
 }
 
 .senators-row {
+	border: 2px solid blue;
 	display: flex;
 	justify-content: space-around;
-	flex-basis: 50%;
+}
+
+.senators-row .senator-container {
+	flex-basis: 30%;
+	margin-top: 20px;
+	/*https://stackoverflow.com/questions/5657964/css-why-doesn-t-percentage-height-work*/
+	height: 75%;
+}
+
+.senators-row .senator-container .modal {
+	
 }
 
 /*So the images change on resize of window*/
 .senators-row img {
-	width: 20%;
-	height: 20%;
+	width: 100%;
+	height: 100%;
 }
 
-.governor-row img, 
-.senators-row img {
+.governor-row img {
 	margin-top: 20px;
 }
 
@@ -657,10 +667,17 @@ h2 {
 /* modal */
 
 /* The Modal (background) */
+
+.wrapper {
+	position: relative;
+}
+
 .modal {
+	position: absolute;
+	border: 2px solid cyan;
 	display: none; /* Hidden by default */
-	z-index: 9999;
-	
+	z-index: 999999;
+	top: 50%;
   }
   
   /* Modal Content */
@@ -670,7 +687,7 @@ h2 {
 	margin: auto;
 	padding: 0;
 	border: 1px solid #888;
-	width: 80%;
+	width: 100%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s;

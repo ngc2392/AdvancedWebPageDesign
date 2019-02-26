@@ -81,31 +81,18 @@ $('.close').on("click", function() {
   $(".modal").css("display", "none");
 });
 
-$("img").on("click", function() {
+$("img").on("click", function(e) {
 
-  //var image = $(this).parent().find('img');
+var idOfContainer = "#" + $(this).parent('div').attr("id");
+// var reference = $(idOfContainer);
+// var popper = document.querySelector('.modal');
+// var popperInstance = new Popper(reference, popper, {
+//   // popper options here
+//   placement: "right",
+// });
+//console.log(idOfContainer + "" + ".modal")
+$(idOfContainer + " " + " .modal").css('display', 'block');
 
-    /* <div class="my-button">reference</div>
-    <div class="my-popper">popper</div> */
-    var reference = $(this);
-    var popper = document.querySelector('.modal');
-    var popperInstance = new Popper(reference, popper, {
-      // popper options here
-      placement: "right",
-    });
-    
-    $('.modal').css('display', 'block');
-
-//   //traverses a single level up the DOM tree
-//  var parentOfImage = $(this).parent('div');
-// //console.log(parentOfImage);
-//  var childrenOfContaining = parentOfImage.find("*");
-// console.log(childrenOfContaining);
-
-// var popup = childrenOfContaining.get(1);
-// console.log(popup);
-
-// $(popup).css('display', 'block');
 
 });
 
