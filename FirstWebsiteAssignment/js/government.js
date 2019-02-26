@@ -71,11 +71,6 @@ $(function() {
 
 });
 
-$('.close').on("click", function() {
-  
-  $(".modal").css("display", "none");
-});
-
 $("img").on("click", function(e) {
 
   var clickedImageID = $(this).attr("id");
@@ -107,20 +102,3 @@ $("img").on("click", function(e) {
     }
   }
 });
-
-/*
-$("img").on("click", function(e) {
-
-var idOfContainer = "#" + $(this).parent('div').attr("id");
-var reference = $(idOfContainer);
-var popper = document.querySelector('.modal');
-var popperInstance = new Popper(reference, popper, {
-  // popper options here
-  placement: "right",
-});
-console.log(idOfContainer + "" + ".modal")
-$(idOfContainer + " " + " .modal").css('display', 'block');
-
-});
-
-*/
