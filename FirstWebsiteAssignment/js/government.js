@@ -21,11 +21,12 @@ $(document).ready(function() {
  
  });
 
+ /*
 $(function() {
 // Enables popover
 $("[data-toggle=popover]").popover();
 });
-
+*/
  
  $(function() {
   tippy("#bob", {
@@ -69,19 +70,42 @@ $(function() {
 });
 
 
-$(".section-nat-reps img").on("click", function() {
-  //$($(this)+"" + '.dialog-box').dialog("open");
-  // $('.dialog-box').dialog("open");
- //console.log($('.dialog-box'));
+$(function() {
 
-  //traverses a single level up the DOM tree
+
+
+});
+
+$('.close').on("click", function() {
+  
+  $(".modal").css("display", "none");
+});
+
+$("img").on("click", function() {
+
+  //var image = $(this).parent().find('img');
+
+    /* <div class="my-button">reference</div>
+    <div class="my-popper">popper</div> */
+    var reference = $(this);
+    var popper = document.querySelector('.modal');
+    var popperInstance = new Popper(reference, popper, {
+      // popper options here
+      placement: "right",
+    });
+    
+    $('.modal').css('display', 'block');
+
+//   //traverses a single level up the DOM tree
 //  var parentOfImage = $(this).parent('div');
-//  console.log(parentOfImage);
-//  var childrenOfContaining = parentOfImage.children();
+// //console.log(parentOfImage);
+//  var childrenOfContaining = parentOfImage.find("*");
 // console.log(childrenOfContaining);
 
+// var popup = childrenOfContaining.get(1);
+// console.log(popup);
 
-
+// $(popup).css('display', 'block');
 
 });
 
