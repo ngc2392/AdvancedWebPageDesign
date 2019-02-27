@@ -102,3 +102,22 @@ $("img").on("click", function(e) {
     }
   }
 });
+
+/*This is just in case the ajax call doesn't work. */
+$( function() {
+  $( "#governor-dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 1000
+    },
+    hide: {
+      effect: "explode",
+      duration: 1000
+    }
+  });
+
+  $( ".section-state-governor img" ).on( "click", function() {
+    $("#governor-dialog" ).dialog( "open" );
+  });
+} );

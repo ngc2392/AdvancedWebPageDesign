@@ -9,3 +9,13 @@ $( function () {
         collapsible: true
     });
 });
+
+$(function() {
+    tippy("#top-mountains div", {
+      placement: 'top',
+      animation: 'fade',
+      duration: 0,
+      arrow: true,
+      delay: [20,20]
+    });
+   });
