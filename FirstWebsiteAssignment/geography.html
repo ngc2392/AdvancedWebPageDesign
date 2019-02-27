@@ -6,6 +6,13 @@
         <!--https://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working-->
         <meta name="viewport" content="width=device-width">
 
+        <!--Jquery UI-->
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+        <!--If we need to change the theme, we can just change this line-->
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.theme.css">
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
+
+
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="css/geography.css">
         <link rel="stylesheet" type="text/css" href="css/queries.css">
@@ -46,7 +53,7 @@
                         </nav>
                 </div> -->
         <header>
-                 <div class="container">
+                <div class="container">
                         <nav>
                                 <ul class="main-nav">
                                         <li><a href="economy.html">Economy</a></li>
@@ -60,10 +67,14 @@
 
                                 <a class="mobile-nav-icon js--nav-icon"><i id="mobile-icon" class="fas fa-bars"></i></a>
                         </nav>
-                </div> 
+                </div>
 
                 <div class="hero-text-box">
                         <h1>Geography</h1>
+                </div>
+
+                <div class="geo-header-txt">
+                        <h5>Mountains, Rivers, and More.</h5>
                 </div>
 
                 <i class="js--scroll-to-categories fas fa-sort-down"></i>
@@ -73,14 +84,121 @@
         <!--  ********  ABOUT SECTION  ********  -->
 
         <section class="section-history-about">
-                <h1>About</h1>
-
+                <h2>About</h2>
         </section>
 
-        <!--  ********  TIMELINE SECTION  ********  -->
+        <!--  ********  DIFFERENT GEO SECTION ********  -->
 
-        <section class="section-timeline">
-                
+        <section class="geography">
+                <div id="geography-accordion">
+                        <h3>Mountains</h3>
+                        <div>
+
+                                <div id="tabs">
+                                        <ul>
+                                                <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                                                <li><a href="#tabs-2">Proin dolor</a></li>
+                                                <li><a href="#top-mountains">Top 10 Mountains</a></li>
+                                        </ul>
+                                        <div id="tabs-1">
+                                                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus.
+                                                        Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam
+                                                        elementum quam ullamcorper ante. Etiam aliquet massa et lorem.
+                                                        Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper
+                                                        leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis
+                                                        orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis
+                                                        aliquam molestie erat. Ut et mauris vel pede varius
+                                                        sollicitudin. Sed ut dolor nec orci tincidunt interdum.
+                                                        Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                                        </div>
+                                        <div id="tabs-2">
+                                                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida
+                                                        ante, ut pharetra massa metus id nunc. Duis scelerisque molestie
+                                                        turpis. Sed fringilla, massa eget luctus malesuada, metus eros
+                                                        molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet
+                                                        fringilla sem. Suspendisse sed ligula in ligula suscipit
+                                                        aliquam. Praesent in eros vestibulum mi adipiscing adipiscing.
+                                                        Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel
+                                                        metus. Ut posuere viverra nulla. Aliquam erat volutpat.
+                                                        Pellentesque convallis. Maecenas feugiat, tellus pellentesque
+                                                        pretium posuere, felis lorem euismod felis, eu ornare leo nisi
+                                                        vel felis. Mauris consectetur tortor et purus.</p>
+                                        </div>
+                                        <div id="top-mountains">
+
+                                                <div>
+                                                        <img src="img/mountain_images/bake_oven_knob.jpg" />
+
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/beam_rocks.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/wolf_rocks.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/gillespie_point.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/sugarloaf_knob.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/lewis_rocks.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/camelback_mountain.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/hemlock_mountain.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/rickard_mountain.jpg" />
+                                                </div>
+
+                                                <div>
+                                                        <img src="img/mountain_images/mount_nittany.jpg" />
+                                                </div>
+                                        </div>
+                                </div>
+
+                        </div>
+                        <h3>Forests</h3>
+                        <div>
+                                <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus
+                                        hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus
+                                        interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.
+                                </p>
+                        </div>
+                        <h3>Rivers</h3>
+                        <div>
+                                <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus
+                                        pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus
+                                        pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam
+                                        ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+                                <ul>
+                                        <li>List item one</li>
+                                        <li>List item two</li>
+                                        <li>List item three</li>
+                                </ul>
+                        </div>
+                        <h3>Lakes</h3>
+                        <div>
+                                <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                        fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et
+                                        ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p>
+                                <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class
+                                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                        himenaeos. </p>
+                        </div>
+                </div>
         </section>
 
         <!--  ********  FOOTER LINKS  ********  -->
@@ -101,17 +219,20 @@
                         <div class="contact-me"><a href="contact.html"">contact me</a></div> 
                 </div>
               
-                <div class="copy-right">
+                <div class=" copy-right">
                                         <p>Copyright &copy; 2019 by Logan Phillips. All rights reserved.</p>
-                </div>
+                        </div>
         </footer>
 
         <script src="js/vendors/jquery-3.3.1.min.js"></script>
         <script src="js/vendors/jquery.waypoints.min.js"></script>
 
+        <!--JQuery UI-->
+        <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
         <!-- Our own scripts should always be the last ones we call -->
         <script src="js/script.js"></script>
-        <script src="js/symbols.js"></script>
+        <script src="js/geography.js"></script>
 
 </body>
 

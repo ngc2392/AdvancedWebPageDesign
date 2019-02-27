@@ -52,6 +52,7 @@ html, body {
 	right: 0;
 	background: gray;
 	padding: 30px; 
+	z-index: 999999;
 }
 
 /*Underline nav bar elements*/
@@ -176,6 +177,8 @@ h2 {
 }
 
 .hero-text-box {
+	/* border: 2px solid red; */
+	/* color:#fff; */
 	position: absolute;
 	/*position in center of the header element*/
 	top: 50%;
@@ -544,6 +547,7 @@ h2 {
 	transform: translate(-50%, -50%);
 	display: block;
 	width: 50%;
+	color: #fff
 }
 
 .header-intro-txt {
@@ -827,3 +831,30 @@ footer {
 footer .copy-right {
     text-align: center;
 }
+
+/*Geography.html*/
+
+.geo-header-txt {
+	position: absolute;
+	color: #fff;
+	top: 70%;
+	left:50%;
+	transform: translate(-50%);
+}
+
+#top-mountains {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+}
+
+#top-mountains div {
+	flex-basis: 33%;
+}
+
+#top-mountains div img {
+	width: 100%;
+	height: 200px;
+}
+
