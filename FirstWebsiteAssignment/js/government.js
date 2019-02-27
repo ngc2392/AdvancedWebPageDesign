@@ -75,11 +75,13 @@ $("img").on("click", function(e) {
 
   var clickedImageID = $(this).attr("id");
 
+  console.log("image id", clickedImageID);
+
   for(var i = 0; i < dataResponse.length; i++) {
     var offical = dataResponse[i];
 
     var fullName = offical.firstName.toLowerCase() + "_" + offical.lastName.toLowerCase();
-    //console.log(fullName);
+    console.log("full name", fullName);
 
     if(clickedImageID === fullName) {
       console.log("FOUND!")
