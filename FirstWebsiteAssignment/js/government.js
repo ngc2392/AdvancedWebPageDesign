@@ -72,6 +72,8 @@ $(function() {
 });
 
 $("img").on("click", function(e) {
+ 
+  // console.log("TYPE", this.getAttribute("data-posType"));
 
   var clickedImageID = $(this).attr("id");
 
