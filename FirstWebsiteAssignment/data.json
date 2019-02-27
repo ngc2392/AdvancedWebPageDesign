@@ -1,0 +1,142 @@
+[
+
+    {
+        "type": "nat_sen",
+        "firstName": "Bob",
+        "lastName": "Casey",
+        "birthday": "",
+        "party": "D",
+        "district": "N/A",
+        "recent_election": "",
+        "reelection": "",
+        "officeRoom": "",
+        "comittees": []
+    },
+
+    {
+        "type": "nat_rep",
+        "firstName": "Pat",
+        "lastName": "Toomey",
+        "birthday": "",
+        "party": "",
+        "state": "",
+        "recent_election": "",
+        "reelection": "",
+        "officeRoom": "",
+        "comittees": [
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Brian",
+        "lastName": "Fitzpatrick",
+        "birthday": "12/17/1973",
+        "party": "R",
+        "state": "PA",
+        "district": "1",
+        "recent_election": "11/3/17",
+        "reelection": "T",
+        "officeRoom": "1722 LHOB",
+        "comittees": [
+            "Foreign Affairs",
+            "Transportation and Infrastructure"
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Brendan",
+        "lastName": "Boyle",
+        "birthday": "2/6/1977",
+        "party": "D",
+        "state": "PA",
+        "district": "2",
+        "recent_election": "11/3/17",
+        "reelection": "T",
+        "officeRoom": "1133 LHOB",
+        "comittees": [
+            "Budget",
+            "Ways and Means"
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Dwight",
+        "lastName": "Evans",
+        "birthday": "5/16/1954",
+        "party": "D",
+        "state": "PA",
+        "district": "3",
+        "recent_election": "11/3/2019",
+        "reelection": "T",
+        "officeRoom": "1105 LHOB",
+        "comittees": [
+            "Small Business",
+            "Ways and Means"
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Madeleline",
+        "lastName": "Dean",
+        "birthday": "6/6/1959",
+        "party": "D",
+        "state": "PA",
+        "district": "4",
+        "recent_election": "",
+        "reelection": "F",
+        "officeRoom": "129 CHOB",
+        "comittees": [
+            "Financial Services, Judiciary"
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Mary",
+        "lastName": "Scanlon",
+        "birthday": "8/30/1959",
+        "party": "D",
+        "state": "PA",
+        "district": "5",
+        "recent_election": "11/6/18",
+        "reelection": "T",
+        "officeRoom": "1535 LHOB",
+        "comittees": [
+            "Judiciary",
+            "Rules"
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Chrissy",
+        "lastName": "Houlahan",
+        "birthday": "6/5/67",
+        "party": "D",
+        "state": "PA",
+        "district": "6",
+        "recent_election": "11/6/18",
+        "reelection": "F",
+        "officeRoom": "1218 LHOB",
+        "comittees": [
+            "Armed Services",
+            "Foreign Affairs",
+            "Ethics"
+        ]
+    },
+    {
+        "type": "nat_rep",
+        "firstName": "Susan",
+        "lastName": "Wild",
+        "birthday": "6/7/57",
+        "party": "D",
+        "state": "PA",
+        "district": "7",
+        "recent_election": "11/6/18",
+        "reelection": "T",
+        "officeRoom": "1607 LHOB",
+        "comittees": [
+            "Education",
+            "Foreign Affairs",
+            "Ethics"
+        ]
+    }
+]
