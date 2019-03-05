@@ -1,0 +1,85 @@
+* {
+	/* Get rid of initial stuff */
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	font-family: 'Lato', sans-serif;
+	background-color: #fff;
+	color: #555;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+
+/* ----------------------------------------------- */
+
+/* NAVIGATION */
+
+/* ----------------------------------------------- */
+
+#menu {
+    position: relative;
+    left: 15px;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* margin-left: 15px; */
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-nav ul {
+    list-style: none;
+}
+
+
+.side-nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    /* transform: rotate(90deg); */
+    transform: translateX(10px);
+}
+
+
+.side-nav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+
+.side-nav a:hover {
+    color: #f1f1f1;
+  }
+
+.side-nav li a:link, 
+.side-nav li a:visited  {
+    text-decoration: none;
+    text-transform: uppercase;
+    /* color: #fff; */
+    font-size: 90%;
+}
