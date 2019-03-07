@@ -1,17 +1,23 @@
 * {
-	/* Get rid of initial stuff */
-	margin: 0;
-	padding: 0;
+    /* Get rid of initial stuff */
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
-	font-family: 'Lato', sans-serif;
-	background-color: #C4C4C4;
-	color: #555;
-	font-weight: 300;
-	font-size: 20px;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #C4C4C4;
+    color: #555;
+    font-weight: 300;
+    font-size: 20px;
 }
 
+h5 {
+    position: relative;
+    top: 25%;
+    left: 50%;
+}
 
 /* ----------------------------------------------- */
 
@@ -40,7 +46,6 @@ html, body {
     align-items: center;
     position: relative;
     /* margin-left: 15px; */
-
     height: 100%;
     width: 250px;
     position: fixed;
@@ -57,7 +62,6 @@ html, body {
     list-style: none;
 }
 
-
 .side-nav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -72,7 +76,6 @@ html, body {
     transform: translateX(10px);
 }
 
-
 .side-nav .close-btn {
     position: absolute;
     top: 0;
@@ -80,16 +83,145 @@ html, body {
     font-size: 36px;
     margin-left: 50px;
     cursor: pointer;
-  }
+}
 
 .side-nav a:hover {
     color: #f1f1f1;
-  }
+}
 
-.side-nav li a:link, 
-.side-nav li a:visited  {
+.side-nav li a:link, .side-nav li a:visited {
     text-decoration: none;
     text-transform: uppercase;
     /* color: #fff; */
     font-size: 90%;
+}
+
+/* ----------------------------------------------- */
+
+/* Filters */
+
+/* ----------------------------------------------- */
+
+.filters-box {
+    position: relative;
+    background-color: red;
+}
+
+.filters-btn {
+    position: fixed;
+    right: 15px;
+    width: 120px;
+    height: 30px;
+    background-color: #3C2E2E;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.filters-box-content {
+    position: absolute;
+    top: 50px;
+    right: 5px;
+    width: 300px;
+    height: 500px;
+    background-color: #FFFFFF;
+}
+
+.filters-box-content label {
+    display: inline-block;
+    /* background-color: red; */
+    margin-bottom: 5px;
+}
+
+.filters-box-content label:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+.filters-box-content label:nth-of-type(3) {
+    margin-top: 10px;
+}
+
+.filters-options-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width: 50px;
+    height: 20px;
+    border: 2px solid #000000;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.filters-options-box:hover {
+    background: #000000;
+    color: white;
+    transition: .3s
+}
+
+.filters-options-box-clicked {
+    background: #000000;
+    color: white;
+}
+
+.region-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-template-rows: 1fr 1fr;
+}
+
+.roast-level-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* ----------------------------------------------- */
+
+/* Select statement */
+
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+
+/* Clear and Done buttons */
+
+/* ----------------------------------------------- */
+
+.clear-done-btns-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.clear-done-btns-wrapper div {
+    text-align: center;
+    cursor: pointer;
+}
+
+.clear-done-btns-wrapper div:first-child {
+    /*flex: is a shorthand for flex-grow ,flex-shrink, flex-basis*/
+    /*The flex-grow property specifies how much the item will grow relative to the rest of the flexible items inside the same container.*/
+    flex-grow: 2;
+    background-color: #faebd7;
+    padding: 10px;
+}
+
+.clear-done-btns-wrapper div:first-child:hover {}
+
+.clear-done-btns-wrapper div:nth-child(2) {
+    flex-grow: 2;
+    background-color: #666666;
+    padding: 10px;
+}
+
+.clear-done-btns-wrapper div:nth-child(2):hover {
+    flex-grow: 2;
+    background-color: #8c8c8c;
+    padding: 10px;
 }
