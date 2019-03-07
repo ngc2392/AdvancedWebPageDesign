@@ -13,11 +13,21 @@ html, body {
     font-size: 20px;
 }
 
-h5 {
+.filters-summary {
     position: absolute;
     top: 25%;
     left: 50%;
 }
+
+.filters-summary h5 {
+    
+}
+
+.filters-summary div {
+   
+   
+}
+
 
 /* ----------------------------------------------- */
 
