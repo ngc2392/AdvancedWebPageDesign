@@ -109,10 +109,19 @@ $(document).ready(function() {
 
     $('.filters-done-btn').on('click', function() {
         var clickedBoxes = $('.filters-box-content').find('.filters-options-box-clicked');
-        console.log(clickedBoxes);
-        // https://stackoverflow.com/a/6623263/9599554
-        var filters = clickedBoxes.eq(0).text().replace(/ /g, '');
-        console.log(filters);
+        console.log("Clicked boxes", clickedBoxes);
+
+        var filters=[];
+
+        jQuery.each(clickedBoxes, function(index, item) {
+            console.log("ITEM", item);
+             // https://stackoverflow.com/a/6623263/9599554
+            var itemText = $(item).text().replace(/ /g, '').toLowerCase();
+            filters.push(itemText);
+        });
+
+        console.log("FILTERS ARRAY", filters);
+
         filterProducts(filters);
     
     });
@@ -120,13 +129,28 @@ $(document).ready(function() {
     // https://codepen.io/adrianparr/pen/Eoydz
     // https://codepen.io/NickyCDK/pen/lhaiz?editors=1010
     function filterProducts(filterValues) {
+
+        console.log("filterValues", filterValues);
         var list = $('.card');
-        $(list).fadeOut("fast");
-        if(filterValues) {
-            console.log("no filters will be applied");
-            $('.card').each(function(i) {
-                $()
-            });
+        
+        $('.card').fadeOut("fast");
+
+         //$('.card').hide();
+
+        console.log("div[data-region*=" + filterValues + "]");
+        
+        jQuery.each(filterValues, function(index, item) {
+
+            $(".products-grid").find("div[data-region*=" + item + "]").each(function (i) {
+               
+               // $(this).show();
+                $(this).delay(200).slideDown("fast");
+            
+		    });
+        });
+
+        if(!filterValues) {
+           console.log("No filters will be applied");
         }
     }
 
