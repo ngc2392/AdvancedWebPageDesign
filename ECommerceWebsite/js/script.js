@@ -93,3 +93,42 @@ $(document).ready(function() {
     }
     
 });
+
+/*products.html*/
+
+$(document).ready(function() {
+    $('.add_to_cart_btn').on('click', function() {
+
+    
+
+        // get an array of parents of the button
+        //we need to use .eq because [] returns a dom element
+        console.log($(this).parents().eq(2).attr("data-region"));
+    });
+
+
+    $('.filters-done-btn').on('click', function() {
+        var clickedBoxes = $('.filters-box-content').find('.filters-options-box-clicked');
+        console.log(clickedBoxes);
+        // https://stackoverflow.com/a/6623263/9599554
+        var filters = clickedBoxes.eq(0).text().replace(/ /g, '');
+        console.log(filters);
+        filterProducts(filters);
+    
+    });
+
+    // https://codepen.io/adrianparr/pen/Eoydz
+    // https://codepen.io/NickyCDK/pen/lhaiz?editors=1010
+    function filterProducts(filterValues) {
+        var list = $('.card');
+        $(list).fadeOut("fast");
+        if(filterValues) {
+            console.log("no filters will be applied");
+            $('.card').each(function(i) {
+                $()
+            });
+        }
+    }
+
+
+});

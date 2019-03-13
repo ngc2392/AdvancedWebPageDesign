@@ -15,7 +15,7 @@ html, body {
 
 .filters-summary {
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 50%;
 }
 
@@ -49,6 +49,7 @@ html, body {
     transform: rotate(90deg);
     transition: .3s ease;
 }
+
 
 .side-nav {
     display: flex;
@@ -106,6 +107,15 @@ html, body {
     font-size: 90%;
 }
 
+/*shopping cart*/
+
+.fa-shopping-cart{
+    color: #000;
+    position: absolute;
+    right: 50px;
+}
+
+
 /* ----------------------------------------------- */
 
 /* Filters */
@@ -136,6 +146,8 @@ html, body {
     width: 300px;
     height: 500px;
     background-color: #FFFFFF;
+    display: none;
+    z-index: 3; /*get it above grid items*/
 }
 
 .filters-box-content label {
@@ -234,4 +246,148 @@ html, body {
     flex-grow: 2;
     background-color: #8c8c8c;
     padding: 10px;
+}
+
+.products-grid {
+    display: grid;
+    justify-items: center;
+    position: relative;
+    top: 50%;
+  
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*products.html*/
+
+  .image-container {
+    position: relative; /*for overlay*/
+    /* border: 2px solid red; */
+
+    width: 250px;
+    height: 205px;
+  }
+
+
+  .image-container img {
+    /* width: 206px;
+    height: 205px; */
+
+    /*Fill up image-container*/
+    width: 100%;
+    height: 100%; 
+    /*https://stackoverflow.com/questions/34247337/object-fit-not-affecting-images*/
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+
+  .card {
+        position: relative;
+       /* Add shadows to create the "card" effect */
+        transition: 0.3s;
+        width: 40%;
+        border-radius: 5px; /* 5px rounded corners */
+        width: 250px; 
+       
+    }
+
+  /*On mouse-over, add a deeper shadow*/
+
+  .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  /*Grows with the content.  Add some padding*/
+.container {
+    position: relative;
+    padding: 20px 16px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.card:hover .overlay {
+    opacity: .8;
+}
+
+.add_to_cart_btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+    width: 172px;
+    opacity: 1;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+
+.add_to_cart_btn:hover {
+    background: #fff;
+    color: #48cfad;
+    cursor: pointer;
+}
+
+.card {
+	z-index: 2;
+	/* for firefox 31 */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #FDF6F6;
+
+}
+
+.product_name {
+    font-size: 20px;
+	color:#393c45;
+}
+
+.container > p {
+    font-size:16px;
+	color:#b1b1b3;	
+	padding:2px 0 20px 0;
+}
+
+.container .product_price{
+	float:right;
+	color:#48cfad;
+	font-size:22px;
+	font-weight:600;
+}
+
+.container .product_description {
+    font-size: 12px;
+}
+
+.container .product_rating {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.container .product_weights {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 10px;
+}
+
+.container .product_rating .checked {
+    color: orange;
 }
