@@ -20,11 +20,13 @@
 
 <body>
 
-        <i id="menu" class="fas fa-bars"></i>
+        <div id="blackOut"></div>
+
+        <!-- <i id="menu" class="fas fa-bars"></i> -->
 
         <div class="side-nav" id="sideNav">
 
-            <div id="closeButton" class="close-btn">&times</div>
+            <!-- <div id="closeButton" class="close-btn">&times</div> -->
             
             <ul>
 
@@ -40,9 +42,46 @@
 
 
         </div>
+<div class="icon-container">
+        <i id="shopping-cart-icon" class="fas fa-shopping-cart"></i>
+        <div id="itemCount">0</div>
+</div>
+        
 
-        <i class="fas fa-shopping-cart"></i>
+        <div id="cart-box" class="cart-box">
+                        <div id="close-btn" class="closebtn">&times;</div>
+                                        <h2>Cart</h2>
+                      
+                        <div class="items-column">
+                          <div class="item-row">
+                                
+                            <div class="item-quantity">
+                              2x
+                            </div>
+                            <div class="item-name">
+                                       Product Name
+                            </div>
+                            
+                            <div class="remove_item">
+                              X
+                            </div>
+                      
+                        <div class="item-price">$19.98</div>
+                                              
+            
+                              </div>
 
+                             
+
+                        </div>
+
+                        <div>Total price:</div>
+                        <div id="cart-total">$0.00</div>
+                        
+                        <div class="checkout-btn">Checkout</div>
+                              
+                                      <p class="cd-go-to-cart"><a href="#0">Go to cart page</a></p>
+                              </div> <!-- cd-cart -->
 
         <div class="filters-box">
             <div class="filters-btn">
@@ -105,10 +144,11 @@
             <div id="roast-levels-insert"></div>
         
         </div>
-
+        <div class="add_item">Add item</div>
 
 <div class="products-grid">
-        <div id="card-id" class="card" data-region="arabia" >
+        <!--
+          <div id="card-id" class="card" data-region="arabia" >
                     <div class="image-container">
                             <img src="https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" />
                             <div class="overlay">
@@ -122,7 +162,7 @@
                              <span class="product_price">$39</span>
                             <span class="product_name">Scandavian Blend</span>
                             <p>Roast Level: Medium</p>
-                            <span class="product_description"><i>Earthy, dark chocolate, medium body</i></span>
+                            <span class="product_description"><i>Earthy, dark chocolate, medium body. From arabia</i></span>
                             <div class="product_rating">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -137,7 +177,7 @@
     </div>
 
     
-    <!-- Card 2  -->
+
 
     
     <div id="card2-id" class="card" data-region="indonesia">
@@ -155,8 +195,8 @@
 
                  <span class="product_price">$39</span>
                 <span class="product_name">Scandavian Blend</span>
-                <p>Roast Level: Dark</p>
-                <span class="product_description"><i>Earthy, dark chocolate, medium body</i></span>
+                <span class="roast_level">Roast Level: Dark</p>
+                <span class="product_description"><i>Earthy, dark chocolate, medium body. From indonesia</i></span>
                 <div class="product_rating">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -168,9 +208,9 @@
                 <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
 
         </div>
-</div> <!-- End of Card 2  -->
+</div>   
 
-<!-- Card 3  -->
+
 
     
 <div id="card3-id" class="card" data-region="africa">
@@ -189,7 +229,7 @@
              <span class="product_price">$39</span>
             <span class="product_name">Scandavian Blend</span>
             <p>Roast Level: Light</p>
-            <span class="product_description"><i>Earthy, dark chocolate, medium body</i></span>
+            <span class="product_description"><i>Earthy, dark chocolate, medium body. From africa.</i></span>
             <div class="product_rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -201,10 +241,40 @@
             <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
 
     </div>
-</div> <!-- End of card 3 -->
+</div> 
 
 
-</div> <!-- End of .products-grid -->
+<div id="card4-id" class="card" data-region="southamerica">
+                <div class="image-container">
+                        <img src="https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" />
+                        <div class="overlay">
+            
+                                <div class="add_to_cart_btn">Add to Cart</div>
+                        </div>
+                </div>
+            
+                <div class="container">
+            
+            
+            
+                         <span class="product_price">$39</span>
+                        <span class="product_name">Scandavian Blend</span>
+                        <p>Roast Level: Light</p>
+                        <span class="product_description"><i>Earthy, dark chocolate, medium body. From southamerica.</i></span>
+                        <div class="product_rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+            
+                        </div>
+                        <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
+            
+                </div>
+            </div>
+
+</div> --> <!-- End of .products-grid -->
       
 
 

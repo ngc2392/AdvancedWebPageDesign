@@ -15,19 +15,13 @@ html, body {
 
 .filters-summary {
     position: absolute;
-    top: 15%;
+    top: 5%;
     left: 50%;
 }
 
-.filters-summary h5 {
-    
-}
+.filters-summary h5 {}
 
-.filters-summary div {
-   
-   
-}
-
+.filters-summary div {}
 
 /* ----------------------------------------------- */
 
@@ -49,7 +43,6 @@ html, body {
     transform: rotate(90deg);
     transition: .3s ease;
 }
-
 
 .side-nav {
     display: flex;
@@ -109,12 +102,124 @@ html, body {
 
 /*shopping cart*/
 
-.fa-shopping-cart{
+.fa-shopping-cart {
     color: #000;
-    position: absolute;
-    right: 50px;
+    right: 180px;
+
 }
 
+
+
+/*so that #itemCount can be positioned absolutely, relative to its parent*/
+.icon-container {
+    position: absolute;
+    right: 180px;
+    border:2px solid red;
+    padding: 25px;
+}
+
+#itemCount {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0px;
+    left: 0px;
+    width: 20px; 
+    border-radius: 70%;
+    background: red;
+    color: white;
+    text-align: center;
+
+}
+
+/*disable scrolling*/
+
+/*https://stackoverflow.com/questions/6554245/need-to-prevent-user-from-manually-scrolling-a-web-page-only-navigate-using-in*/
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.cart-box {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /*make it higher than #blackOut*/
+    z-index: 11; 
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.cart-box h2 {
+    text-align: center;
+}
+
+.cart-box a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.cart-box a:hover {
+    color: #f1f1f1;
+}
+
+.cart-box .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    background: #4CAF50;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+    padding: 12px;
+}
+
+.remove_item {
+    align-self: flex-end;
+}
+
+.item-quantity {
+    color: #a5aebc;
+}
+
+.item-row {
+    display: flex;
+    border-top: 1px solid #e0e6ef;
+    padding: 15px;
+}
+
+.add_item {
+    position: absolute;
+    left: 50%;
+}
+
+#blackOut {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+    background-color: rgba(0,0,0,0.4);
+}
 
 /* ----------------------------------------------- */
 
@@ -147,7 +252,8 @@ html, body {
     height: 500px;
     background-color: #FFFFFF;
     display: none;
-    z-index: 3; /*get it above grid items*/
+    z-index: 3;
+    /*get it above grid items*/
 }
 
 .filters-box-content label {
@@ -250,54 +356,53 @@ html, body {
 
 .products-grid {
     display: grid;
+    grid-gap: 15px;
     justify-items: center;
     position: relative;
     top: 50%;
-  
+    margin-left: 250px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 /*products.html*/
 
-  .image-container {
-    position: relative; /*for overlay*/
+.image-container {
+    position: relative;
+    /*for overlay*/
     /* border: 2px solid red; */
-
     width: 250px;
     height: 205px;
-  }
+}
 
-
-  .image-container img {
+.image-container img {
     /* width: 206px;
     height: 205px; */
-
     /*Fill up image-container*/
     width: 100%;
-    height: 100%; 
+    height: 100%;
     /*https://stackoverflow.com/questions/34247337/object-fit-not-affecting-images*/
     object-fit: cover;
     border-radius: 5px 5px 0 0;
 }
 
+.card {
+    position: relative;
+    /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    /* 5px rounded corners */
+    width: 250px;
+}
 
-  .card {
-        position: relative;
-       /* Add shadows to create the "card" effect */
-        transition: 0.3s;
-        width: 40%;
-        border-radius: 5px; /* 5px rounded corners */
-        width: 250px; 
-       
-    }
+/*On mouse-over, add a deeper shadow*/
 
-  /*On mouse-over, add a deeper shadow*/
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 
-  .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
+/*Grows with the content.  Add some padding*/
 
-  /*Grows with the content.  Add some padding*/
 .container {
     position: relative;
     padding: 20px 16px;
@@ -347,29 +452,28 @@ html, body {
 }
 
 .card {
-	z-index: 2;
-	/* for firefox 31 */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    z-index: 2;
+    /* for firefox 31 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #FDF6F6;
-
 }
 
 .product_name {
     font-size: 20px;
-	color:#393c45;
+    color: #393c45;
 }
 
-.container > p {
-    font-size:16px;
-	color:#b1b1b3;	
-	padding:2px 0 20px 0;
+.container>p {
+    font-size: 16px;
+    color: #b1b1b3;
+    padding: 2px 0 20px 0;
 }
 
-.container .product_price{
-	float:right;
-	color:#48cfad;
-	font-size:22px;
-	font-weight:600;
+.container .product_price {
+    float: right;
+    color: #48cfad;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .container .product_description {
@@ -399,13 +503,11 @@ html, body {
 .payment-grid {
     display: grid;
     /* grid-auto-columns: 300px; */
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
     justify-items: center;
 }
 
-.products-form {
-
-}
+.products-form {}
 
 .shippingInfoForm {
     /* width: 700px; */
@@ -416,19 +518,14 @@ html, body {
     color: #4c4e56;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
-
     grid-column-start: 1;
     grid-column-end: 4;
-    
-
-    
 }
 
 .shippingInfoForm h1 {
     border-bottom: 2px solid #FFF;
     padding-bottom: 15px;
 }
-
 
 .shippingInfoForm .content input {
     width: 100%;
@@ -441,18 +538,14 @@ html, body {
     /* display: table-row-group; */
     transition: all 0.3s ease;
     font-size: 1.05em;
-
-   
 }
 
 .shippingInfoForm .content .name-row {
     display: flex;
-    
 }
 
 .shippingInfoForm .content .name-row div:first-of-type input {
     flex-basis: 30%;
-   
     border: 2px solid red;
 }
 
@@ -461,40 +554,31 @@ html, body {
     margin-left: 15px;
 }
 
-.first_name_box, 
-.last_name_box, 
-.phone_box, 
-.address_box {
+.first_name_box, .last_name_box, .phone_box, .address_box {
     position: relative;
     padding-top: 20px;
 }
 
-
-.first_name_box label, 
-.last_name_box label, 
-.phone_box label, 
-.address_box label {
+.first_name_box label, .last_name_box label, .phone_box label, .address_box label {
     position: absolute;
     top: 0;
 }
 
-
 input:focus {
-
     outline: none !important;
     border-color: #69B692 !important;
     box-shadow: 0 0 10px #719ECE;
-  }
-  
-   /* match all <label> that directly follow an <input> (on focus) */
-  input:focus + label {
+}
+
+/* match all <label> that directly follow an <input> (on focus) */
+
+input:focus+label {
     color: #69b692;
-  }
+}
 
+/* billing info form */
 
-  /* billing info form */
-  
-  .billingInfoForm {
+.billingInfoForm {
     /* width: 700px; */
     background-color: #282A2C;
     /* margin: 100px auto; */
@@ -503,18 +587,14 @@ input:focus {
     color: #4c4e56;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
-
     grid-column-start: 4;
     grid-column-end: 7;
-    
-
 }
 
 .billingInfoForm h1 {
     border-bottom: 2px solid #FFF;
     padding-bottom: 15px;
 }
-
 
 .billingInfoForm .content input {
     width: 100%;
@@ -527,8 +607,6 @@ input:focus {
     /* display: table-row-group; */
     transition: all 0.3s ease;
     font-size: 1.05em;
-
-   
 }
 
 .billingInfoForm .content .name-row {
@@ -544,23 +622,15 @@ input:focus {
     flex-basis: 30%;
 }
 
-.first_name_box, 
-.last_name_box, 
-.phone_box, 
-.address_box {
+.first_name_box, .last_name_box, .phone_box, .address_box {
     position: relative;
     padding-top: 20px;
 }
 
-
-.first_name_box label, 
-.last_name_box label, 
-.phone_box label, 
-.address_box label {
+.first_name_box label, .last_name_box label, .phone_box label, .address_box label {
     position: absolute;
     top: 0;
 }
-
 
 /* payment form */
 
@@ -573,20 +643,21 @@ input:focus {
     color: #4c4e56;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
-    
     grid-column-start: 2;
     grid-column-end: 6;
-
 }
+
 .creditCardForm label {
     width: 100%;
     margin-bottom: 10px;
 }
+
 .creditCardForm .heading h1 {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     color: #4c4e56;
 }
+
 .creditCardForm .payment {
     float: left;
     font-size: 18px;
@@ -594,37 +665,46 @@ input:focus {
     margin-top: 20px;
     position: relative;
 }
+
 .creditCardForm .payment .form-group {
     float: left;
     margin-bottom: 15px;
 }
+
 .creditCardForm .payment .form-control {
     line-height: 40px;
     height: auto;
     padding: 0 16px;
 }
+
 .creditCardForm .owner {
     width: 63%;
     margin-right: 10px;
 }
+
 .creditCardForm .CVV {
     width: 35%;
 }
+
 .creditCardForm #card-number-field {
     width: 100%;
 }
+
 .creditCardForm #expiration-date {
     width: 49%;
 }
+
 .creditCardForm #credit_cards {
     width: 50%;
     margin-top: 25px;
     text-align: right;
 }
+
 .creditCardForm #pay-now {
     width: 100%;
     margin-top: 25px;
 }
+
 .creditCardForm .payment .btn {
     width: 100%;
     margin-top: 3px;
@@ -632,10 +712,12 @@ input:focus {
     background-color: #2ec4a5;
     color: white;
 }
+
 .creditCardForm .payment select {
     padding: 10px;
     margin-right: 15px;
 }
+
 .transparent {
     opacity: 0.2;
 }
