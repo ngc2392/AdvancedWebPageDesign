@@ -249,32 +249,32 @@ $(document).ready(function() {
     // https://codepen.io/NickyCDK/pen/lhaiz?editors=1010
     function filterProducts(filterValues) {
 
-        console.log("filterValues", filterValues);
-        var list = $('.card');
+//         console.log("filterValues", filterValues);
+//         var list = $('.card');
         
-        $('.card').fadeOut("fast");
+//         $('.card').fadeOut("fast");
 
-         //$('.card').hide();
+//          //$('.card').hide();
 
-        console.log("div[data-region*=" + filterValues + "]");
+//         console.log("div[data-region*=" + filterValues + "]");
         
-        jQuery.each(filterValues, function(index, item) {
+//         jQuery.each(filterValues, function(index, item) {
             
-            console.log( $(".products-grid").find("div[data-region*=" + item + "]"));
-            $(".products-grid").find("div[data-region*=" + item + "]").each(function (i) {
+//             console.log( $(".products-grid").find("div[data-region*=" + item + "]"));
+//             $(".products-grid").find("div[data-region*=" + item + "]").each(function (i) {
              
-               // $(this).show();
-               $(this).delay(200).slideDown("fast");
+//                // $(this).show();
+//                $(this).delay(200).slideDown("fast");
                 
-		    });
-        });
-// https://stackoverflow.com/a/24403771/9599554
-        if(!Array.isArray(filterValues) || !filterValues.length) {
-           console.log("No filters will be applied");
-           $(".products-grid").find(".card").each(function() {
-                $(this).delay(200).slideDown("fast");
-           });
-        }
+// 		    });
+//         });
+// // https://stackoverflow.com/a/24403771/9599554
+//         if(!Array.isArray(filterValues) || !filterValues.length) {
+//            console.log("No filters will be applied");
+//            $(".products-grid").find(".card").each(function() {
+//                 $(this).delay(200).slideDown("fast");
+//            });
+//         }
 
 
         // remove all elements, and then only add the ones we want to show
@@ -283,28 +283,33 @@ $(document).ready(function() {
 
         // find all objects with the filters
 
-
+        $('.products-grid').empty();
         
         var results = [];
 
         jQuery.each(filterValues, function(indexInArray, value) {
             var tempResults = products.filter(obj => {
-                console.log("FROM DATA", obj.region.toLowerCase());
-                console.log("FROM FILTER", value);
                 // white space was making the strings not equal
                 return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
             });
-            //results.concat(tempResults);
-           
-            console.log("TEMP RESULTS", tempResults);
+            results = results.concat(tempResults);
+            console.log("FILTERS CONCAT", results);
         });
 
-        console.log("FILTERS CONCAT", results);
+        // hide it so that we can apply an animation
+        $('.products-grid').hide();
+        applyFilters(results);
+        // now show its
+        $('.products-grid').delay(200).slideDown("fast");
 
-        // var productsGrid = document.querySelector(".products-grid");
-        // productsGrid.appendChild(productElement);
+        //https://stackoverflow.com/a/24403771/9599554
+        if(!Array.isArray(filterValues) || !filterValues.length) {
+           console.log("No filters will be applied");
 
-
+           $('.products-grid').hide();
+           applyFilters(products);
+           $('.products-grid').delay(200).slideDown("fast");
+        }
 
     }
 
@@ -387,6 +392,50 @@ var generateProductsList = function() {
 
     });
 }
+
+
+
+var applyFilters = function(array) {
+    console.log("UPDATING PRODUCTS", array);
+    array.forEach(function(item) {
+        var productElement = document.createElement("div");
+        // productElement.className = "card";
+        productElement.innerHTML = `
+        <div id="card-${item.id}" class="card" data-region="${item.region.toLowerCase()}">
+                    <div class="image-container">
+                            <img src="${item.img_url}" />
+                            <div class="overlay">
+
+                                    <div class="add_to_cart_btn">Add to Cart</div>
+                            </div>
+                    </div>
+
+                    <div class="container">
+                             <span class="product_price">${item.price}</span>
+                            <span class="product_name">${item.name}</span>
+                            <span class="roast_level">Roast Level: ${item.roast_level}</span>
+                            <span class="product_description"><i>${item.description}</i></span>
+                            <div class="product_rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                            </div>
+                            <span class="product_weights">Weights: ${item.weights}</span>
+
+                    </div>
+    </div> `;
+
+    var productsGrid = document.querySelector(".products-grid");
+    
+    productsGrid.appendChild(productElement);
+
+    });
+}
+
+
+
 
 $(function() {
     generateProductsList();
