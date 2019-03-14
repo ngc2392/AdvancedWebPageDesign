@@ -112,7 +112,14 @@ $(document).ready(function() {
     
     }
 
-    
+    $('.checkout-btn').on('click', function() {
+        //get form data
+
+        var value="hello";
+        var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/review_order.html?source=" + value;
+        var element = document.getElementById('checkout-btn-link');
+        element.setAttribute("href",url)
+    });
 
     // https://stackoverflow.com/questions/6658752/click-event-doesnt-work-on-dynamically-generated-elements
     $(".products-grid").on("click", "div.add_to_cart_btn", function() {
@@ -340,6 +347,24 @@ var generateProductsList = function() {
 $(function() {
     generateProductsList();
 });
+
+/* review_order */
+
+ function GetURLParameter(sParam) {
+     var sPageURL = window.location.search.substring(1);
+     var sURLVariables = sPageURL.split('&');
+     for(var i = 0; i < sURLVariables.length; i++){
+         var sParameterName = sURLVariables[i].split('=');
+         if(sParameterName[0] == sParam) {
+             return sParameterName[1];
+         }
+     }
+ }
+
+ (function() {
+    var tech = GetURLParameter("blog");
+    console.log(tech);
+ });
 
 // var init = function() {
 //     alert("hi");
