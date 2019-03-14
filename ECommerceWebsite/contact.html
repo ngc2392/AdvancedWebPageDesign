@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="utf-8">
+        <!--https://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working-->
+        <meta name="viewport" content="width=device-width">
+
+        <title>Contat me!</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/queries.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   
+</head>
+   
+   
+    </head>
+
+<body>
+
+    <div class="grid-wrapper">
+        <div class="col-1">
+          <h1>
+          Contact me
+          </h1>
+        </div>
+        <div class="col-2">
+          
+          <div class="form-container">
+      
+                          <form id="contact">
+                              <h3>Contact</h3>
+                              <h4>I'll get back to you as soon as I can</h4>
+      
+                              <label for="fname">First Name</label>
+                              <input placeholder="Your first name" type="text" tabindex="1" required autofocus>
+      
+                              <label for="lname">Last Name</label>
+                              <input placeholder="Your last name" type="text" tabindex="2" required autofocus>
+      
+                              <label for="Email">Email</label>
+                              <input placeholder="Your Email Address" type="email" tabindex="3" required>
+                              
+                              <label for="phone-num">Email</label>
+                              <input placeholder="Your phone number" type="tel" tabindex="4" required>
+      
+      
+                              <label for="reason">Why are you contacting us?</label>
+                              <select name="reason">
+                                  <option value="Question">Question</option>
+                                  <option value="bored">I'm bored</option>
+                                  <option value="what">Why am I here?</option>
+                              </select>
+      
+                              <textarea placeholder="Type your Message Here .... " tabindex="5" required>
+      
+                              </textarea>
+                             
+                              <button name="submit" type="submit" data-submit="...Sending...">Submit</button>
+      
+                          </form>
+                          
+                      </div>
+          
+          
+          
+        </div>
+      </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+    <!-- Our own scripts should always be the last ones we call -->
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

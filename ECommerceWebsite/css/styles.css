@@ -11,6 +11,8 @@ html, body {
     color: #555;
     font-weight: 300;
     font-size: 20px;
+    /*When we make the browser smaller, the user won't be able to scroll horizontally*/
+    overflow-x: hidden;
 }
 
 .filters-summary {
@@ -114,7 +116,7 @@ html, body {
 .icon-container {
     position: absolute;
     right: 180px;
-    border:2px solid red;
+    /* border:2px solid red; */
     padding: 25px;
 }
 
@@ -177,7 +179,7 @@ html, body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     cursor: pointer;
 }
 
@@ -189,6 +191,11 @@ html, body {
     text-align: center;
     border-radius: 3px;
     padding: 12px;
+}
+
+.checkout-btn-container {
+    display: flex;
+    justify-items: center;
 }
 
 .remove_item {
@@ -359,7 +366,7 @@ html, body {
     grid-gap: 15px;
     justify-items: center;
     position: relative;
-    top: 50%;
+    top: 30%;
     margin-left: 250px;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -644,7 +651,7 @@ input:focus+label {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
     grid-column-start: 2;
-    grid-column-end: 6;
+    grid-column-end: 4;
 }
 
 .creditCardForm label {
@@ -757,3 +764,112 @@ input:focus+label {
     margin-right: 10px;
 }
  */
+
+
+ /* contact.html */
+
+
+ .grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+  }
+  
+  .col-1 {
+     background: -webkit-linear-gradient(to right, #2c3e50, #fd746c); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #2c3e50, #fd746c); 
+  
+  }
+  
+  
+  .col-1 h1 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+    text-align: center;
+  }
+  
+  
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact input[type="tel"],
+  #contact input[type="url"],
+  #contact textarea,
+  #contact button
+   {
+       border: 1px solid #CCC;
+       display: block;
+       width: 100%;
+       padding: 10px;  
+  
+  }
+  
+  #contact input, 
+  textarea, 
+  select, 
+  button {
+       /*Top bottom, left right*/
+       margin: 10px 0;
+  }
+  
+  #contact input[type="text"]:hover,
+  #contact input[type="email"]:hover,
+  #contact input[type="tel"]:hover,
+  #contact input[type="url"]:hover,
+  #contact textarea:hover
+   {
+       -webkit-transition: border-color 0.3s ease-in-out;
+       transition: border-color 0.3s ease-in-out;
+       border: 1px solid red;
+  
+  }
+  
+  #contact textarea {
+      height: 75px;
+      resize: none;
+      margin-top: 5%;
+      margin-bottom: 5%;
+  }
+  
+  
+  #contact {
+      background: #F9F9F9;
+      padding: 25px;
+      /* margin: 150px 0; */
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+  
+  #contact button[type="submit"] {
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      background: #0cf;
+      color: #fff;
+      margin: 0 0 5px;
+      padding: 10px;
+  }
+  
+  
+  #contact button[type="submit"]:hover {
+     background: #09C;
+     -webkit-transition:background 0.3s ease-in-out;
+      -moz-transition:background 0.3s ease-in-out;
+      transition:background-color 0.3s ease-in-out;
+  
+  }
+  
+  #contact input:focus, 
+  #contact textarea:focus {
+      outline:0;
+      border:1px solid green;
+  }
+  
+  select {
+      display: block;
+  }
+  
+  label {
+      font-size: 75%;
+  }
+  

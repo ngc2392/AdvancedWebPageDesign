@@ -115,10 +115,23 @@ $(document).ready(function() {
     $('.checkout-btn').on('click', function() {
         //get form data
 
-        var value="hello";
-        var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/review_order.html?source=" + value;
+        //var value="hello";
+        //var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/review_order.html?source=" + value;        
+        //var element = document.getElementById('checkout-btn-link');
+        //element.setAttribute("href",url)
+
+
+        // get all items from cart 
+        
+
+        
+        var myArray = {type:"Fiat", model:"500", color:"white"};
+        var arraySend = encodeURIComponent(JSON.stringify(myArray));
+        var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/review_order.html?array=" + arraySend;        
         var element = document.getElementById('checkout-btn-link');
         element.setAttribute("href",url)
+
+
     });
 
     // https://stackoverflow.com/questions/6658752/click-event-doesnt-work-on-dynamically-generated-elements
@@ -262,6 +275,37 @@ $(document).ready(function() {
                 $(this).delay(200).slideDown("fast");
            });
         }
+
+
+        // remove all elements, and then only add the ones we want to show
+
+        // remove all items
+
+        // find all objects with the filters
+
+
+        
+        var results = [];
+
+        jQuery.each(filterValues, function(indexInArray, value) {
+            var tempResults = products.filter(obj => {
+                console.log("FROM DATA", obj.region.toLowerCase());
+                console.log("FROM FILTER", value);
+                // white space was making the strings not equal
+                return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
+            });
+            //results.concat(tempResults);
+           
+            console.log("TEMP RESULTS", tempResults);
+        });
+
+        console.log("FILTERS CONCAT", results);
+
+        // var productsGrid = document.querySelector(".products-grid");
+        // productsGrid.appendChild(productElement);
+
+
+
     }
 
     /*products.html*/
