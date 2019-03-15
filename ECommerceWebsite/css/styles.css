@@ -503,7 +503,42 @@ html, body {
     color: orange;
 }
 
-/* cart.html */
+/* shopping_cart.html */
+
+.shopping-cart .product-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    border-bottom: 1px solid #eee;
+}
+
+.shopping-cart .product-row .product-image  {
+
+}
+
+.shopping-cart .product-row .product-image  img {
+    width: 100px;
+}
+
+.shopping-cart .product-row .product-details   {
+}
+
+.shopping-cart .product-row .product-details .product-description  {
+    border: 2px solid blue;
+    margin: 5px 20px 0px 0;
+    width: 50%;
+    line-height: 1.4em;
+}
+
+
+.shopping-cart .product-row .product-price {
+    border: 2px solid red;
+}
+
+.shopping-cart .product-row .product-quantity input {
+    width: 40px;
+}
 
 /* checkout.html */
 
