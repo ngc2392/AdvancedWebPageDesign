@@ -1,15 +1,154 @@
 
 $(document).ready(function() {
    
+    var products = [
+        {
+            "id": 0,
+            "name":"Arabian Blend",
+            "region": "Arabia",
+            "roast_level": "Medium",
+            "price": "42",
+            "description": "Earthly, dark choclate, medium body. From Arabia.",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }, {
+            "id": 1,
+            "name":"Scandavian Blend",
+            "region": "Indonesia",
+            "roast_level": "Dark",
+            "price": "75",
+            "description": "Earthly, dark choclate, medium body.  From Indonesia.",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }, {
+            "id": 2,
+            "name":"Driven House Blend",
+            "region": "India",
+            "roast_level": "Light",
+            "price": "25",
+            "description": "Earthly, dark choclate, medium body. From India.",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }, {
+            "id": 3,
+            "name":"Tanzanian Peaberry",
+            "region": "Africa",
+            "roast_level": "Light",
+            "price": "39",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }
+    ];
+
+
     if($('body').hasClass('ShoppingCartPage')) {
 
         
         $(document).ready(function() {
+
+            //initilalize shopping cart page
+            initializeBigShoppingCart();
+            console.log("INITAL");
+            // fill in total-item-price 
+
+            $('.products').children().each(function(index, item) {
+            
+                console.log("ITEM",$(item).children());
+                console.log("ITEM 2", $(item).children().children());
+
+                // product-row, find .product-price in the children
+                var itemPrice = $(item).children().children().eq(2).text().replace("$", "");
+                var quantity = $(item).children().children().eq(3).children().val();
+                var totalItemPrice = parseFloat(itemPrice) * parseFloat(quantity);
+                console.log("ITEM PRICE", itemPrice);
+                console.log("QUANTITY", quantity);
+                console.log(totalItemPrice.toFixed(2));
+
+                $(item).children().children().eq(5).text("$"+totalItemPrice);
+
+            });
+
+
             recalculateCart();
-        
-         // get the data
     
           });
+
+          function initializeBigShoppingCart () {
+            var productsFromSmallShoppingCart = JSON.parse(decodeURIComponent(GetURLParameter("data-array")));
+          
+            console.log("FROM URL", productsFromSmallShoppingCart);
+
+            $(productsFromSmallShoppingCart).each(function(index, itemFromSmallCart) {
+                console.log("JSON", itemFromSmallCart);
+
+                // should probably be searching by id
+                var productFromDatabase = getProductFromDatabase(itemFromSmallCart.name)[0];
+                console.log("PRODUCT FROM DATABASE", productFromDatabase);
+
+                // now create the divs for each item 
+                
+                var shoppingCartElement = document.createElement("div");
+                // productElement.className = "card";
+                shoppingCartElement.innerHTML = `
+                <div class="product-row">
+                            <div class="product-image">
+                                    <img src="${productFromDatabase.img_url}" />
+                            </div>
+        
+                            <div class="product-details">
+                                <div class="product-title">${productFromDatabase.name}</div>
+                                <div class="product-description">${productFromDatabase.description}</div>
+                            </div>
+
+                            <div class="product-price">$${productFromDatabase.price}</div>
+                            <div class="product-quantity">
+                                <input type="number" value="${itemFromSmallCart.quantity.match(/\d+/)[0]}" min="1" />
+                            </div>
+
+                            <div class="product-removal">
+                                <button class="remove-product">
+                                    Remove
+                                </button>
+                            </div>
+
+                            <div class="product-total-price">
+                            $15.00
+                            </div>
+            </div> `;
+        
+            var bigShoppingCartList = document.querySelector(".shopping-cart .products");
+            
+            bigShoppingCartList.appendChild(shoppingCartElement);
+            
+
+            });
+
+          }
+
+          function getProductFromDatabase(itemName) {
+
+            // https://stackoverflow.com/a/16392802/9599554
+            return products.filter(function(v) {
+                return v.name === itemName;
+            });
+
+         
+
+/* This was returning undefined 
+            products.forEach(function(element) {
+                console.log("METHOD");
+                if(itemName === element.name) {
+                    console.log("ITEM NAME", itemName);
+                    console.log("ELEMENT", element.name);
+                    console.log("RETURNING", element);
+                    return element;
+                }
+              
+            });
+            */
+          }
+          
           
           var taxRate = 0.05;
           var shippingRate = 15.00;
@@ -23,10 +162,19 @@ $(document).ready(function() {
             console.log("PRICE", priceOfItem);
             
             // remove the row
-            $(this).parents().eq(1).remove();
             
-            recalculateCart();
+            // $(this).parents().eq(1).remove();
             
+            // recalculateCart();
+
+            var productRow = $(this).parents().eq(1);
+
+            productRow.slideUp(fadeTime, function() {
+                productRow.remove();
+                recalculateCart();
+              });
+              
+
           });
           
           
@@ -106,7 +254,8 @@ $(document).ready(function() {
           function recalculateCart() {
             // update totals
             var all = $(".product-total-price").map(function() {
-              return parseFloat(this.innerHTML);
+                console.log("THIS", this.innerHTML);
+              return parseFloat(this.innerHTML.replace("$", ""));
             }).get();
            
             console.log("ALL", all);
@@ -127,18 +276,40 @@ $(document).ready(function() {
               $('.grand-total-amount').text(total.toFixed(2));
               
               if(total == 0) {
-                $('.checkout-btn').fadeOut(fadeTime);
+                $('.big-shopping-cart-checkout-btn-wrapper').fadeOut(fadeTime);
               } else {
-                $('.checkout').fadeIn(fadeTime);
+                $('.big-shopping-cart-checkout-btn-wrapper').fadeIn(fadeTime);
               }
-              
               $('.final-amounts').fadeIn(fadeTime);
             });
           }
     
-    
-    
+
+          $('.big-shopping-cart-checkout-btn').on('click', function() {
+
+            // get total price 
+            var totalPrice = $('.grand-total-amount').text();
+            var send = encodeURIComponent(JSON.stringify(totalPrice));
+            var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/checkout.html?total-price=" + send;        
+            var element = document.getElementById('big-shopping-cart-checkout-btn-wrapper-link');
+            element.setAttribute("href",url);
+
+
+        });
+
     };
+
+    if($('body').hasClass('CheckoutPage')) {
+        var totalPrice = decodeURIComponent(GetURLParameter("total-price"));
+        console.log("totalPrice", totalPrice);
+        $('.checkout-total-price-summary').text("$"+totalPrice.replace(/"/g,""));
+
+    }
+
+
+
+    
+
 
     cartItems = [];
     var itemCount = 0;
@@ -268,10 +439,10 @@ $(document).ready(function() {
 
         console.log("SENDING", arrayToSend);
 
-        var arraySend = encodeURIComponent(JSON.stringify(myArray));
-        var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/review_order.html?array=" + arraySend;        
+        var arraySend = encodeURIComponent(JSON.stringify(arrayToSend));
+        var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/shopping_cart.html?data-array=" + arraySend;        
         var element = document.getElementById('checkout-btn-link');
-        //element.setAttribute("href",url)
+        element.setAttribute("href",url)
 
 
     });
@@ -279,41 +450,45 @@ $(document).ready(function() {
     // cart for products.html.  This is in comparison to shopping_cart.html
     function getSmallCart() {
 
-        var arrayToReturn = [];
+        var arrayToReturn = new Array();
 
         var smallShoppingCartItems = $('.cart-box').find('.item-row');
         
+        smallShoppingCartItems.each(function(index, item) {
 
-       
-        
-        smallShoppingCartItems.each(function() {
+            console.log("THIS", $(this));
 
-            console.log("CHILDREN", $(this).children());
-        
+            console.log("ITEM", item);
 
-        $(this).children().each(function () {
-            console.log("CHILDREN2", $(this));
-        });
+            // had to switch item.find to $(item).find because item.find isn't a method
+            var itemQuantity = $(item).find('.item-quantity').text();
+            var itemName = $(item).find('.item-name').text();
+            var itemPrice = $(item).find('.item-price').text();
 
-            // now go through each child
-            $(this).map(function(item) {
-
-                arrayToReturn.push({
-                    "name":item.name,
-                    "price": item.price,
-                    "quantity": item.quantity
-                });
-
-                /*
-                quantity = $(this).quantity;
-                name = $(this).name;
-                price = $(this).price;
-                */
-
+            arrayToReturn.push({
+                "name": itemName,
+                "price": itemPrice,
+                "quantity": itemQuantity
             });
-
            
+    
+        // $(this).children().each(function (index, item) {
+        //     console.log("CHILDREN2", $(this));
+
+        //     console.log("ITEM", item);
+
+        //     arrayToReturn.push({
+        //         "name":item.name,
+        //         "price": item.price,
+        //         "quantity": item.quantity
+        //     });
+        //     console.log("ARRAY TO RETURN", arrayToReturn);
+        // });
+
+            
         });
+
+        //console.log("ARRAY TO RETURN", arrayToReturn);
 
         return arrayToReturn;
 
@@ -345,7 +520,7 @@ $(document).ready(function() {
         <div class="item-row">   
                 <div class="item-quantity">2x</div>
                 <div class="item-name">${name}</div>
-                <div class="item-price">${price}</div>
+                <div class="item-price">$${price}</div>
                 <div class="remove_item">X</div>
         </div>
         `;
@@ -408,6 +583,7 @@ $(document).ready(function() {
         if(itemCount == 0) {
             $('#itemCount').css('display', 'none');
         }
+
     });
 
 
@@ -500,45 +676,7 @@ $(document).ready(function() {
 
     /*products.html*/
 
-var products = [
-    {
-        "id": 0,
-        "name":"Hello",
-        "region": "Arabia",
-        "roast_level": "Medium",
-        "price": "$42",
-        "description": "Earthly, dark choclate, medium body. From Arabia.",
-        "weights": "12oz, 3lb, 5lb",
-        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
-    }, {
-        "id": 1,
-        "name":"Scandavian Blend",
-        "region": "Indonesia",
-        "roast_level": "Dark",
-        "price": "$75",
-        "description": "Earthly, dark choclate, medium body.  From Indonesia.",
-        "weights": "12oz, 3lb, 5lb",
-        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
-    }, {
-        "id": 2,
-        "name":"Scandavian Blend",
-        "region": "India",
-        "roast_level": "Light",
-        "price": "$25",
-        "description": "Earthly, dark choclate, medium body. From India.",
-        "weights": "12oz, 3lb, 5lb",
-        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
-    }, {
-        "id": 3,
-        "name":"Tanzanian Peaberry",
-        "region": "Africa",
-        "roast_level": "Light",
-        "price": "$39",
-        "description": "Rich and Intense with a swet outline.  From Africa",
-        "weights": "12oz, 3lb, 5lb",
-        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
-    }
-];
+
 
 var generateProductsList = function() {
     products.forEach(function(item) {

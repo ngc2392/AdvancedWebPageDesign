@@ -18,9 +18,34 @@
    
     </head>
 
-<body>
+<body class="CheckoutPage">
 
+    
+
+        <div class="side-nav" id="sideNav">
+
+                <!-- <div id="closeButton" class="close-btn">&times</div> -->
+                
+                <ul>
+            
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Coffee</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+            
+            
+            
+                </ul>
+            
+            
+            </div>
+<div class="payment-wrapper">
+
+        <h5>You will be charged: <span class="checkout-total-price-summary"></span></h5>
     <div class="payment-grid">
+
+       
             <div class="shippingInfoForm">
                     <div class="heading">
                         
@@ -105,25 +130,28 @@
 
                     <div class="creditCardForm">
                             <div class="heading">
-                                <h1>Confirm Purchase</h1>
+                                <h1>Payment info</h1>
                             </div>
-                            <div class="payment">
-                                <form>
-                                    <div class="form-group owner">
-                                        <label for="owner">Owner</label>
-                                        <input type="text" class="form-control" id="owner">
-                                    </div>
-                                    <div class="form-group CVV">
-                                        <label for="cvv">CVV</label>
-                                        <input type="text" class="form-control" id="cvv">
-                                    </div>
-                                    <div class="form-group" id="card-number-field">
-                                        <label for="cardNumber">Card Number</label>
-                                        <input type="text" class="form-control" id="cardNumber">
-                                    </div>
-                                    <div class="form-group" id="expiration-date">
-                                        <label>Expiration Date</label>
-                                        <select>
+                        
+                            <div class="content">
+                        
+                                   <div class="cardholder-row">
+                                       <div class="cardholder_name_box">
+                                            <input type="text" name="card-number" id="card-number">
+                                            <label>Cardholder's name</label>
+                                        </div>
+                                       
+                                       <div class="card_number_box">
+                                            <input type="text" name="last_name">
+                                            <label>Card Number</label>
+                                        </div>
+                            
+                                   </div>
+
+                                   <div class="card-info-row">
+                                        <div class="expiration-date-month">
+                                                <label>Expiration</label>
+                                             <select>
                                             <option value="01">January</option>
                                             <option value="02">February </option>
                                             <option value="03">March</option>
@@ -136,33 +164,42 @@
                                             <option value="10">October</option>
                                             <option value="11">November</option>
                                             <option value="12">December</option>
-                                        </select>
-                                        <select>
-                                            <option value="16"> 2016</option>
-                                            <option value="17"> 2017</option>
-                                            <option value="18"> 2018</option>
-                                            <option value="19"> 2019</option>
-                                            <option value="20"> 2020</option>
-                                            <option value="21"> 2021</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group" id="credit_cards">
-                                        <i class="fab fa-cc-visa"></i>
-                                        <i class="fab fa-cc-mastercard"></i>
-                                        <i class="fab fa-cc-amex"></i>
-                                    </div>
-                                    <div class="form-group" id="pay-now">
-                                        <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
-                                    </div>
-                                </form>
+                                            </select>
+                                         </div>
+        
+                                         <div class="expiration-date-year">
+                                             <label>year</label>
+                                                <select>
+                                                        <option value="16"> 2016</option>
+                                                        <option value="17"> 2017</option>
+                                                        <option value="18"> 2018</option>
+                                                        <option value="19"> 2019</option>
+                                                        <option value="20"> 2020</option>
+                                                        <option value="21"> 2021</option>
+                                                    </select>
+                                         </div>
+        
+                                         <div class="cvv">
+                                                <label>CVV</label>
+                                                <input type="text" class="form-control" id="cvv">
+                                         </div>
+                                   </div>
+                                
+
                             </div>
+                        
+                        
                         </div>
-                              
-                         
 
 
     </div>
 
+    <div class="final-checkout-btn-wrapper">
+            <a id="final-checkout-btn-wrapper-link" href="thankyou.html"><div class="final-cart-checkout-btn">PAY</div></a>
+
+     </div>
+
+    </div>
 
 
 
