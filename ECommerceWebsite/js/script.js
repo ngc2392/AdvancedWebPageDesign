@@ -1,6 +1,144 @@
 
 $(document).ready(function() {
+   
+    if($('body').hasClass('ShoppingCartPage')) {
 
+        
+        $(document).ready(function() {
+            recalculateCart();
+        
+         // get the data
+    
+          });
+          
+          var taxRate = 0.05;
+          var shippingRate = 15.00;
+          var fadeTime = 300;
+          
+          
+          $(".shopping-cart").on('click', '.remove-product', function() {
+              
+              var priceOfItem = $(this).parents().eq(1).find('.product-price').text().replace("$", "");
+           
+            console.log("PRICE", priceOfItem);
+            
+            // remove the row
+            $(this).parents().eq(1).remove();
+            
+            recalculateCart();
+            
+          });
+          
+          
+          
+          // detect change in input box
+          $('.product-row input').on('input', function() {
+            console.log("CHANING");
+            
+          //  console.log($(this).val());
+            
+            //console.log($(this).parents().eq(1));
+            
+            //console.log($(this).parents().eq(1).find('.product-price').text());
+            
+            // update the total product price
+            var quantity = $(this).val();
+            var productPrice = $(this).parents().eq(1).find('.product-price').text();
+            var newProductRowPrice = quantity * productPrice;
+            var productRow = $(this).parents().eq(1);
+            
+            // get the price of the product row where input was changed
+            productRow.children('.product-total-price').each(function() {
+              // $(this).fadeOut(fadeTime, function() {
+              //    $(this).text(newProductRowPrice.toFixed(2));
+              //     $(this).fadeIn(fadeTime);
+              });
+            
+            console.log("DROPDOWN");
+          
+            productRow.children('.product-total-price').fadeOut(fadeTime, function() {
+              $(this).text(newProductRowPrice.toFixed(2));
+              $(this).fadeIn(fadeTime);
+              recalculateCart();
+            });
+            
+           console.log("RECALCULATING CART");
+           
+           
+            //recalculateCart();
+           
+            
+          //    // update totals
+          //   var all = $(".product-total-price").map(function() {
+          //     console.log("BEFORE ALL", this.innerHTML);
+          //     return parseFloat(this.innerHTML);
+          //   }).get();
+            
+          //   console.log("All", all)
+           
+          //  var subTotal = all.reduce((a,b) => a + b, 0);
+            
+          //  console.log("SUB TOTAL",  subTotal);
+          
+          //   var tax = subTotal * taxRate;
+          //   var shipping = (subTotal > 0 ? shippingRate : 0);
+          //   var total = subTotal + tax + shipping;
+            
+          //   // update totals 
+          //   $('.final-amounts').fadeOut(fadeTime, function() {
+          //     $('.subtotal-amount').text(subTotal.toFixed(2));
+          //     $('.tax-amount').text(tax.toFixed(2));
+          //     $('.shipping-amount').text(shipping.toFixed(2));
+          //     $('.grand-total-amount').text(total.toFixed(2));
+              
+          //     if(total == 0) {
+          //       $('.checkout-btn').fadeOut(fadeTime);
+          //     } else {
+          //       $('.checkout').fadeIn(fadeTime);
+          //     }
+              
+          //     $('.final-amounts').fadeIn(fadeTime);
+          //   });
+            
+            
+          });
+          
+          function recalculateCart() {
+            // update totals
+            var all = $(".product-total-price").map(function() {
+              return parseFloat(this.innerHTML);
+            }).get();
+           
+            console.log("ALL", all);
+            
+           var subTotal = all.reduce((a,b) => a + b, 0);
+            
+           console.log("SUB TOTAL",  subTotal);
+          
+            var tax = subTotal * taxRate;
+            var shipping = (subTotal > 0 ? shippingRate : 0);
+            var total = subTotal + tax + shipping;
+            
+            // update totals 
+            $('.final-amounts').fadeOut(fadeTime, function() {
+              $('.subtotal-amount').text(subTotal.toFixed(2));
+              $('.tax-amount').text(tax.toFixed(2));
+              $('.shipping-amount').text(shipping.toFixed(2));
+              $('.grand-total-amount').text(total.toFixed(2));
+              
+              if(total == 0) {
+                $('.checkout-btn').fadeOut(fadeTime);
+              } else {
+                $('.checkout').fadeIn(fadeTime);
+              }
+              
+              $('.final-amounts').fadeIn(fadeTime);
+            });
+          }
+    
+    
+    
+    };
 
     cartItems = [];
     var itemCount = 0;
@@ -125,14 +263,61 @@ $(document).ready(function() {
         
 
         
-        var myArray = {type:"Fiat", model:"500", color:"white"};
+
+        var arrayToSend = getSmallCart();
+
+        console.log("SENDING", arrayToSend);
+
         var arraySend = encodeURIComponent(JSON.stringify(myArray));
         var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/review_order.html?array=" + arraySend;        
         var element = document.getElementById('checkout-btn-link');
-        element.setAttribute("href",url)
+        //element.setAttribute("href",url)
 
 
     });
+
+    // cart for products.html.  This is in comparison to shopping_cart.html
+    function getSmallCart() {
+
+        var arrayToReturn = [];
+
+        var smallShoppingCartItems = $('.cart-box').find('.item-row');
+        
+
+       
+        
+        smallShoppingCartItems.each(function() {
+
+            console.log("CHILDREN", $(this).children());
+        
+
+        $(this).children().each(function () {
+            console.log("CHILDREN2", $(this));
+        });
+
+            // now go through each child
+            $(this).map(function(item) {
+
+                arrayToReturn.push({
+                    "name":item.name,
+                    "price": item.price,
+                    "quantity": item.quantity
+                });
+
+                /*
+                quantity = $(this).quantity;
+                name = $(this).name;
+                price = $(this).price;
+                */
+
+            });
+
+           
+        });
+
+        return arrayToReturn;
+
+    }
 
     // https://stackoverflow.com/questions/6658752/click-event-doesnt-work-on-dynamically-generated-elements
     $(".products-grid").on("click", "div.add_to_cart_btn", function() {
@@ -318,7 +503,7 @@ $(document).ready(function() {
 var products = [
     {
         "id": 0,
-        "name":"Scandavian Blend",
+        "name":"Hello",
         "region": "Arabia",
         "roast_level": "Medium",
         "price": "$42",
@@ -345,11 +530,11 @@ var products = [
         "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
     }, {
         "id": 3,
-        "name":"Scandavian Blend",
+        "name":"Tanzanian Peaberry",
         "region": "Africa",
         "roast_level": "Light",
         "price": "$39",
-        "description": "Earthly, dark choclate, medium body.  From Africa",
+        "description": "Rich and Intense with a swet outline.  From Africa",
         "weights": "12oz, 3lb, 5lb",
         "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
     }
@@ -468,6 +653,10 @@ $(function() {
 //     init: init
 // };
 
-    
+// shopping_cart.js
+
+
+
+
 }); // end of $(document).ready
 
