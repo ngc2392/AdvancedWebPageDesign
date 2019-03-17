@@ -534,10 +534,12 @@ $(document).ready(function() {
 
                 var price = parseInt(productFromDatabase.price.replace("$", ""));
                 console.log("Old total", priceTotal);
-                priceTotal += (price * newQuantity);
+                priceTotal += price;
                 console.log("New total", priceTotal);
                 $("#cart-total").text("$"+priceTotal.toFixed(2));
-                 
+                
+                //recalculateSmallCart();
+
                 // need to call false in the loop callback
                 return false;
             }
@@ -581,6 +583,7 @@ $(document).ready(function() {
          
     });
 
+    // find all quanities and prices add them up
     function recalculateSmallCart() {
 
     }

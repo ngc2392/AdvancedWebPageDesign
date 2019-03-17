@@ -16,12 +16,30 @@ html, body {
 }
 
 header {
+    /* position header text relative to header, not body*/
+    position: relative;
     background-size: cover;
 	background-position: center;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../coffee-hero-image.jpg);
 	background-attachment: fixed;
     height: 100vh;
     margin-left: 250px;
+}
+
+header div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.home-page-wrapper {
+    margin-left: 250px;
+}
+
+.home-page-wrapper h1 {
+  text-align: center;
 }
 
 .filters-summary {
