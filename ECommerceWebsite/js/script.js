@@ -514,6 +514,40 @@ $(document).ready(function() {
 
         console.log($('#itemCount'));
 
+        var continueOn = true;
+
+        $('.items-column').children().each(function(i, div) {
+
+            console.log("TEXT", $(this).find('.item-quantity').text().match(/\d+/)[0]);
+            if($(this).find('.item-name').text() === name) {
+                console.log("That item is already in the cart.  Increasing the quantity by one");
+
+                var oldQuantity = parseInt($(this).find('.item-quantity').text().match(/\d+/)[0]);
+                var newQuantity = oldQuantity + 1;
+
+                console.log("newQuantity is" + newQuantity);
+                $(this).find('.item-quantity').text(newQuantity + "x");
+
+                continueOn = false;
+
+                // recalculate cart total
+
+                var price = parseInt(productFromDatabase.price.replace("$", ""));
+                console.log("Old total", priceTotal);
+                priceTotal += (price * newQuantity);
+                console.log("New total", priceTotal);
+                $("#cart-total").text("$"+priceTotal.toFixed(2));
+                 
+                // need to call false in the loop callback
+                return false;
+            }
+        });
+
+        if(!continueOn) {
+            return;
+        }
+     
+
         var shoppingCartItem = document.createElement("div");
         shoppingCartItem.innerHTML = `
         
@@ -542,10 +576,14 @@ $(document).ready(function() {
 
          var price = parseInt(productFromDatabase.price.replace("$", ""));
          priceTotal += price;
-         $("#cart-total").text("$"+priceTotal);
+         $("#cart-total").text("$"+priceTotal.toFixed(2));
 
          
     });
+
+    function recalculateSmallCart() {
+
+    }
 
 
     function getIdOfCard(card) {

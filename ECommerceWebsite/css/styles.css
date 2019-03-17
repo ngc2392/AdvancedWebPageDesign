@@ -248,6 +248,10 @@ header {
     right: 0;
 }
 
+.item-row .fa-times:hover {
+    color: red;
+}
+
 .add_item {
     position: absolute;
     left: 50%;
@@ -436,6 +440,7 @@ header {
     border-radius: 5px;
     /* 5px rounded corners */
     width: 250px;
+    border: 2px solid red;
 }
 
 /*On mouse-over, add a deeper shadow*/
