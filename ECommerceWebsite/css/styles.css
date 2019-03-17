@@ -111,6 +111,12 @@ header {
     font-size: 90%;
 }
 
+.side-nav .copyright {
+    position: absolute;
+    bottom: 80px;
+    font-size: 40%;
+}
+
 /*shopping cart*/
 
 .fa-shopping-cart {
@@ -218,9 +224,28 @@ header {
 }
 
 .item-row {
-    display: flex;
+    /* display: flex; */
+    /*For the x button*/
+    position: relative;
     border-top: 1px solid #e0e6ef;
     padding: 15px;
+}
+
+.quantity-price-row {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid red;
+    width: 50%;
+}
+
+.item-quantity {
+    border: 2px solid blue;
+}
+
+.item-row .fa-times {
+    position: absolute;
+    top: 50%;
+    right: 0;
 }
 
 .add_item {
@@ -982,8 +1007,7 @@ input:focus+label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
+    height: 100%;
  }
 
  .thank_you_wrapper h1 {

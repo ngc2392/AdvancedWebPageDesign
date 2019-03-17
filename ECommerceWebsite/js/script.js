@@ -518,10 +518,12 @@ $(document).ready(function() {
         shoppingCartItem.innerHTML = `
         
         <div class="item-row">   
-                <div class="item-quantity">2x</div>
                 <div class="item-name">${name}</div>
+                <div class="quantity-price-row">
+                <div class="item-quantity">1x</div>
                 <div class="item-price">$${price}</div>
-                <div class="remove_item">X</div>
+                </div>
+                <div class="remove_item"><i class="fas fa-times"></i></div>
         </div>
         `;
 
@@ -693,7 +695,7 @@ var generateProductsList = function() {
                     </div>
 
                     <div class="container">
-                             <span class="product_price">${item.price}</span>
+                             <span class="product_price">$${item.price}</span>
                             <span class="product_name">${item.name}</span>
                             <span class="roast_level">Roast Level: ${item.roast_level}</span>
                             <span class="product_description"><i>${item.description}</i></span>
@@ -734,7 +736,7 @@ var applyFilters = function(array) {
                     </div>
 
                     <div class="container">
-                             <span class="product_price">${item.price}</span>
+                             <span class="product_price">$${item.price}</span>
                             <span class="product_name">${item.name}</span>
                             <span class="roast_level">Roast Level: ${item.roast_level}</span>
                             <span class="product_description"><i>${item.description}</i></span>
