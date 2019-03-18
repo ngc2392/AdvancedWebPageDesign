@@ -251,6 +251,8 @@ $(document).ready(function() {
             
           });
           
+          //recalculateBigShoppingCart()
+
           function recalculateCart() {
             // update totals
             var all = $(".product-total-price").map(function() {
@@ -516,35 +518,65 @@ $(document).ready(function() {
 
         var continueOn = true;
 
+        
+
+
         $('.items-column').children().each(function(i, div) {
 
-            console.log("TEXT", $(this).find('.item-quantity').text().match(/\d+/)[0]);
-            if($(this).find('.item-name').text() === name) {
-                console.log("That item is already in the cart.  Increasing the quantity by one");
+            console.log("THIS OK", $(this).children().children().hasClass("quantity-price-row"));
 
-                var oldQuantity = parseInt($(this).find('.item-quantity').text().match(/\d+/)[0]);
-                var newQuantity = oldQuantity + 1;
+            //check if the .items-row has item-quantity
 
-                console.log("newQuantity is" + newQuantity);
-                $(this).find('.item-quantity').text(newQuantity + "x");
+            if($(this).children().children().hasClass('quantity-price-row')) {
 
-                continueOn = false;
+                console.log("TEXT", $(this).find('.item-quantity').text().match(/\d+/)[0]);
+                if($(this).find('.item-name').text() === name) {
+                    console.log("That item is already in the cart.  Increasing the quantity by one");
+    
+                    var oldQuantity = parseInt($(this).find('.item-quantity').text().match(/\d+/)[0]);
+                    var newQuantity = oldQuantity + 1;
+    
+                    console.log("newQuantity is" + newQuantity);
+                    $(this).find('.item-quantity').text(newQuantity + "x");
+    
+                    continueOn = false;
+    
+                    // recalculate cart total
+    
+                    var price = parseInt(productFromDatabase.price.replace("$", ""));
+                    console.log("Old total", priceTotal);
+                    priceTotal += price;
+                    console.log("New total", priceTotal);
+                    $("#cart-total").text("$"+priceTotal.toFixed(2));
+                    
+                    //$("#itemCount").text(itemCount).css('display', 'block');
 
-                // recalculate cart total
+                    //recalculateSmallCart();
 
-                var price = parseInt(productFromDatabase.price.replace("$", ""));
-                console.log("Old total", priceTotal);
-                priceTotal += price;
-                console.log("New total", priceTotal);
-                $("#cart-total").text("$"+priceTotal.toFixed(2));
-                
-                //recalculateSmallCart();
+                    // var totalItems = $('.items-column').find('.item-row').find('.quantity-price-row .item-quantity').text().match(/\d+/)[0].reduce(function(a, b) {
+                    //     return a + b;
+                    // }, 0);
 
-                // need to call false in the loop callback
-                return false;
+                    //console.log("adfasdf", $('.items-column').find('.item-row').find('.quantity-price-row .item-quantity').text().match(/\d+/)[0]);
+                      
+                    // var totalItems = 0;
+
+                    // $('.items-column').find('.item-row').find('.quantity-price-row .item-quantity').each(function(index, obj) {
+                    //      totalItems += parseInt($(this).text().match(/\d+/)[0]);
+                    // });
+
+                    // console.log("TOTAL ITEMS", totalItems);
+    
+                    // need to call false in the loop callback
+                    return false;
+                }
+
+
             }
+            
         });
 
+        // if we updated a quantity, we don't need to move on
         if(!continueOn) {
             return;
         }
@@ -575,16 +607,48 @@ $(document).ready(function() {
 
          var productFromDatabase = products.find(x => x.id === parseInt(idOfProduct));
 
-
          var price = parseInt(productFromDatabase.price.replace("$", ""));
          priceTotal += price;
          $("#cart-total").text("$"+priceTotal.toFixed(2));
 
+        // recalculateSmallCart();
          
     });
 
     // find all quanities and prices add them up
     function recalculateSmallCart() {
+
+        var newTotalPrice = 0;
+
+        console.log("adfadf", $('.items-column').children());
+
+        $('.items-column').children().each(function(i, div) {
+        
+            var cartItemPrice =  parseFloat($(this).find('.item-price').text().replace("$", ""));
+            console.log("p", cartItemPrice);
+            var cartItemQuantity =  parseInt($(this).find('.item-quantity').text().match(/\d+/)[0]);
+            console.log("pq", cartItemQuantity);
+            var tempPrice = cartItemPrice * cartItemQuantity;
+            newTotalPrice = newTotalPrice + tempPrice;
+        });
+
+        console.log("NEW TOTAL IS", newTotalPrice);
+        $("#cart-total").text("$"+newTotalPrice.toFixed(2));
+
+        // $('.items-column').find('.item-row').find('.quantity-price-row .item-quantity').each(function(i, obj) {
+        //     var quantity = parseInt($(this).text().match(/\d+/)[0]);
+
+        // });
+
+        var totalItems = 0;
+
+        $('.items-column').find('.item-row').find('.quantity-price-row .item-quantity').each(function(index, obj) {
+             totalItems += parseInt($(this).text().match(/\d+/)[0]);
+        });
+
+        console.log("TOTAL ITEMS", totalItems);
+
+        $("#itemCount").text(totalItems).css('display', 'block');
 
     }
 
@@ -614,10 +678,15 @@ $(document).ready(function() {
         // remove item row from shopping cart
         $(this).parents().eq(0).remove();
         
+        // update cart quantity indicator
+        // get just the number
+        itemCount = itemCount - $(this).parents().eq(0).find('.item-quantity').text().match(/\d+/)[0];
+        console.log("NEW ITEM COUNT", itemCount);
+        $('#itemCount').text(itemCount);
     
         // update cart quantity indicator
-        itemCount--;
-        $('#itemCount').text(itemCount);
+        // itemCount--;
+        // $('#itemCount').text(itemCount);
 
         // remove cost of deleted item from the total cart price 
         priceTotal -= priceOfItem;
@@ -721,48 +790,7 @@ $(document).ready(function() {
 
 
 // make this a generic one, can then get rid of applyFilters();
-var generateProductsList = function() {
-    products.forEach(function(item) {
-        var productElement = document.createElement("div");
-        // productElement.className = "card";
-        productElement.innerHTML = `
-        <div id="card-${item.id}" class="card" data-region="${item.region.toLowerCase()}">
-                    <div class="image-container">
-                            <img src="${item.img_url}" />
-                            <div class="overlay">
-
-                                    <div class="add_to_cart_btn">Add to Cart</div>
-                            </div>
-                    </div>
-
-                    <div class="container">
-                             <span class="product_price">$${item.price}</span>
-                            <span class="product_name">${item.name}</span>
-                            <span class="roast_level">Roast Level: ${item.roast_level}</span>
-                            <span class="product_description"><i>${item.description}</i></span>
-                            <div class="product_rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                            </div>
-                            <span class="product_weights">Weights: ${item.weights}</span>
-
-                    </div>
-    </div> `;
-
-    var productsGrid = document.querySelector(".products-grid");
-    
-    productsGrid.appendChild(productElement);
-
-    });
-}
-
-
-// call generateProductsList() (it will be named differently)
-var applyFilters = function(array) {
-    console.log("UPDATING PRODUCTS", array);
+var generateProductsList = function(array) {
     array.forEach(function(item) {
         var productElement = document.createElement("div");
         // productElement.className = "card";
@@ -800,11 +828,54 @@ var applyFilters = function(array) {
     });
 }
 
+var applyFilters = function(array) {
+    generateProductsList(array);
+};
 
+// call generateProductsList() (it will be named differently)
+// var applyFilters = function(array) {
+//     console.log("UPDATING PRODUCTS", array);
+//     array.forEach(function(item) {
+//         var productElement = document.createElement("div");
+//         // productElement.className = "card";
+//         productElement.innerHTML = `
+//         <div id="card-${item.id}" class="card" data-region="${item.region.toLowerCase()}">
+//                     <div class="image-container">
+//                             <img src="${item.img_url}" />
+//                             <div class="overlay">
+
+//                                     <div class="add_to_cart_btn">Add to Cart</div>
+//                             </div>
+//                     </div>
+
+//                     <div class="container">
+//                              <span class="product_price">$${item.price}</span>
+//                             <span class="product_name">${item.name}</span>
+//                             <span class="roast_level">Roast Level: ${item.roast_level}</span>
+//                             <span class="product_description"><i>${item.description}</i></span>
+//                             <div class="product_rating">
+//                                     <span class="fa fa-star checked"></span>
+//                                     <span class="fa fa-star checked"></span>
+//                                     <span class="fa fa-star checked"></span>
+//                                     <span class="fa fa-star"></span>
+//                                     <span class="fa fa-star"></span>
+//                             </div>
+//                             <span class="product_weights">Weights: ${item.weights}</span>
+
+//                     </div>
+//     </div> `;
+
+//     var productsGrid = document.querySelector(".products-grid");
+    
+//     productsGrid.appendChild(productElement);
+
+//     });
+// }
 
 
 $(function() {
-    generateProductsList();
+    //generateProductsList(products);
+    generateProductsList(products);
 });
 
 /* review_order */
