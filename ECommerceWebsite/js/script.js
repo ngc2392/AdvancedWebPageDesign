@@ -720,7 +720,7 @@ $(document).ready(function() {
     /*products.html*/
 
 
-
+// make this a generic one, can then get rid of applyFilters();
 var generateProductsList = function() {
     products.forEach(function(item) {
         var productElement = document.createElement("div");
@@ -760,7 +760,7 @@ var generateProductsList = function() {
 }
 
 
-
+// call generateProductsList() (it will be named differently)
 var applyFilters = function(array) {
     console.log("UPDATING PRODUCTS", array);
     array.forEach(function(item) {
