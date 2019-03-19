@@ -53,15 +53,30 @@ header div {
   font-weight: 900;
 }
 
-.home-page-wrapper .intro-wrapper {
+.home-page-wrapper .values-section {
+    padding-top: 25px;
     padding-bottom: 100px;
+    background-color: #7E6060;
+}
+
+.home-page-wrapper .values-section h1 {
+    color: #C4C4C4;
+}
+
+.home-page-wrapper .intro-section {
+    padding: 25px 0;
+    background-color: #887D7D;
 }
 
 .home-page-wrapper .intro-text {
     width: 60%;
     /*center the text*/
     margin: 0 auto;
-}
+}  
+
+.home-page-wrapper .intro-section h1{
+    color: #C4C4C4;
+ }
 
 
 .home-page-wrapper .values-section .intro-text h4 {
@@ -72,12 +87,13 @@ header div {
 .home-page-wrapper .values-section .values {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
 }
 
 .home-page-wrapper .values-section .values .box {
     background-color: #FFF;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    flex-basis: 30%;
+    flex-basis: 20%;
     padding: 25px;
 }
 
@@ -724,21 +740,38 @@ header div {
 /* ----------------------------------------------- */
 
 .order-summary {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: inline-block;
+}
 
+.order-summary-wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 .order-summary .title {
     background-color: gray;
+    text-align: center;
+    padding: 10px;
+}
+
+.order-summary .content {
+    padding: 30px;
+    background-color: #FFF;
 }
 
 .payment-grid {
-    border: 2px solid red;
-    display: flex;
-    /* grid-auto-columns: 300px; */
-    justify-content: space-around;
-    flex-wrap: wrap;
+    /* border: 2px solid red; */
+  /* border: 2px solid red; */
+  display: flex;
+  /* grid-auto-columns: 300px; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.shipping_billing_form_wrapper {
+  
 }
 
 .cardholder_name_box {
@@ -763,7 +796,7 @@ header div {
 
     flex-basis: 40%;
 
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     
 }
 
@@ -815,9 +848,14 @@ header div {
 }
 
 .final-checkout-btn-wrapper {
+    /* border: 2px solid red; */
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+ #final-checkout-btn-wrapper-link {
+   display: inline-block;
 }
 
 .final-cart-checkout-btn {
@@ -829,7 +867,14 @@ header div {
     font-size: 25px;
     border-radius: 3px;
     cursor: pointer;
+    width: 20%;
+    text-align: center;
 }
+
+.final-cart-checkout-btn:hover{
+     background-color: #93cf93;
+
+ }
 
 .big-shopping-cart-checkout-btn:hover {
  
@@ -838,7 +883,7 @@ header div {
 
 /* match all <label> that directly follow an <input> (on focus) */
 
-input:focus+label {
+.CheckoutPage input:focus+label {
     color: #69b692;
 }
 
@@ -916,8 +961,9 @@ input:focus+label {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     border-radius: 20px;
 
-    flex-basis: 30%;
-  
+    flex-basis: 50%;
+
+    /* border: 2px solid black; */
 }
 
 .creditCardForm h1 {
@@ -939,8 +985,18 @@ input:focus+label {
 }
 
 .creditCardForm .content .cardholder-row {
-    display: flex;
+    /* border: 2px solid red; */
+    display: flex; 
     justify-content: space-between;
+    width: 100%;
+}
+
+.cardholder_name_box {
+    flex-basis: 30%;
+}
+
+.card_number_box {
+    flex-basis: 30%;
 }
 
 .creditCardForm .content .cardholder-row div:first-of-type input {
@@ -956,18 +1012,42 @@ input:focus+label {
     padding-top: 20px;
 }
 
-.cvv {
-    position: relative;
+.card-info-row {
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid green; */
 }
+
+.card-info-row .cvv {
+    position: relative;
+    /* border: 2px solid royalblue; */
+}
+
+.card-info-row .cvv label {
+    position: absolute;
+    top: 0;
+}
+
+.card-info-row .cvv input[type="text"] {
+    width: 50%;
+    position: relative;
+    /* border: 2px solid black; */
+    margin-top: 25px;
+}
+
+
+
+.card-info-row .cvv input[type="text"] {
+ 
+}
+
 
 .cardholder_name_box label, .card_number_box label, .address_box label {
     position: absolute;
     top: 0;
 }
 
-.card-info-row {
-    display: flex;
-}
+
 
 
 /* .creditCardForm label {
@@ -1120,10 +1200,18 @@ input:focus+label {
     grid-template-columns: 1fr 1fr;
     
   }
+
+  .contact_page_wrapper .grid-wrapper {
+      margin-left: 250px;
+  }
   
   .col-1 {
-     background: -webkit-linear-gradient(to right, #2c3e50, #fd746c); /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to right, #2c3e50, #fd746c); 
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../coffee_background.jpg);
+    background-size: cover;
+	background-position: center;
+     /* background-image: -webkit-linear-gradient(to right, #2c3e50, #fd746c); 
+   background: linear-gradient(to right, #2c3e50, #fd746c);  */
   
   }
   
@@ -1215,8 +1303,36 @@ input:focus+label {
       display: block;
   }
   
+  /* this is affect labels on checkout.html */
   label {
       font-size: 75%;
   }
   
+  /* ----------------------------------------------- */
 
+/* BLOG POST */
+
+/* ----------------------------------------------- */
+
+
+.blog_wrapper {
+    margin-left: 250px;
+     display: grid;
+     grid-template-columns: repeat(8, 1fr);
+  }
+  
+  .content {
+    /* border: 2px solid red; */
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
+  
+  .related-articles {
+      /* border: 2px solid blue; */
+      /*have it take up all the columns*/
+      width: 100%;
+      grid-column-start: 7;
+      grid-column-end: 9;
+      align-items: end;
+      
+  }

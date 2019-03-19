@@ -38,6 +38,60 @@ $(document).ready(function() {
             "description": "Rich and Intense with a swet outline.  From Africa",
             "weights": "12oz, 3lb, 5lb",
             "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }, {
+            "id": 4,
+            "name":"Ethiopian Harrar Coffee",
+            "region": "Africa",
+            "roast_level": "Light",
+            "price": "27.22",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }, {
+            "id": 5,
+            "name":"Ethiopian Yirgacheffe Coffee",
+            "region": "Africa",
+            "roast_level": "Light",
+            "price": "27.22",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+        }, {
+            "id": 6,
+            "name":"Kenya AA",
+            "region": "Africa",
+            "roast_level": "Light",
+            "price": "27.22",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+        }, {
+            "id": 7,
+            "name":"Delta Ground",
+            "region": "South America",
+            "roast_level": "Light",
+            "price": "27.22",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+        }, {
+            "id": 8,
+            "name":"Brown Gold",
+            "region": "South America",
+            "roast_level": "Light",
+            "price": "27.22",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+        }, {
+            "id": 9,
+            "name":"La Crema",
+            "region": "South America",
+            "roast_level": "Light",
+            "price": "27.22",
+            "description": "Rich and Intense with a swet outline.  From Africa",
+            "weights": "12oz, 3lb, 5lb",
+            "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
         }
     ];
 
@@ -208,9 +262,57 @@ $(document).ready(function() {
     }; // end of shopping cart.html
 
     if($('body').hasClass('CheckoutPage')) {
-        var totalPrice = decodeURIComponent(GetURLParameter("total-price"));
-        console.log("totalPrice", totalPrice);
-        $('.checkout-total-price-summary').text("$"+totalPrice.replace(/"/g,""));
+
+        $(document).ready(function() {
+            var totalPrice = decodeURIComponent(GetURLParameter("total-price"));
+            console.log("totalPrice", totalPrice);
+            $('.checkout-total-price-summary').text("$"+totalPrice.replace(/"/g,""));
+        });
+
+        // check for empty fields 
+        $('#final-checkout-btn-wrapper-link').on('click', function() {
+
+            // can add each empty class name to array and tell the user exactly which ones are empty 
+
+
+            var shippingInfoFirstName = $('.shippingInfoForm .first_name_box input').val();
+            var shippingInfoLastName = $('.shippingInfoForm .last_name_box input').val();
+            var shippingInfoPhone = $('.shippingInfoForm .phone_box input').val();
+            var shippingInfoAddress  = $('.shippingInfoForm .address_box input').val();
+
+            var billingInfoFirstName = $('.billingInfoForm .first_name_box input').val();
+            var billingInfoLastName = $('.billingInfoForm .last_name_box input').val();
+            var billingInfoPhone = $('.billingInfoForm .phone_box input').val();
+            var billingInfoAddress  = $('.billingInfoForm .address_box input').val();
+
+            var creditCardFullName = $('.creditCardForm .cardholder_name_box input').val();
+            var creditCardNumber = $('.creditCardForm .card_number_box input').val();
+            var creditCardCVV = $('.creditCardForm .cvv input').val();
+
+            // check for empty fields in shipping info
+            if(!shippingInfoFirstName || !shippingInfoLastName || !shippingInfoPhone || !shippingInfoAddress 
+                || !billingInfoFirstName || !billingInfoLastName || !billingInfoPhone || !billingInfoAddress || !creditCardFullName
+                || !creditCardNumber || !creditCardCVV) {
+                    alert("Please make sure all fields are filled in.");
+                    return false;
+                } else {
+                    alert("SUCCESS");
+                }
+
+    
+
+            // check for empty fields in billing info
+
+            // check for empty fields in payment info
+
+              //  alert(shippingInfoFirstName + " " + shippingInfoLastName + " " + shippingInfoPhone + " " + shippingInfoAddress);
+
+               // alert(billingInfoFirstName + " " + billingInfoLastName + " " + billingInfoPhone + " " + billingInfoAddress);
+                
+               // alert(creditCardFullName + " " + creditCardNumber + " " + creditCardCVV);
+                
+        });
+
  
     } // end of checkout page 
 
