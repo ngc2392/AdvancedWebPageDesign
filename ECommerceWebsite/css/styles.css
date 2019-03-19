@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
 
 
 * {
@@ -58,23 +58,24 @@ header div {
 }
 
 
-.home-page-wrapper .intro-text h4 {
+.home-page-wrapper .values-section .intro-text h4 {
     
     font-weight: 400;
 }
 
-.home-page-wrapper .values {
+.home-page-wrapper .values-section .values {
     display: flex;
     justify-content: space-around;
 }
 
-.home-page-wrapper .values .box {
+.home-page-wrapper .values-section .values .box {
     background-color: #FFF;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     flex-basis: 30%;
+    padding: 25px;
 }
 
-.home-page-wrapper .values .box h6 {
+.home-page-wrapper .values-section .values .box h6 {
     text-align: center;
     font-size: 120%;
     margin-bottom: 15px;
@@ -497,7 +498,7 @@ header div {
     border-radius: 5px;
     /* 5px rounded corners */
     width: 250px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 /*On mouse-over, add a deeper shadow*/
@@ -610,15 +611,23 @@ header div {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     border-bottom: 1px solid #eee;
+    justify-items: center;
   }
   
   
   .shopping-cart .product-row .product-image  img {
       width: 100px;
+      margin-left: 15px;
   }
   
+  .shopping-cart .product-row .product-details .product-title {
+      font-weight: 700;
+
+  }
+
   .shopping-cart .product-row .product-details   {
-    grid-column: span 3
+    grid-column: span 3;
+    margin-left: 15px;
   }
   
   .shopping-cart .product-row .product-details .product-description  {
@@ -644,6 +653,8 @@ header div {
   }
   
   .payment-totals {
+      /* border: 2px solid red; */
+    /*get to right side of screen*/
     float: right;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -667,11 +678,13 @@ header div {
 
 
   .big-shopping-cart-checkout-btn-wrapper {
-      border: 2px solid purple;
+      /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
       /*force it to a new row */
       width: 100%;
-      display: flex;
-      justify-content: center;
+
+     
   }
 
   .big-shopping-cart-checkout-btn {
@@ -696,6 +709,7 @@ header div {
     color: #fff;
     font-size: 12px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 /* checkout.html */

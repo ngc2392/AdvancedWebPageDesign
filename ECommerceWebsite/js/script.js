@@ -1,14 +1,15 @@
 
 $(document).ready(function() {
+    var fadeTime = 300;
    
     var products = [
         {
             "id": 0,
-            "name":"Arabian Blend",
+            "name": "Arabian Blend",
             "region": "Arabia",
             "roast_level": "Medium",
-            "price": "42",
-            "description": "Earthly, dark choclate, medium body. From Arabia.",
+            "price": "42.00",
+            "description": "Earthly, dark choclate, medium body.  From Arabia.",
             "weights": "12oz, 3lb, 5lb",
             "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
         }, {
@@ -16,7 +17,7 @@ $(document).ready(function() {
             "name":"Scandavian Blend",
             "region": "Indonesia",
             "roast_level": "Dark",
-            "price": "75",
+            "price": "75.50",
             "description": "Earthly, dark choclate, medium body.  From Indonesia.",
             "weights": "12oz, 3lb, 5lb",
             "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
@@ -25,7 +26,7 @@ $(document).ready(function() {
             "name":"Driven House Blend",
             "region": "India",
             "roast_level": "Light",
-            "price": "25",
+            "price": "25.00",
             "description": "Earthly, dark choclate, medium body. From India.",
             "weights": "12oz, 3lb, 5lb",
             "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
@@ -34,7 +35,7 @@ $(document).ready(function() {
             "name":"Tanzanian Peaberry",
             "region": "Africa",
             "roast_level": "Light",
-            "price": "39",
+            "price": "39.00",
             "description": "Rich and Intense with a swet outline.  From Africa",
             "weights": "12oz, 3lb, 5lb",
             "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
@@ -44,41 +45,9 @@ $(document).ready(function() {
 
     if($('body').hasClass('ShoppingCartPage')) {
 
-        
-        $(document).ready(function() {
-
-            //initilalize shopping cart page
-            initializeBigShoppingCart();
-            console.log("INITAL");
-            // fill in total-item-price 
-
-            $('.products').children().each(function(index, item) {
-            
-                console.log("ITEM",$(item).children());
-                console.log("ITEM 2", $(item).children().children());
-
-                // product-row, find .product-price in the children
-                var itemPrice = $(item).children().children().eq(2).text().replace("$", "");
-                var quantity = $(item).children().children().eq(3).children().val();
-                var totalItemPrice = parseFloat(itemPrice) * parseFloat(quantity);
-                console.log("ITEM PRICE", itemPrice);
-                console.log("QUANTITY", quantity);
-                console.log(totalItemPrice.toFixed(2));
-
-                $(item).children().children().eq(5).text("$"+totalItemPrice);
-
-            });
-
-
-            recalculateCart();
-    
-          });
-
-          function initializeBigShoppingCart () {
+        function initializeBigShoppingCart () {
             var productsFromSmallShoppingCart = JSON.parse(decodeURIComponent(GetURLParameter("data-array")));
-          
-            console.log("FROM URL", productsFromSmallShoppingCart);
-
+        
             $(productsFromSmallShoppingCart).each(function(index, itemFromSmallCart) {
                 console.log("JSON", itemFromSmallCart);
 
@@ -86,8 +55,6 @@ $(document).ready(function() {
                 var productFromDatabase = getProductFromDatabase(itemFromSmallCart.name)[0];
                 console.log("PRODUCT FROM DATABASE", productFromDatabase);
 
-                // now create the divs for each item 
-                
                 var shoppingCartElement = document.createElement("div");
                 // productElement.className = "card";
                 shoppingCartElement.innerHTML = `
@@ -120,21 +87,32 @@ $(document).ready(function() {
             var bigShoppingCartList = document.querySelector(".shopping-cart .products");
             
             bigShoppingCartList.appendChild(shoppingCartElement);
-            
-
             });
-
           }
 
-          function getProductFromDatabase(itemName) {
+        $(document).ready(function() {
+            //initilalize shopping cart page
+            initializeBigShoppingCart();
+    
+            // fill in total-item-price for each row in big shopping cart
+            $('.products').children().each(function(index, item) {
+                // product-row, find .product-price in the children
+                var itemPrice = $(item).children().children().eq(2).text().replace("$", "");
+                var quantity = $(item).children().children().eq(3).children().val();
+                var totalItemPrice = parseFloat(itemPrice) * parseFloat(quantity);
+                $(item).children().children().eq(5).text("$"+totalItemPrice);
+            });
+            recalculateCart();
+          });
 
+          
+          function getProductFromDatabase(itemName) {
             // https://stackoverflow.com/a/16392802/9599554
             return products.filter(function(v) {
                 return v.name === itemName;
             });
 
-         
-
+        
 /* This was returning undefined 
             products.forEach(function(element) {
                 console.log("METHOD");
@@ -150,11 +128,11 @@ $(document).ready(function() {
           }
           
           
-          var taxRate = 0.05;
-          var shippingRate = 15.00;
-          var fadeTime = 300;
+        //   var taxRate = 0.05;
+        //   var shippingRate = 15.00;
+        //   var fadeTime = 300;
           
-          
+
           $(".shopping-cart").on('click', '.remove-product', function() {
               
               var priceOfItem = $(this).parents().eq(1).find('.product-price').text().replace("$", "");
@@ -180,80 +158,31 @@ $(document).ready(function() {
           
           
           // detect change in input box
-          $('.product-row input').on('input', function() {
-            console.log("CHANING");
-            
-          //  console.log($(this).val());
-            
-            //console.log($(this).parents().eq(1));
-            
-            //console.log($(this).parents().eq(1).find('.product-price').text());
-            
+          // shopping-cart.html
+          //$('.product-row input').on('input', function() {
+        $('body').on('change', '.product-row input', function() {
+  
             // update the total product price
             var quantity = $(this).val();
-            var productPrice = $(this).parents().eq(1).find('.product-price').text();
-            var newProductRowPrice = quantity * productPrice;
+            console.log("QUANTITY", quantity);
+            var productPrice = $(this).parents().eq(1).find('.product-price').text().replace("$", "");
+            var newProductRowPrice = parseInt(quantity) * parseInt(productPrice);
+            console.log("NEW PRODUCT ROW PRICE", newProductRowPrice);
             var productRow = $(this).parents().eq(1);
-            
-            // get the price of the product row where input was changed
-            productRow.children('.product-total-price').each(function() {
-              // $(this).fadeOut(fadeTime, function() {
-              //    $(this).text(newProductRowPrice.toFixed(2));
-              //     $(this).fadeIn(fadeTime);
-              });
-            
-            console.log("DROPDOWN");
-          
+                    
             productRow.children('.product-total-price').fadeOut(fadeTime, function() {
               $(this).text(newProductRowPrice.toFixed(2));
               $(this).fadeIn(fadeTime);
               recalculateCart();
             });
-            
-           console.log("RECALCULATING CART");
-           
-           
-            //recalculateCart();
-           
-            
-          //    // update totals
-          //   var all = $(".product-total-price").map(function() {
-          //     console.log("BEFORE ALL", this.innerHTML);
-          //     return parseFloat(this.innerHTML);
-          //   }).get();
-            
-          //   console.log("All", all)
-           
-          //  var subTotal = all.reduce((a,b) => a + b, 0);
-            
-          //  console.log("SUB TOTAL",  subTotal);
-          
-          //   var tax = subTotal * taxRate;
-          //   var shipping = (subTotal > 0 ? shippingRate : 0);
-          //   var total = subTotal + tax + shipping;
-            
-          //   // update totals 
-          //   $('.final-amounts').fadeOut(fadeTime, function() {
-          //     $('.subtotal-amount').text(subTotal.toFixed(2));
-          //     $('.tax-amount').text(tax.toFixed(2));
-          //     $('.shipping-amount').text(shipping.toFixed(2));
-          //     $('.grand-total-amount').text(total.toFixed(2));
-              
-          //     if(total == 0) {
-          //       $('.checkout-btn').fadeOut(fadeTime);
-          //     } else {
-          //       $('.checkout').fadeIn(fadeTime);
-          //     }
-              
-          //     $('.final-amounts').fadeIn(fadeTime);
-          //   });
-            
-            
           });
           
           //recalculateBigShoppingCart()
-
           function recalculateCart() {
+
+            var taxRate = 0.05;
+            var shippingRate = 15.00;
+           
             // update totals
             var all = $(".product-total-price").map(function() {
                 console.log("THIS", this.innerHTML);
@@ -299,7 +228,7 @@ $(document).ready(function() {
 
         });
 
-    };
+    }; // end of shopping cart.html
 
     if($('body').hasClass('CheckoutPage')) {
         var totalPrice = decodeURIComponent(GetURLParameter("total-price"));
@@ -313,9 +242,9 @@ $(document).ready(function() {
     
 
 
-    cartItems = [];
-    var itemCount = 0;
-    var priceTotal = 0.00;
+   // cartItems = [];
+    //var itemCount = 0;
+    //var priceTotal = 0.00;
 
     document.getElementById("shopping-cart-icon").addEventListener('click', function() {
         document.getElementById("cart-box").style.width = "250px";
@@ -543,15 +472,15 @@ $(document).ready(function() {
     
                     // recalculate cart total
     
-                    var price = parseInt(productFromDatabase.price.replace("$", ""));
-                    console.log("Old total", priceTotal);
-                    priceTotal += price;
-                    console.log("New total", priceTotal);
-                    $("#cart-total").text("$"+priceTotal.toFixed(2));
+                    // var price = parseInt(productFromDatabase.price.replace("$", ""));
+                    // console.log("Old total", priceTotal);
+                    // priceTotal += price;
+                    // console.log("New total", priceTotal);
+                    // $("#cart-total").text("$"+priceTotal.toFixed(2));
                     
                     //$("#itemCount").text(itemCount).css('display', 'block');
 
-                    //recalculateSmallCart();
+                    recalculateSmallCart();
 
                     // var totalItems = $('.items-column').find('.item-row').find('.quantity-price-row .item-quantity').text().match(/\d+/)[0].reduce(function(a, b) {
                     //     return a + b;
@@ -573,7 +502,7 @@ $(document).ready(function() {
 
 
             }
-            
+
         });
 
         // if we updated a quantity, we don't need to move on
@@ -601,15 +530,17 @@ $(document).ready(function() {
 
          shoppingCartColumn.appendChild(shoppingCartItem);
 
-         cartItems.push(shoppingCartItem);
+       //  cartItems.push(shoppingCartItem);
 
-         var idOfProduct = getIdOfCard($(this).parents().eq(2));
+        //  var idOfProduct = getIdOfCard($(this).parents().eq(2));
 
-         var productFromDatabase = products.find(x => x.id === parseInt(idOfProduct));
+        //  var productFromDatabase = products.find(x => x.id === parseInt(idOfProduct));
 
-         var price = parseInt(productFromDatabase.price.replace("$", ""));
-         priceTotal += price;
-         $("#cart-total").text("$"+priceTotal.toFixed(2));
+        //  var price = parseInt(productFromDatabase.price.replace("$", ""));
+        //  priceTotal += price;
+        //  $("#cart-total").text("$"+priceTotal.toFixed(2));
+
+        recalculateSmallCart();
 
         // recalculateSmallCart();
          
@@ -622,14 +553,20 @@ $(document).ready(function() {
 
         console.log("adfadf", $('.items-column').children());
 
-        $('.items-column').children().each(function(i, div) {
         
-            var cartItemPrice =  parseFloat($(this).find('.item-price').text().replace("$", ""));
+        $('.items-column').children().each(function(i, div) {
+
+            // if we don't have this, we get a null
+            if($(this).children().children().hasClass('quantity-price-row')) { 
+                var cartItemPrice =  parseFloat($(this).find('.item-price').text().replace("$", ""));
             console.log("p", cartItemPrice);
             var cartItemQuantity =  parseInt($(this).find('.item-quantity').text().match(/\d+/)[0]);
             console.log("pq", cartItemQuantity);
             var tempPrice = cartItemPrice * cartItemQuantity;
             newTotalPrice = newTotalPrice + tempPrice;
+            }
+        
+            
         });
 
         console.log("NEW TOTAL IS", newTotalPrice);
@@ -680,21 +617,24 @@ $(document).ready(function() {
         
         // update cart quantity indicator
         // get just the number
-        itemCount = itemCount - $(this).parents().eq(0).find('.item-quantity').text().match(/\d+/)[0];
-        console.log("NEW ITEM COUNT", itemCount);
-        $('#itemCount').text(itemCount);
-    
-        // update cart quantity indicator
-        // itemCount--;
+        // itemCount = itemCount - $(this).parents().eq(0).find('.item-quantity').text().match(/\d+/)[0];
+        // console.log("NEW ITEM COUNT", itemCount);
         // $('#itemCount').text(itemCount);
+    
+        // // update cart quantity indicator
+        // // itemCount--;
+        // // $('#itemCount').text(itemCount);
 
-        // remove cost of deleted item from the total cart price 
-        priceTotal -= priceOfItem;
-        $("#cart-total").text("$" + priceTotal);
+        // // remove cost of deleted item from the total cart price 
+        // priceTotal -= priceOfItem;
+        // $("#cart-total").text("$" + priceTotal);
 
-        if(itemCount == 0) {
-            $('#itemCount').css('display', 'none');
-        }
+        // if(itemCount == 0) {
+        //     $('#itemCount').css('display', 'none');
+        // }
+
+
+        recalculateSmallCart();
 
     });
 
