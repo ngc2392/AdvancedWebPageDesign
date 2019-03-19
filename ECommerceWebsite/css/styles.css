@@ -18,6 +18,12 @@ html, body {
     overflow-x: hidden;
 }
 
+/* ----------------------------------------------- */
+
+/* HOME PAGE */
+
+/* ----------------------------------------------- */
+
 header {
     /* position header text relative to header, not body*/
     position: relative;
@@ -96,11 +102,11 @@ header div {
 /* NAVIGATION */
 
 /* ----------------------------------------------- */
-
+/* 
 #menu {
     position: relative;
     left: 15px;
-}
+} */
 
 #closeButton {
     position: absolute;
@@ -174,15 +180,17 @@ header div {
     font-size: 40%;
 }
 
-/*shopping cart*/
+
+/* ----------------------------------------------- */
+
+/* PRODUCTS PAGE */
+
+/* ----------------------------------------------- */
 
 .fa-shopping-cart {
     color: #000;
     right: 180px;
-
 }
-
-
 
 /*so that #itemCount can be positioned absolutely, relative to its parent*/
 .icon-container {
@@ -203,21 +211,30 @@ header div {
     background: red;
     color: white;
     text-align: center;
+}
 
+#blackOut {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* make it higher than everything else, except for shopping cart box */
+    z-index: 10;
+    display: none;
+    background-color: rgba(0,0,0,0.4);
 }
 
 /*disable scrolling*/
-
 /*https://stackoverflow.com/questions/6554245/need-to-prevent-user-from-manually-scrolling-a-web-page-only-navigate-using-in*/
-
 .overflow-hidden {
     overflow: hidden;
 }
 
+/* small shopping cart */
 .cart-box {
     height: 100%;
     display: block;
-
     width: 0;
     position: fixed;
     /*make it higher than #blackOut*/
@@ -296,8 +313,8 @@ header div {
     margin: 0 auto;
 }
 
-.item-quantity {
-}
+/* .item-quantity {
+} */
 
 .item-row .fa-times {
     position: absolute;
@@ -309,28 +326,14 @@ header div {
     color: red;
 }
 
-.add_item {
+/* .add_item {
     position: absolute;
     left: 50%;
-}
+    border: 2px solid orchid;
+} */
 
-#blackOut {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    display: none;
-    background-color: rgba(0,0,0,0.4);
-}
-
-/* ----------------------------------------------- */
 
 /* Filters */
-
-/* ----------------------------------------------- */
-
 .filters-box {
     position: relative;
     background-color: red;
@@ -423,6 +426,7 @@ header div {
 
 /* ----------------------------------------------- */
 
+/* Clear and Done buttons */
 .clear-done-btns-wrapper {
     display: flex;
     flex-direction: row;
@@ -445,7 +449,7 @@ header div {
     padding: 10px;
 }
 
-.clear-done-btns-wrapper div:first-child:hover {}
+/* .clear-done-btns-wrapper div:first-child:hover {} */
 
 .clear-done-btns-wrapper div:nth-child(2) {
     flex-grow: 2;
@@ -468,8 +472,6 @@ header div {
     margin-left: 250px;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
-/*products.html*/
 
 .image-container {
     position: relative;
@@ -508,7 +510,6 @@ header div {
 }
 
 /*Grows with the content.  Add some padding*/
-
 .container {
     position: relative;
     padding: 20px 16px;
@@ -603,7 +604,11 @@ header div {
     color: orange;
 }
 
-/* shopping_cart.html */
+/* ----------------------------------------------- */
+
+/* SHOPPING CART PAGE */
+
+/* ----------------------------------------------- */
 
 
 .shopping-cart .product-row {
@@ -636,7 +641,7 @@ header div {
       line-height: 1.4em;
   }
   
-  .product-total-price {
+  .product-row .product-total-price {
     
   }
 
@@ -712,7 +717,11 @@ header div {
     cursor: pointer;
 }
 
-/* checkout.html */
+/* ----------------------------------------------- */
+
+/* CHECKOUT PAGE */
+
+/* ----------------------------------------------- */
 
 .order-summary {
     border: 2px solid green;
@@ -1075,7 +1084,11 @@ input:focus+label {
 }
  */
 
- /*thankyou.html*/
+ /* ----------------------------------------------- */
+
+/* THANK YOU PAGE  */
+
+/* ----------------------------------------------- */
 
  .thank_you_wrapper {
     margin-left: 250px;
@@ -1095,7 +1108,11 @@ input:focus+label {
     color: #00cc00;
 }
 
- /* contact.html */
+/* ----------------------------------------------- */
+
+/* CONTACT PAGE */
+
+/* ----------------------------------------------- */
 
 
  .grid-wrapper {
