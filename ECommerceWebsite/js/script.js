@@ -557,14 +557,17 @@ $(document).ready(function() {
 
 
     $('.filters-done-btn').on('click', function() {
+        // get all the boxes that have been clicked by the user
         var clickedBoxes = $('.filters-box-content').find('.filters-options-box-clicked');
         console.log("Clicked boxes", clickedBoxes);
 
         var filters=[];
 
+        // go through each div in the array
         jQuery.each(clickedBoxes, function(index, item) {
             console.log("ITEM", item);
              // https://stackoverflow.com/a/6623263/9599554
+             // put the text of each box into the array
             var itemText = $(item).text().replace(/ /g, '').toLowerCase();
             filters.push(itemText);
         });
@@ -579,12 +582,14 @@ $(document).ready(function() {
     
         var results = [];
 
-        // go through all the text of filter values.  
+        // go through all the text of filter values.
         jQuery.each(filterValues, function(indexInArray, value) {
-            // set tempResults equal to obj if item in database is equal to the filter value
+            // set tempResults equal to obj if item in database is equal to the filter values
             var tempResults = products.filter(obj => {
                 // white space was making the strings not equal
-                return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
+                //return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
+                return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'') ||
+                obj.roast_level.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
             });
             results = results.concat(tempResults);
             console.log("FILTERS CONCAT", results);

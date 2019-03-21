@@ -206,6 +206,7 @@ header div {
 .fa-shopping-cart {
     color: #000;
     right: 180px;
+    
 }
 
 /*so that #itemCount can be positioned absolutely, relative to its parent*/
@@ -214,6 +215,8 @@ header div {
     right: 180px;
     /* border:2px solid red; */
     padding: 25px;
+    /*get above grid-items*/
+    z-index: 3;
 }
 
 #itemCount {
@@ -353,6 +356,8 @@ header div {
 .filters-box {
     position: relative;
     background-color: red;
+       /*get it above grid items*/
+       z-index: 3;
 }
 
 .filters-btn {
@@ -375,9 +380,7 @@ header div {
     /* height: 500px; */
     padding-bottom: 25px;
     background-color: #FFFFFF;
-    display: none;
-    z-index: 3;
-    /*get it above grid items*/
+    display: none;    
 }
 
 .filters-box-content label {
@@ -1325,6 +1328,11 @@ header div {
     /* border: 2px solid red; */
     grid-column-start: 1;
     grid-column-end: 7;
+    margin-left: 10px;
+  }
+
+  .content .article-info h3 {
+      text-align: center;
   }
   
   .related-articles {
@@ -1333,6 +1341,6 @@ header div {
       width: 100%;
       grid-column-start: 7;
       grid-column-end: 9;
-      align-items: end;
+    
       
   }
