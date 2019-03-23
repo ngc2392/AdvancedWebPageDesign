@@ -252,7 +252,8 @@ $(document).ready(function() {
             // get total price 
             var totalPrice = $('.grand-total-amount').text();
             var send = encodeURIComponent(JSON.stringify(totalPrice));
-            var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/checkout.html?total-price=" + send;        
+            //var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/checkout.html?total-price=" + send;        
+            var url = "./checkout.html?total-price=" + send;   
             var element = document.getElementById('big-shopping-cart-checkout-btn-wrapper-link');
             element.setAttribute("href",url);
 
@@ -406,7 +407,8 @@ $(document).ready(function() {
         console.log("SENDING", arrayToSend);
 
         var arraySend = encodeURIComponent(JSON.stringify(arrayToSend));
-        var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/shopping_cart.html?data-array=" + arraySend;        
+        //var url = "file:///Users/LoganPhillips/Desktop/AdvancedWebDesign/ECommerceWebsite/shopping_cart.html?data-array=" + arraySend;        
+        var url = "./shopping_cart.html?data-array=" + arraySend;        
         var element = document.getElementById('checkout-btn-link');
         element.setAttribute("href",url)
 
