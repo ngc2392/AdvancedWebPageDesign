@@ -1417,6 +1417,7 @@ header .header-text {
 
   .blog_wrapper .content .article-info h3 {
       text-align: center;
+      font-size: 40px;
   }
 
   .blog_wrapper .paragraph-heading {
@@ -1426,11 +1427,15 @@ header .header-text {
 }
   
   .related-articles {
-      /* border: 2px solid blue; */
+      border: 2px solid blue;
+      text-align: center;
+      /*centers vertically*/
+      /* align-self: center; */
       /*have it take up all the columns*/
       width: 100%;
       grid-column-start: 7;
       grid-column-end: 9;
+      
     
       
   }
