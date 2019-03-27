@@ -1408,16 +1408,22 @@ header .header-text {
      grid-template-columns: repeat(8, 1fr);
   }
   
-  .content {
+  .blog_wrapper .content {
     /* border: 2px solid red; */
     grid-column-start: 1;
     grid-column-end: 7;
     margin-left: 10px;
   }
 
-  .content .article-info h3 {
+  .blog_wrapper .content .article-info h3 {
       text-align: center;
   }
+
+  .blog_wrapper .paragraph-heading {
+    font-size: 36px;
+    font-weight: 900;
+    color: #333;
+}
   
   .related-articles {
       /* border: 2px solid blue; */
