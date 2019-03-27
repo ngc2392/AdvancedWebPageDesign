@@ -35,7 +35,7 @@ header {
     margin-left: 250px;
 }
 
-header div {
+header .header-text {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -194,6 +194,30 @@ header div {
     position: absolute;
     bottom: 80px;
     font-size: 40%;
+}
+
+/* ----------------------------------------------- */
+
+/* ABOUT PAGE */
+
+/* ----------------------------------------------- */
+
+.about_page_wrapper header  {
+    position: relative;
+    background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../coming-soon.jpg);
+	background-attachment: fixed;
+    height: 100vh;
+    margin-left: 250px;
+}
+
+.about_page_wrapper header div {
+   position: relative;
+   display: flex;
+   justify-content: center;
+    font-size: 120px;
+    color: #fff;
 }
 
 
@@ -953,28 +977,28 @@ header div {
 
 /* payment form */
 
-.payment-form .heading h1 {
+.payment-wrapper .payment-form .heading h1 {
     border-bottom: 2px solid #FFF;
     padding-bottom: 15px;
 }
 
-.form-container .field-container:first-of-type {
+.payment-wrapper .form-container .field-container:first-of-type {
     grid-area: name;
   }
   
-  .form-container .field-container:nth-of-type(2) {
+  .payment-wrapper .form-container .field-container:nth-of-type(2) {
     grid-area: number;
   }
   
-  .form-container .field-container:nth-of-type(3) {
+  .payment-wrapper .form-container .field-container:nth-of-type(3) {
     grid-area: expiration;
   }
   
-  .form-container .field-container:nth-of-type(4) {
+  .payment-wrapper .form-container .field-container:nth-of-type(4) {
     grid-area: security;
   }
   
-  .form-container {
+  .payment-wrapper .form-container {
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: auto;
@@ -985,13 +1009,13 @@ header div {
     color: #707070;
   }
   
-  label {
+  .payment-wrapper label {
     padding-bottom: 5px;
     font-size: 13px;
   }
 
  
-  .field-container input {
+  .payment-wrapper .field-container input {
     box-sizing: border-box;
     margin-top: 3px;
     padding: 15px;
@@ -1006,17 +1030,11 @@ header div {
 }
   
 
-  .field-container input:focus {
-
-  }
-
-.form-container .field-container input:focus {
+.payment-wrapper .form-container .field-container input:focus {
     outline: none !important;
     border-color: #69B692 !important;
     box-shadow: 0 0 10-px #719ECE;
 }
-
-
 
 
 /*DONT NEED BELOW*/
