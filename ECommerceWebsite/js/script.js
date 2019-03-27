@@ -286,14 +286,15 @@ $(document).ready(function() {
             var billingInfoPhone = $('.billingInfoForm .phone_box input').val();
             var billingInfoAddress  = $('.billingInfoForm .address_box input').val();
 
-            var creditCardFullName = $('.creditCardForm .cardholder_name_box input').val();
-            var creditCardNumber = $('.creditCardForm .card_number_box input').val();
-            var creditCardCVV = $('.creditCardForm .cvv input').val();
+            var creditCardFullName = $("#payment-form-name").val();
+            var creditCardNumber = $("#payment-card-number").val();
+            var creditCardExpiration = $("#payment-expiration").val();
+            var creditCardCVV = $("#payment-security-code").val();
 
             // check for empty fields in shipping info
             if(!shippingInfoFirstName || !shippingInfoLastName || !shippingInfoPhone || !shippingInfoAddress 
                 || !billingInfoFirstName || !billingInfoLastName || !billingInfoPhone || !billingInfoAddress || !creditCardFullName
-                || !creditCardNumber || !creditCardCVV) {
+                || !creditCardNumber || !creditCardExpiration || !creditCardCVV) {
                     alert("Please make sure all fields are filled in.");
                     return false;
                 } else {

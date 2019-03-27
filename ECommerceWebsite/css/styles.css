@@ -953,7 +953,73 @@ header div {
 
 /* payment form */
 
+.payment-form .heading h1 {
+    border-bottom: 2px solid #FFF;
+    padding-bottom: 15px;
+}
 
+.form-container .field-container:first-of-type {
+    grid-area: name;
+  }
+  
+  .form-container .field-container:nth-of-type(2) {
+    grid-area: number;
+  }
+  
+  .form-container .field-container:nth-of-type(3) {
+    grid-area: expiration;
+  }
+  
+  .form-container .field-container:nth-of-type(4) {
+    grid-area: security;
+  }
+  
+  .form-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto;
+    grid-template-rows: 90px 90px 90px;
+    grid-template-areas: "name name" "number number" "expiration security";
+    max-width: 400px;
+    padding: 20px;
+    color: #707070;
+  }
+  
+  label {
+    padding-bottom: 5px;
+    font-size: 13px;
+  }
+
+ 
+  .field-container input {
+    box-sizing: border-box;
+    margin-top: 3px;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: #FFF;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+  
+
+  .field-container input:focus {
+
+  }
+
+.form-container .field-container input:focus {
+    outline: none !important;
+    border-color: #69B692 !important;
+    box-shadow: 0 0 10-px #719ECE;
+}
+
+
+
+
+/*DONT NEED BELOW*/
 .creditCardForm {
     /* width: 700px; */
     /* background-color: #282A2C; */
@@ -1049,7 +1115,7 @@ header div {
     position: absolute;
     top: 0;
 }
-
+/*DONT NEED ABOVE*/
 
 
 
