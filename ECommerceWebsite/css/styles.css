@@ -35,7 +35,7 @@ header {
     margin-left: 250px;
 }
 
-header div {
+header .header-text {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -194,6 +194,30 @@ header div {
     position: absolute;
     bottom: 80px;
     font-size: 40%;
+}
+
+/* ----------------------------------------------- */
+
+/* ABOUT PAGE */
+
+/* ----------------------------------------------- */
+
+.about_page_wrapper header  {
+    position: relative;
+    background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../coming-soon.jpg);
+	background-attachment: fixed;
+    height: 100vh;
+    margin-left: 250px;
+}
+
+.about_page_wrapper header div {
+   position: relative;
+   display: flex;
+   justify-content: center;
+    font-size: 120px;
+    color: #fff;
 }
 
 
@@ -356,12 +380,13 @@ header div {
 .filters-box {
     position: relative;
     background-color: red;
-       /*get it above grid items*/
-       z-index: 3;
+    /*get it above grid items*/
+    z-index: 3;
 }
 
 .filters-btn {
     position: fixed;
+    top: 15px;
     right: 15px;
     width: 120px;
     height: 30px;
@@ -373,14 +398,18 @@ header div {
 }
 
 .filters-box-content {
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 50px;
     right: 5px;
     width: 300px;
     /* height: 500px; */
     padding-bottom: 25px;
     background-color: #FFFFFF;
-    display: none;    
+    display: none;
+    /*get it above grid items*/
+    z-index: 3; 
+   
 }
 
 .filters-box-content label {
@@ -808,6 +837,11 @@ header div {
     padding-bottom: 15px;
 }
 
+.shippingInfoForm .content, 
+.billingInfoForm .content {
+    margin-top: 20px;
+}
+
 .shippingInfoForm .content input {
     width: 100%;
     box-sizing: border-box;
@@ -953,7 +987,67 @@ header div {
 
 /* payment form */
 
+.payment-wrapper .payment-form .heading h1 {
+    border-bottom: 2px solid #FFF;
+    padding-bottom: 15px;
+}
 
+.payment-wrapper .form-container .field-container:first-of-type {
+    grid-area: name;
+  }
+  
+  .payment-wrapper .form-container .field-container:nth-of-type(2) {
+    grid-area: number;
+  }
+  
+  .payment-wrapper .form-container .field-container:nth-of-type(3) {
+    grid-area: expiration;
+  }
+  
+  .payment-wrapper .form-container .field-container:nth-of-type(4) {
+    grid-area: security;
+  }
+  
+  .payment-wrapper .form-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto;
+    grid-template-rows: 90px 90px 90px;
+    grid-template-areas: "name name" "number number" "expiration security";
+    max-width: 400px;
+    padding: 20px;
+    color: #707070;
+  }
+  
+  .payment-wrapper label {
+    padding-bottom: 5px;
+    font-size: 13px;
+  }
+
+ 
+  .payment-wrapper .field-container input {
+    box-sizing: border-box;
+    margin-top: 3px;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: #FFF;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+  
+
+.payment-wrapper .form-container .field-container input:focus {
+    outline: none !important;
+    border-color: #69B692 !important;
+    box-shadow: 0 0 10-px #719ECE;
+}
+
+
+/*DONT NEED BELOW*/
 .creditCardForm {
     /* width: 700px; */
     /* background-color: #282A2C; */
@@ -1049,7 +1143,7 @@ header div {
     position: absolute;
     top: 0;
 }
-
+/*DONT NEED ABOVE*/
 
 
 
@@ -1324,23 +1418,44 @@ header div {
      grid-template-columns: repeat(8, 1fr);
   }
   
-  .content {
+  .blog_wrapper .content {
     /* border: 2px solid red; */
     grid-column-start: 1;
     grid-column-end: 7;
     margin-left: 10px;
   }
 
-  .content .article-info h3 {
+  .blog_wrapper .content .article-info h3 {
       text-align: center;
+      font-size: 40px;
   }
+
+  .blog_wrapper .paragraph-heading {
+    font-size: 36px;
+    font-weight: 900;
+    color: #333;
+}
   
   .related-articles {
       /* border: 2px solid blue; */
+      text-align: center;
+      /*centers vertically*/
+      /* align-self: center; */
       /*have it take up all the columns*/
       width: 100%;
       grid-column-start: 7;
       grid-column-end: 9;
-    
       
+  }
+
+  .related-articles h4 {
+      margin-top: 15px;
+  }
+
+  .related-articles div:first-of-type {
+    margin-top: 40px;
+}
+
+  .related-articles div {
+      margin-bottom: 40px;
   }

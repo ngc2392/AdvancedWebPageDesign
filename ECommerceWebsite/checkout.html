@@ -118,7 +118,7 @@
                                </div>
                             
                                <div class="phone_box">
-                                    <input type="text" name="phone" id="phone">
+                                    <input id="billing-info-phone-number"type="text" name="phone" id="phone">
                                     <label for="phone">Phone</label>
                                </div>
                     
@@ -134,7 +134,7 @@
                     
                     </div>
 
-
+<!--
                     <div class="creditCardForm">
                             <div class="heading">
                                 <h1>Payment info</h1>
@@ -197,7 +197,40 @@
                         
                         
                         </div>
+                    -->
 
+                    <div class="payment-form">
+                            <div class="heading">
+                                 <h1>Card Info</h1>
+                            </div>
+
+                            <div class="form-container">
+
+                                    <div class="field-container">
+                                        <label>Name</label>
+                                        <input id="payment-form-name" type="text">
+                                    </div>
+            
+                                    <div class="field-container">
+                                        <label>Card Number</label>
+                                        <input id="payment-card-number" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+            
+                                    <div class="field-container">
+                                        <label>Expiration (mm/yy)</label>
+                                        <input id="payment-expiration" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+            
+                                    <div class="field-container">
+                                        <label>Security Code</label>
+                                        <input id="payment-security-code" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+            
+                                </div>
+
+                    </div>
+
+                    
 
     </div>
 
@@ -210,7 +243,9 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>	
+   
     <!-- Our own scripts should always be the last ones we call -->
 	<script src="js/script.js"></script>
 

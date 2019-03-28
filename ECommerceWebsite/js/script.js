@@ -270,6 +270,52 @@ $(document).ready(function() {
             $('.checkout-total-price-summary').text("$"+totalPrice.replace(/"/g,""));
         });
 
+        //masks
+
+        // https://unmanner.github.io/imaskjs/
+        
+        const billingInfoPhoneNumber = document.getElementById('billing-info-phone-number');
+        
+        const cardNameElement = document.getElementById('payment-form-name');
+        const cardNumberElement = document.getElementById('payment-card-number');
+        const expirationDateElement = document.getElementById('payment-expiration');
+        const securityCodeElement = document.getElementById('payment-security-code');
+
+        var billingInfoPhoneNumberMask = new IMask(billingInfoPhoneNumber, {
+            mask: '+{7}(000)000-0000'
+        });
+
+        // https://stackoverflow.com/questions/4244109/regular-expression-to-accept-only-characters-a-z-in-a-textbox
+        var cardNameMask = new IMask(cardNameElement, {
+            mask: /^[a-zA-Z]+$/
+        });
+
+        var cardNumberMask = new IMask(cardNumberElement, {
+            mask: '0000 0000 0000'
+        });
+
+        var expirationDateMask = new IMask(expirationDateElement, {
+            mask: 'MM{/}YY',
+            blocks: {
+                YY: {
+                    mask: IMask.MaskedRange, 
+                    from: 0,
+                    to: 99
+                }, 
+
+                MM: {
+                    mask: IMask.MaskedRange,
+                    from: 1, 
+                    to: 12
+                }
+            }
+          
+        });
+
+        var securityCodeMask = new IMask(securityCodeElement, {
+            mask: '000'
+        });
+
         // check for empty fields 
         $('#final-checkout-btn-wrapper-link').on('click', function() {
 
@@ -286,18 +332,19 @@ $(document).ready(function() {
             var billingInfoPhone = $('.billingInfoForm .phone_box input').val();
             var billingInfoAddress  = $('.billingInfoForm .address_box input').val();
 
-            var creditCardFullName = $('.creditCardForm .cardholder_name_box input').val();
-            var creditCardNumber = $('.creditCardForm .card_number_box input').val();
-            var creditCardCVV = $('.creditCardForm .cvv input').val();
+            var creditCardFullName = $("#payment-form-name").val();
+            var creditCardNumber = $("#payment-card-number").val();
+            var creditCardExpiration = $("#payment-expiration").val();
+            var creditCardCVV = $("#payment-security-code").val();
 
             // check for empty fields in shipping info
             if(!shippingInfoFirstName || !shippingInfoLastName || !shippingInfoPhone || !shippingInfoAddress 
                 || !billingInfoFirstName || !billingInfoLastName || !billingInfoPhone || !billingInfoAddress || !creditCardFullName
-                || !creditCardNumber || !creditCardCVV) {
+                || !creditCardNumber || !creditCardExpiration || !creditCardCVV) {
                     alert("Please make sure all fields are filled in.");
                     return false;
                 } else {
-                    alert("SUCCESS");
+                    //alert("SUCCESS");
                 }
 
     
