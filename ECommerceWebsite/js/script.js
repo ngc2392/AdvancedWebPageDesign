@@ -344,7 +344,7 @@ $(document).ready(function() {
                     alert("Please make sure all fields are filled in.");
                     return false;
                 } else {
-                    alert("SUCCESS");
+                    //alert("SUCCESS");
                 }
 
     

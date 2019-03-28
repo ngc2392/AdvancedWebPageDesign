@@ -380,12 +380,13 @@ header .header-text {
 .filters-box {
     position: relative;
     background-color: red;
-       /*get it above grid items*/
-       z-index: 3;
+    /*get it above grid items*/
+    z-index: 3;
 }
 
 .filters-btn {
     position: fixed;
+    top: 15px;
     right: 15px;
     width: 120px;
     height: 30px;
@@ -397,14 +398,18 @@ header .header-text {
 }
 
 .filters-box-content {
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 50px;
     right: 5px;
     width: 300px;
     /* height: 500px; */
     padding-bottom: 25px;
     background-color: #FFFFFF;
-    display: none;    
+    display: none;
+    /*get it above grid items*/
+    z-index: 3; 
+   
 }
 
 .filters-box-content label {
@@ -830,6 +835,11 @@ header .header-text {
 .shippingInfoForm h1 {
     border-bottom: 2px solid #FFF;
     padding-bottom: 15px;
+}
+
+.shippingInfoForm .content, 
+.billingInfoForm .content {
+    margin-top: 20px;
 }
 
 .shippingInfoForm .content input {
@@ -1427,7 +1437,7 @@ header .header-text {
 }
   
   .related-articles {
-      border: 2px solid blue;
+      /* border: 2px solid blue; */
       text-align: center;
       /*centers vertically*/
       /* align-self: center; */
@@ -1436,6 +1446,16 @@ header .header-text {
       grid-column-start: 7;
       grid-column-end: 9;
       
-    
-      
+  }
+
+  .related-articles h4 {
+      margin-top: 15px;
+  }
+
+  .related-articles div:first-of-type {
+    margin-top: 40px;
+}
+
+  .related-articles div {
+      margin-bottom: 40px;
   }
