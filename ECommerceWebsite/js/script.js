@@ -97,10 +97,20 @@ $(document).ready(function() {
 
 
     if($('body').hasClass('DropDown_Page_Wrapper')) {
+        $("#dropDown").append($("<option></option>").val("ALL").html("ALL"));
         $.each(products, function (key, value) {
-            $("#dropDown").append($("<option></option>").val(value.name).html(value.name));
+            $("#dropDown").append($("<option></option>").val(value.region).html(value.region));
         });
+        
+        $("#dropDown").change(function () {
+           // alert($(this).val());
+          
+           
+           filterProducts($(this).val());
+           
 
+        });
+        
         document.getElementById("shopping-cart-icon").addEventListener('click', function() {
             document.getElementById("cart-box").style.width = "250px";
             $("#blackOut").show();
@@ -119,70 +129,7 @@ $(document).ready(function() {
                 //animation complete
             });
         });
-    
-        // fill filters box item when clicked
-        $('.filters-options-box').on('click', function(e) {
-            $(this).toggleClass('filters-options-box-clicked');
-            e.preventDefault();
-        });
-    
-        // clear the filters
-        $('.filters-clear-btn').on('click', function() {
-            clearFilters();
-            clearFiltersOnScreenText();
-        });
-    
-        $('.filters-done-btn').on('click', function() {
-            let x = document.getElementsByClassName('filters-options-box-clicked');
-            //console.log(x);
-    
-            // get the text that we are going to filter by 
-            let regionsFiltersText = [];
-            let roastLevelsText = [];
-    
-            for(var i = 0; i < x.length; i++) {
-               
-                if(x[i].parentNode.className === 'region-grid') { // going through region boxes
-                    regionsFiltersText.push(x[i].textContent);
-                } else if(x[i].parentNode.className === 'roast-level-row') { // going through roast levels
-                    roastLevelsText.push(x[i].textContent);
-                } 
-            }
-    
-            // insert filter text onto page 
-            let regionNode = document.getElementById('region-insert');
-            for(var i = 0; i < regionsFiltersText.length; i++) {
-                //console.log(regionsFiltersText[i]);
-                regionNode.innerHTML += regionsFiltersText[i];
-            }
-    
-            //console.log(regionNode);
-    
-            // filter roast levels text onto screen 
-            let roastLevelsNode = document.getElementById('roast-levels-insert');
-            for(var i = 0; i < roastLevelsText.length; i++) {
-                roastLevelsNode.innerHTML += " " + roastLevelsText[i];
-            }
-    
-        
-            $('.filters-box-content').toggle();
-            
-        });
-    
-        // clear all filters, get all products on page 
-        function clearFilters() {
-            let selectedFilters = document.getElementsByClassName('filters-options-box-clicked');
-            // https://stackoverflow.com/a/40001129/9599554
-            [].forEach.call(document.querySelectorAll('.filters-options-box-clicked'), function (el) {
-                el.classList.remove('filters-options-box-clicked');
-            });
-        }
-        // clear the filters text on screen
-        function clearFiltersOnScreenText() {
-            document.getElementById("region-insert").innerHTML = "";
-            document.getElementById("roast-levels-insert").innerHTML = "";
-        }
-    
+
         // send small shopping cart data when 
         $('.DropDown_Page_Wrapper .checkout-btn').on('click', function() {
     
@@ -342,59 +289,47 @@ $(document).ready(function() {
         });
     
     
-        $('.filters-done-btn').on('click', function() {
-            // get all the boxes that have been clicked by the user
-            var clickedBoxes = $('.filters-box-content').find('.filters-options-box-clicked');
-            console.log("Clicked boxes", clickedBoxes);
-    
-            var filters=[];
-    
-            // go through each div in the array
-            jQuery.each(clickedBoxes, function(index, item) {
-                console.log("ITEM", item);
-                 // https://stackoverflow.com/a/6623263/9599554
-                 // put the text of each box into the array
-                var itemText = $(item).text().replace(/ /g, '').toLowerCase();
-                filters.push(itemText);
-            });
-            console.log("FILTERS ARRAY", filters);
-            filterProducts(filters);
-        });
-    
         // https://codepen.io/adrianparr/pen/Eoydz
         // https://codepen.io/NickyCDK/pen/lhaiz?editors=1010
-        function filterProducts(filterValues) {
+        function filterProducts(filterValue) {
+            // need to delete all products and insert them back in.  If not, they don't position correctly.  The just stay in their original place.
             $('.products-grid').empty();
         
             var results = [];
     
-            // go through all the text of filter values.
-            jQuery.each(filterValues, function(indexInArray, value) {
-                // set tempResults equal to obj if item in database is equal to the filter values
-                var tempResults = products.filter(obj => {
-                    // white space was making the strings not equal
-                    //return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
-                    return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'') ||
-                    obj.roast_level.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
-                });
-                results = results.concat(tempResults);
-                console.log("FILTERS CONCAT", results);
+            console.log("FILTER VALUes", filterValue);
+
+            var tempResults = products.filter(obj => {
+                
+                // white space was making the strings not equal
+                //return obj.region.toLowerCase().replace(/\s/g,'') === value.replace(/\s/g,'');
+                return obj.region.toLowerCase().replace(/\s/g,'') === filterValue.toLowerCase().replace(/\s/g,'') 
             });
-    
+
+            console.log("DROP DOWN RESULT", tempResults);
+           
             // hide it so that we can apply an animation
             $('.products-grid').hide();
-            applyFilters(results);
+            applyFilters(tempResults);
             // now have filtered products show up
             $('.products-grid').delay(200).slideDown("fast");
     
             //https://stackoverflow.com/a/24403771/9599554
             // show everything
-            if(!Array.isArray(filterValues) || !filterValues.length) {
-               console.log("No filters will be applied");
-               $('.products-grid').hide();
-               applyFilters(products);
-               $('.products-grid').delay(200).slideDown("fast");
+
+            if(filterValue === "ALL") {
+                console.log("No filters will be applied");
+                $('.products-grid').hide();
+                applyFilters(products);
+                $('.products-grid').delay(200).slideDown("fast");
             }
+
+            // if(!Array.isArray(filterValue) || !filterValue.length) {
+            //    console.log("No filters will be applied");
+            //    $('.products-grid').hide();
+            //    applyFilters(products);
+            //    $('.products-grid').delay(200).slideDown("fast");
+            // }
     
         }
     
@@ -439,6 +374,7 @@ $(document).ready(function() {
     
     // show filtered items on screen
     var applyFilters = function(array) {
+        console.log("SENDING THE FOLLOWING", array);
         generateProductsList(array);
     };
     
