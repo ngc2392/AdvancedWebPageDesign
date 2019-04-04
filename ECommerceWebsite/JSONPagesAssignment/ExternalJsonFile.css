@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+
+* {
+    /* Get rid of initial stuff */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #C4C4C4;
+    color: #555;
+    font-weight: 300;
+    font-size: 20px;
+    /*When we make the browser smaller, the user won't be able to scroll horizontally*/
+    overflow-x: hidden;
+}
+
+/* ----------------------------------------------- */
+
+/* HOME PAGE */
+
+/* ----------------------------------------------- */
+
+header {
+    /* position header text relative to header, not body*/
+    position: relative;
+    background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../coffee-hero-image.jpg);
+	background-attachment: fixed;
+    height: 100vh;
+    margin-left: 250px;
+}
+
+header .header-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.home-page-wrapper {
+    margin-left: 250px;
+}
+
+.home-page-wrapper h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.home-page-wrapper .values-section {
+    padding-top: 25px;
+    padding-bottom: 100px;
+    background-color: #7E6060;
+}
+
+.home-page-wrapper .values-section h1 {
+    color: #C4C4C4;
+}
+
+.home-page-wrapper .intro-section {
+    padding: 25px 0;
+    background-color: #887D7D;
+}
+
+.home-page-wrapper .intro-text {
+    width: 60%;
+    /*center the text*/
+    margin: 0 auto;
+}  
+
+.home-page-wrapper .intro-section h1{
+    color: #C4C4C4;
+ }
+
+
+.home-page-wrapper .values-section .intro-text h4 {
+    
+    font-weight: 400;
+}
+
+.home-page-wrapper .values-section .values {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.home-page-wrapper .values-section .values .box {
+    background-color: #FFF;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    flex-basis: 20%;
+    padding: 25px;
+}
+
+.home-page-wrapper .values-section .values .box h6 {
+    text-align: center;
+    font-size: 120%;
+    margin-bottom: 15px;
+}
+
+.filters-summary {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+}
+
+.filters-summary h5 {}
+
+.filters-summary div {}
+
+/* ----------------------------------------------- */
+
+/* NAVIGATION */
+
+/* ----------------------------------------------- */
+/* 
+#menu {
+    position: relative;
+    left: 15px;
+} */
+
+#closeButton {
+    position: absolute;
+    right: 30px;
+}
+
+#closeButton:hover {
+    transform: rotate(90deg);
+    transition: .3s ease;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* margin-left: 15px; */
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-nav ul {
+    list-style: none;
+}
+
+.side-nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    /* transform: rotate(90deg); */
+    transform: translateX(10px);
+}
+
+.side-nav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.side-nav a:hover {
+    color: #f1f1f1;
+}
+
+.side-nav li a:link, .side-nav li a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    /* color: #fff; */
+    font-size: 90%;
+}
+
+.side-nav .copyright {
+    position: absolute;
+    bottom: 80px;
+    font-size: 40%;
+}
+
+/* ----------------------------------------------- */
+
+/* ABOUT PAGE */
+
+/* ----------------------------------------------- */
+
+.about_page_wrapper header  {
+    position: relative;
+    background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../coming-soon.jpg);
+	background-attachment: fixed;
+    height: 100vh;
+    margin-left: 250px;
+}
+
+.about_page_wrapper header div {
+   position: relative;
+   display: flex;
+   justify-content: center;
+    font-size: 120px;
+    color: #fff;
+}
+
+
+/* ----------------------------------------------- */
+
+/* PRODUCTS PAGE */
+
+/* ----------------------------------------------- */
+
+.fa-shopping-cart {
+    color: #000;
+    right: 180px;
+    
+}
+
+/*so that #itemCount can be positioned absolutely, relative to its parent*/
+.icon-container {
+    position: absolute;
+    right: 180px;
+    /* border:2px solid red; */
+    padding: 25px;
+    /*get above grid-items*/
+    z-index: 3;
+}
+
+#itemCount {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0px;
+    left: 0px;
+    width: 20px; 
+    border-radius: 70%;
+    background: red;
+    color: white;
+    text-align: center;
+}
+
+#blackOut {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* make it higher than everything else, except for shopping cart box */
+    z-index: 10;
+    display: none;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/*disable scrolling*/
+/*https://stackoverflow.com/questions/6554245/need-to-prevent-user-from-manually-scrolling-a-web-page-only-navigate-using-in*/
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* small shopping cart */
+.cart-box {
+    height: 100%;
+    display: block;
+    width: 0;
+    position: fixed;
+    /*make it higher than #blackOut*/
+    z-index: 11; 
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.cart-box h2 {
+    text-align: center;
+}
+
+.cart-box a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.cart-box a:hover {
+    color: #f1f1f1;
+}
+
+.cart-box .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    /* border: 2px solid red; */
+    cursor: pointer;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    background: #4CAF50;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+    padding: 12px;
+}
+
+.checkout-btn-container {
+    display: flex;
+    justify-items: center;
+}
+
+.remove_item {
+    align-self: flex-end;
+}
+
+.item-quantity {
+    color: #a5aebc;
+}
+
+.item-row {
+    /* display: flex; */
+    /*For the x button*/
+    position: relative;
+    border-top: 1px solid #e0e6ef;
+    padding: 15px;
+}
+
+.quantity-price-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    /*center div horizontally*/
+    margin: 0 auto;
+}
+
+/* .item-quantity {
+} */
+
+.item-row .fa-times {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+.item-row .fa-times:hover {
+    color: red;
+}
+
+/* .add_item {
+    position: absolute;
+    left: 50%;
+    border: 2px solid orchid;
+} */
+
+
+/* Filters */
+.filters-box {
+    position: relative;
+    background-color: red;
+    /*get it above grid items*/
+    z-index: 3;
+}
+
+.filters-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 120px;
+    height: 30px;
+    background-color: #3C2E2E;
+    text-align: center;
+    line-height: 30px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.filters-box-content {
+    /* position: absolute; */
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    width: 300px;
+    /* height: 500px; */
+    padding-bottom: 25px;
+    background-color: #FFFFFF;
+    display: none;
+    /*get it above grid items*/
+    z-index: 3; 
+   
+}
+
+.filters-box-content label {
+    display: inline-block;
+    /* background-color: red; */
+    margin-bottom: 5px;
+}
+
+.filters-box-content label:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+.filters-box-content label:nth-of-type(3) {
+    margin-top: 10px;
+}
+
+.filters-options-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width: 50px;
+    height: 20px;
+    border: 2px solid #000000;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.filters-options-box:hover {
+    background: #000000;
+    color: white;
+    transition: .3s
+}
+
+.filters-options-box-clicked {
+    background: #000000;
+    color: white;
+}
+
+.region-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-template-rows: 1fr 1fr;
+}
+
+.roast-level-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* ----------------------------------------------- */
+
+/* Select statement */
+
+/* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+
+/* Clear and Done buttons */
+
+/* ----------------------------------------------- */
+
+/* Clear and Done buttons */
+.clear-done-btns-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.clear-done-btns-wrapper div {
+    text-align: center;
+    cursor: pointer;
+}
+
+.clear-done-btns-wrapper div:first-child {
+    /*flex: is a shorthand for flex-grow ,flex-shrink, flex-basis*/
+    /*The flex-grow property specifies how much the item will grow relative to the rest of the flexible items inside the same container.*/
+    flex-grow: 2;
+    background-color: #faebd7;
+    padding: 10px;
+}
+
+/* .clear-done-btns-wrapper div:first-child:hover {} */
+
+.clear-done-btns-wrapper div:nth-child(2) {
+    flex-grow: 2;
+    background-color: #666666;
+    padding: 10px;
+}
+
+.clear-done-btns-wrapper div:nth-child(2):hover {
+    flex-grow: 2;
+    background-color: #8c8c8c;
+    padding: 10px;
+}
+
+.products-grid {
+    display: grid;
+    grid-gap: 15px;
+    justify-items: center;
+    position: relative;
+    top: 30%;
+    margin-left: 250px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.image-container {
+    position: relative;
+    /*for overlay*/
+    /* border: 2px solid red; */
+    width: 250px;
+    height: 205px;
+}
+
+.image-container img {
+    /* width: 206px;
+    height: 205px; */
+    /*Fill up image-container*/
+    width: 100%;
+    height: 100%;
+    /*https://stackoverflow.com/questions/34247337/object-fit-not-affecting-images*/
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.card {
+    position: relative;
+    /* Add shadows to create the "card" effect */
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    /* 5px rounded corners */
+    width: 250px;
+    /* border: 2px solid red; */
+}
+
+/*On mouse-over, add a deeper shadow*/
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*Grows with the content.  Add some padding*/
+.container {
+    position: relative;
+    padding: 20px 16px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.card:hover .overlay {
+    opacity: .8;
+}
+
+.add_to_cart_btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+    width: 172px;
+    opacity: 1;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+
+.add_to_cart_btn:hover {
+    background: #fff;
+    color: #48cfad;
+    cursor: pointer;
+}
+
+.card {
+    z-index: 2;
+    /* for firefox 31 */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #FDF6F6;
+}
+
+.product_name {
+    font-size: 20px;
+    color: #393c45;
+}
+
+.container>p {
+    font-size: 16px;
+    color: #b1b1b3;
+    padding: 2px 0 20px 0;
+}
+
+.container .product_price {
+    float: right;
+    color: #48cfad;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.container .product_description {
+    font-size: 12px;
+
+}
+
+.container .product_rating {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.container .product_weights {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 10px;
+}
+
+.container .product_rating .checked {
+    color: orange;
+}
+
+/* ----------------------------------------------- */
+
+/* SHOPPING CART PAGE */
+
+/* ----------------------------------------------- */
+
+
+.shopping-cart .product-row {
+ 
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    border-bottom: 1px solid #eee;
+    justify-items: center;
+  }
+  
+  
+  .shopping-cart .product-row .product-image  img {
+      width: 100px;
+      margin-left: 15px;
+  }
+  
+  .shopping-cart .product-row .product-details .product-title {
+      font-weight: 700;
+
+  }
+
+  .shopping-cart .product-row .product-details   {
+    grid-column: span 3;
+    margin-left: 15px;
+  }
+  
+  .shopping-cart .product-row .product-details .product-description  {
+      display: inline-block;
+      margin: 5px 20px 0px 0;
+      line-height: 1.4em;
+  }
+  
+  .product-row .product-total-price {
+    
+  }
+
+  .shopping-cart-page-wrapper  {
+      margin-left: 250px;
+  }
+
+  .shopping-cart-page-wrapper h1 {
+      text-align: center;
+  }
+  
+  .shopping-cart .product-row .product-quantity input {
+      width: 40px;
+  }
+  
+  .payment-totals {
+      /* border: 2px solid red; */
+    /*get to right side of screen*/
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .labels {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labels label {
+    font-size: 75%;
+
+  }
+  
+  .final-amounts {
+    justify-self: end;
+    font-size: 75%;
+    
+  }
+
+
+  .big-shopping-cart-checkout-btn-wrapper {
+      /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+      /*force it to a new row */
+      width: 100%;
+
+     
+  }
+
+  .big-shopping-cart-checkout-btn {
+      display: inline-block;
+      border: 0;
+      padding: 6px 25px;
+      background-color: #6b6;
+      color: #fff;
+      font-size: 25px;
+      border-radius: 3px;
+      cursor: pointer;
+  }
+
+  .big-shopping-cart-checkout-btn:hover {
+   
+}
+
+.remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}

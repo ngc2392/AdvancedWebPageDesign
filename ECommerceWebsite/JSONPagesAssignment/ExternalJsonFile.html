@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="utf-8">
+        <!--https://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working-->
+        <meta name="viewport" content="width=device-width">
+
+        
+        <link rel="stylesheet" type="text/css" href="ExternalJsonFile.css">
+        <link rel="stylesheet" type="text/css" href="css/queries.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   
+</head>
+   
+   
+    </head>
+
+<body class="ExternalJsonFile_Page_Wrapper">
+
+        <div id="blackOut"></div>
+
+        <!-- <i id="menu" class="fas fa-bars"></i> -->
+
+        <div class="side-nav" id="sideNav">
+
+                        <!-- <div id="closeButton" class="close-btn">&times</div> -->
+                        
+                        <ul>
+                    
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="products.html">Coffee</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="blog.html"">Blog</a></li>
+                    
+                    
+                    
+                        </ul>
+                    
+                        <div class="copyright"><p>Copyright &copy; 2019 by Logan Phillips. All rights reserved.</p>
+                        </div>
+                    
+                    </div>
+<div class="icon-container">
+        <i id="shopping-cart-icon" class="fas fa-shopping-cart"></i>
+        <div id="itemCount">0</div>
+</div>
+        
+<!-- swith name to 'small shopping cart' -->
+        <div id="cart-box" class="cart-box">
+                        <div id="close-btn" class="closebtn">&times;</div>
+                                        <h2>Cart</h2>
+                      
+                        <div class="items-column">
+                          <!-- <div class="item-row">
+                                
+                            <div class="item-quantity">
+                            </div>
+                            <div class="item-name">
+                            </div>
+                            
+                            <div class="remove_item">
+                              
+                            </div>
+                      
+                        <div class="item-price"></div>
+                                              
+            
+                              </div> -->
+
+                             
+
+                        </div>
+
+                        <div>Total price:</div>
+                        <div id="cart-total">$0.00</div>
+                        
+<div class="checkout-btn-container">
+
+        <a id="checkout-btn-link" href="#"><div class="checkout-btn">Checkout</div></a>
+
+</div>
+                              
+                              </div> <!-- cd-cart -->
+
+        <div class="filters-box">
+            <div class="filters-btn">
+                FILTERS
+            </div>
+            <div class="filters-box-content">
+                <label>Region</label>
+                <div class="region-grid">
+                    <div class="filters-options-box">
+                        Africa
+                    </div>
+
+                    <div class="filters-options-box">
+                            Arabia
+                    </div>
+
+                    <div class="filters-options-box">
+                            Central <br> America
+                    </div>
+
+                    <div class="filters-options-box">
+                            India
+                    </div>
+
+                    <div class="filters-options-box">
+                            South <br> America
+                    </div>
+
+                    <div class="filters-options-box">
+                            Indonesia 
+                    </div>
+
+            
+                </div>
+
+                <label>Roast Level:</label>
+                <div class="roast-level-row">
+                    <div class="filters-options-box">Light</div>
+                    <div class="filters-options-box">Medium</div>
+                    <div class="filters-options-box">Dark</div>
+
+                </div>
+
+
+                <label>Sort By:</label>
+
+                <div class="clear-done-btns-wrapper">
+                    <div class="filters-clear-btn">CLEAR</div>
+                    <div class="filters-done-btn">DONE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters-summary">
+            <h5>Filters selected:</h5>
+
+            Region:
+            <div id="region-insert"></div>
+            Roast level:
+            <div id="roast-levels-insert"></div>
+        
+        </div>
+
+<div class="products-grid">
+
+</div>
+        <!--
+          <div id="card-id" class="card" data-region="arabia" >
+                    <div class="image-container">
+                            <img src="https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" />
+                            <div class="overlay">
+
+                                    <div class="add_to_cart_btn">Add to Cart</div>
+                            </div>
+                    </div>
+
+                    <div class="container">
+
+                             <span class="product_price">$39</span>
+                            <span class="product_name">Scandavian Blend</span>
+                            <p>Roast Level: Medium</p>
+                            <span class="product_description"><i>Earthy, dark chocolate, medium body. From arabia</i></span>
+                            <div class="product_rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+
+                            </div>
+                            <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
+
+                    </div>
+    </div>
+
+    
+
+
+    
+    <div id="card2-id" class="card" data-region="indonesia">
+        <div class="image-container">
+                <img src="https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" />
+                <div class="overlay">
+
+                        <div class="add_to_cart_btn">Add to Cart</div>
+                </div>
+        </div>
+
+        <div class="container">
+
+
+
+                 <span class="product_price">$39</span>
+                <span class="product_name">Scandavian Blend</span>
+                <span class="roast_level">Roast Level: Dark</p>
+                <span class="product_description"><i>Earthy, dark chocolate, medium body. From indonesia</i></span>
+                <div class="product_rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+
+                </div>
+                <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
+
+        </div>
+</div>   
+
+
+
+    
+<div id="card3-id" class="card" data-region="africa">
+    <div class="image-container">
+            <img src="https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" />
+            <div class="overlay">
+
+                    <div class="add_to_cart_btn">Add to Cart</div>
+            </div>
+    </div>
+
+    <div class="container">
+
+
+
+             <span class="product_price">$39</span>
+            <span class="product_name">Scandavian Blend</span>
+            <p>Roast Level: Light</p>
+            <span class="product_description"><i>Earthy, dark chocolate, medium body. From africa.</i></span>
+            <div class="product_rating">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+            </div>
+            <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
+
+    </div>
+</div> 
+
+
+<div id="card4-id" class="card" data-region="southamerica">
+                <div class="image-container">
+                        <img src="https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" />
+                        <div class="overlay">
+            
+                                <div class="add_to_cart_btn">Add to Cart</div>
+                        </div>
+                </div>
+            
+                <div class="container">
+            
+            
+            
+                         <span class="product_price">$39</span>
+                        <span class="product_name">Scandavian Blend</span>
+                        <p>Roast Level: Light</p>
+                        <span class="product_description"><i>Earthy, dark chocolate, medium body. From southamerica.</i></span>
+                        <div class="product_rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+            
+                        </div>
+                        <span class="product_weights">Weights: 12oz, 3lb, 5lb</span>
+            
+                </div>
+            </div>
+
+</div> --> <!-- End of .products-grid -->
+      
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+    <!-- Our own scripts should always be the last ones we call -->
+	<script src="ExternalJsonFile.js"></script>
+
+</body>
+
+</html>

@@ -102,11 +102,10 @@ html, body {
 .DropDown_Page_Wrapper .dropDownWrapper {
     /*take into consideration the side nav*/
     margin-left: 250px;
-    border: 2px solid red;
     display: flex;
     justify-content: center;
     position: relative;
-    top: 25%;
+    top: 15%;
 }
 
 .DropDown_Page_Wrapper .icon-container {
@@ -270,7 +269,7 @@ html, body {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 30%;
+    top: 25%;
     margin-left: 250px;
 }
 
@@ -323,7 +322,6 @@ html, body {
   
   .product_info_wrapper {
     text-align: center;
-    border: 2px solid red;
   
   }
   
@@ -361,10 +359,9 @@ html, body {
     color: #FFFFFF;
     text-align: center;
     transition: all 0.15s;
-    
     margin: 0 auto;
-    
     cursor: pointer;
+    margin-bottom: 15px;
     /*https://stackoverflow.com/questions/4631765/why-cant-floated-elements-set-their-left-and-right-margins*/
   }
   
