@@ -1,0 +1,93 @@
+[
+    {
+        "id": 0,
+        "name": "Arabian Blend",
+        "region": "Arabia",
+        "roast_level": "Medium",
+        "price": "42.00",
+        "description": "Earthly, dark choclate, medium body.  From Arabia.",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+    }, {
+        "id": 1,
+        "name":"Scandavian Blend",
+        "region": "Indonesia",
+        "roast_level": "Dark",
+        "price": "75.50",
+        "description": "Earthly, dark choclate, medium body.  From Indonesia.",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+    }, {
+        "id": 2,
+        "name":"Driven House Blend",
+        "region": "India",
+        "roast_level": "Light",
+        "price": "25.00",
+        "description": "Earthly, dark choclate, medium body. From India.",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+    }, {
+        "id": 3,
+        "name":"Tanzanian Peaberry",
+        "region": "Africa",
+        "roast_level": "Light",
+        "price": "39.00",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+    }, {
+        "id": 4,
+        "name":"Ethiopian Harrar Coffee",
+        "region": "Africa",
+        "roast_level": "Light",
+        "price": "27.22",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+    }, {
+        "id": 5,
+        "name":"Ethiopian Yirgacheffe Coffee",
+        "region": "Africa",
+        "roast_level": "Light",
+        "price": "27.22",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg" 
+    }, {
+        "id": 6,
+        "name":"Kenya AA",
+        "region": "Africa",
+        "roast_level": "Light",
+        "price": "27.22",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+    }, {
+        "id": 7,
+        "name":"Delta Ground",
+        "region": "South America",
+        "roast_level": "Light",
+        "price": "27.22",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+    }, {
+        "id": 8,
+        "name":"Brown Gold",
+        "region": "South America",
+        "roast_level": "Light",
+        "price": "27.22",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+    }, {
+        "id": 9,
+        "name":"La Crema",
+        "region": "South America",
+        "roast_level": "Light",
+        "price": "27.22",
+        "description": "Rich and Intense with a swet outline.  From Africa",
+        "weights": "12oz, 3lb, 5lb",
+        "img_url": "https://www.drivencoffee.com/wp-content/uploads/2016/03/Scandinavian-Blend-coffee.jpg"
+    }
+]

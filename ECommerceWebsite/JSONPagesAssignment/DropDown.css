@@ -1,0 +1,377 @@
+* {
+    /* Get rid of initial stuff */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #C4C4C4;
+    color: #555;
+    font-weight: 300;
+    font-size: 20px;
+    /*When we make the browser smaller, the user won't be able to scroll horizontally*/
+    overflow-x: hidden;
+}
+
+/* ----------------------------------------------- */
+
+/* NAVIGATION */
+
+/* ----------------------------------------------- */
+/* 
+#menu {
+    position: relative;
+    left: 15px;
+} */
+
+#closeButton {
+    position: absolute;
+    right: 30px;
+}
+
+#closeButton:hover {
+    transform: rotate(90deg);
+    transition: .3s ease;
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* margin-left: 15px; */
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-nav ul {
+    list-style: none;
+}
+
+.side-nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    /* transform: rotate(90deg); */
+    transform: translateX(10px);
+}
+
+.side-nav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.side-nav a:hover {
+    color: #f1f1f1;
+}
+
+.side-nav li a:link, .side-nav li a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    /* color: #fff; */
+    font-size: 90%;
+}
+
+.side-nav .copyright {
+    position: absolute;
+    bottom: 80px;
+    font-size: 40%;
+}
+
+
+.DropDown_Page_Wrapper .dropDownWrapper {
+    /*take into consideration the side nav*/
+    margin-left: 250px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 15%;
+}
+
+.DropDown_Page_Wrapper .icon-container {
+    position: absolute;
+    right: 20px;
+    /* border:2px solid red; */
+    padding: 25px;
+    /*get above grid-items*/
+    z-index: 3;
+}
+
+.fa-shopping-cart {
+    color: #000;
+    right: 180px;
+    
+}
+
+/*so that #itemCount can be positioned absolutely, relative to its parent*/
+.icon-container {
+    position: absolute;
+    right: 180px;
+    /* border:2px solid red; */
+    padding: 25px;
+    /*get above grid-items*/
+    z-index: 3;
+}
+
+#itemCount {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0px;
+    left: 0px;
+    width: 20px; 
+    border-radius: 70%;
+    background: red;
+    color: white;
+    text-align: center;
+}
+
+#blackOut {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* make it higher than everything else, except for shopping cart box */
+    z-index: 10;
+    display: none;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/*disable scrolling*/
+/*https://stackoverflow.com/questions/6554245/need-to-prevent-user-from-manually-scrolling-a-web-page-only-navigate-using-in*/
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* small shopping cart */
+.cart-box {
+    height: 100%;
+    display: block;
+    width: 0;
+    position: fixed;
+    /*make it higher than #blackOut*/
+    z-index: 11; 
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.cart-box h2 {
+    text-align: center;
+}
+
+.cart-box a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.cart-box a:hover {
+    color: #f1f1f1;
+}
+
+.cart-box .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    /* border: 2px solid red; */
+    cursor: pointer;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    background: #4CAF50;
+    color: #FFF;
+    text-align: center;
+    border-radius: 3px;
+    padding: 12px;
+}
+
+.checkout-btn-container {
+    display: flex;
+    justify-items: center;
+}
+
+.remove_item {
+    align-self: flex-end;
+}
+
+.item-quantity {
+    color: #a5aebc;
+}
+
+.item-row {
+    /* display: flex; */
+    /*For the x button*/
+    position: relative;
+    border-top: 1px solid #e0e6ef;
+    padding: 15px;
+}
+
+.quantity-price-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    /*center div horizontally*/
+    margin: 0 auto;
+}
+
+/* .item-quantity {
+} */
+
+.item-row .fa-times {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+.item-row .fa-times:hover {
+    color: red;
+}
+
+/* .add_item {
+    position: absolute;
+    left: 50%;
+    border: 2px solid orchid;
+} */
+
+.products-column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25%;
+    margin-left: 250px;
+}
+
+.products-column > div {
+    margin: 15px;
+}
+
+/* Card */
+
+.card {
+    width: 800px;
+    /* width: 80%; */
+    height: 250px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+   
+  }
+  
+  .card .image-container {
+    width: 40%;
+    /*make it extend the full height of the parent container*/
+    height: 100%;
+   overflow: hidden;
+    /*https://css-tricks.com/all-about-floats/*/
+    float: left;  
+  }
+  
+  .content {
+    position: relative;
+    width: 60%;
+    background-color: gray;
+    height: 100%;
+    float: left;
+  }
+  
+  .content .product_info_wrapper span:first-child {
+    margin-top: 15px;
+  } 
+  
+  .content .product_info_wrapper span {
+    /*put them on their own line*/
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+  
+  .content h1 {
+    text-align: center;
+  }
+  
+  .product_info_wrapper {
+    text-align: center;
+  
+  }
+  
+  .product_info_wrapper .product_price {
+    font-size: 300%;
+  }
+  
+  .product_weights {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 75%;
+  }
+  
+  img {
+    /*https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container*/
+    width: 100%;
+    height: 100%;
+   object-fit: cover;
+  }
+  
+  .add_to_cart_btn {
+    
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform: translate(-50%);
+    
+    border: 2px solid #FFFFFF;
+    /*https://stackoverflow.com/questions/14831866/breaking-to-a-new-line-with-inline-block*/
+    display: table;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.15s;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-bottom: 15px;
+    /*https://stackoverflow.com/questions/4631765/why-cant-floated-elements-set-their-left-and-right-margins*/
+  }
+  
+  .add_to_cart_btn:hover {
+    color: #DDDDDD;
+    border-color: #DDDDDD;
+  }
+  
+  .add_to_cart_btn:active {
+    color: #BBBBBB;
+    border-color: #BBBBBB;
+  }
+  
