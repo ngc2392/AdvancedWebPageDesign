@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+
+* {
+    /* Get rid of initial stuff */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #C4C4C4;
+    color: #555;
+    font-weight: 300;
+    font-size: 20px;
+    /*When we make the browser smaller, the user won't be able to scroll horizontally*/
+    overflow-x: hidden;
+}
