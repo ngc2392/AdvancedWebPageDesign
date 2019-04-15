@@ -35,6 +35,7 @@ header {
 }
 
 nav {
+    /* https://www.w3.org/TR/css-position-3/ */
     position: absolute;
     display: flex;
     margin: 0 -5px;
