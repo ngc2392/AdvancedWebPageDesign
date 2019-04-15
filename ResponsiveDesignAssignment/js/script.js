@@ -42,6 +42,36 @@ var data = [
 ];
 
 $(document).ready(function() {
-    
+    generateProductList(data);
 
 });
+
+var generateProductList = function(array) {
+    array.forEach(function(dataItem) {
+        var element = document.createElement("div");
+
+        element.innerHTML = `
+            <div id="planet-${dataItem.id}" class="card">
+                <div class="image-container">
+                    <div class="title">${dataItem.planetName}</div>
+                    <img src="${dataItem.imageURL}" />
+                    <div class="overlay">
+                        <div class="text">Planet ${dataItem.planetName}</div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    This is a pic
+                </div>
+
+                <div class="modal-box">
+                </div>
+            
+            </div>
+        `
+        
+        var planetsGrid = document.querySelector('.planets-container');
+        planetsGrid.appendChild(element);
+     
+    });
+};
