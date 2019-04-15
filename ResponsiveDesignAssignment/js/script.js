@@ -70,6 +70,7 @@ var generateProductList = function(array) {
                 </div>
 
                 <div class="modal-box">
+                    <i class="fas fa-times"></i>
                     <div class="content">
                         this is a box 
                     </div>
@@ -88,11 +89,31 @@ $(document).on('click', '.card', function(e) {
     // https://api.jquery.com/eq/
     console.log($(this).children().eq(3));
 
-
-
     $(this).children().eq(3).show();
 
-    // click anywhere else outside the pop up, close it 
+  
+});
+
+// click anywhere else outside the pop up, close it 
+
+$(document).mouseup(function(e) {
+    var modalPopup = $(".modal-box");
+
+    var childrenOfPopup = modalPopup.children();
+    var clickedElement = e.target;
+    // if we click anythign that is not the pop up or inside the popup, close it
+    if(!modalPopup.is(clickedElement) && !childrenOfPopup.is(clickedElement)) {
+        modalPopup.hide();
+    }
+});
+
+
+$(document).on('click', '.fa-times', function(e) {
+    console.log($(this));
+
+    $('.modal-box').hide();
+
+  
 });
 
 // click button to add to cart.  Have model box go to center of screen "you really didn't think we were going to sell you a planet, did you?"

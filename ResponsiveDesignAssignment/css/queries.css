@@ -1,0 +1,35 @@
+/* Queries have to go from large to small */
+
+/* For mobile navigation */
+@media only screen and (max-width: 767px) {
+    .planets-section .planets-container > div {
+        flex: 0 0 40%;
+    }
+}
+
+
+/*For index.html*/
+
+/* Go to 2 columns */
+@media(max-width: 700px) {
+    .planets-section .planets-container > div {
+        flex: 0 0 40%;
+    }
+}
+
+/* Go to 1 column */
+@media(max-width: 500px) {
+    .planets-section .planets-container > div {
+        flex: 0 0 100%;
+    }
+}
+
+
+/*https://stackoverflow.com/a/16647547*/
+/*https://stackoverflow.com/questions/16647380/max-width-vs-min-width*/
+
+
+/*No greater than 650px, no less than 300px*/
+@media only screen and (max-width: 650px) and (min-width: 300px) {
+
+}
