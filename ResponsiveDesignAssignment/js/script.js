@@ -18,7 +18,8 @@ var data = [
     }, {
         "id": "",
         "planetName": "Mercury",
-        "imageURL": "images/planets/mercury.jpg"
+        "imageURL": "images/planets/mercury.jpg",
+        "links": ["https://solarsystem.nasa.gov/planets/mercury/overview/"]
     }, {
         "id": "",
         "planetName": "Neptune",
@@ -64,7 +65,14 @@ var generateProductList = function(array) {
                     This is a pic
                 </div>
 
+                <div class="btn">
+                
+                </div>
+
                 <div class="modal-box">
+                    <div class="content">
+                        this is a box 
+                    </div>
                 </div>
             
             </div>
@@ -75,3 +83,17 @@ var generateProductList = function(array) {
      
     });
 };
+
+$(document).on('click', '.card', function(e) {
+    // https://api.jquery.com/eq/
+    console.log($(this).children().eq(3));
+
+
+
+    $(this).children().eq(3).show();
+
+    // click anywhere else outside the pop up, close it 
+});
+
+// click button to add to cart.  Have model box go to center of screen "you really didn't think we were going to sell you a planet, did you?"
+// disable vertical scrolling 
