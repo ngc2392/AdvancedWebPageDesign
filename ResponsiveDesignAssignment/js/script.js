@@ -5,14 +5,20 @@ var data = [
     {
         "id":"",
         "planetName":"Earth",
+        "interestingFacts":["", 
+                "", ""],
         "imageURL":"images/planets/earth.jpg"
     },{
         "id": "",
         "planetName": "Jupiter",
+        "interestingFacts":["", 
+                "", ""],
         "imageURL": "images/planets/jupiter.jpg"
     }, {
         "id": "",
         "planetName": "Mars",
+        "interestingFacts":["", 
+                "", ""],
         "imageURL": "images/planets/mars.jpg", 
         "links":["https://mars.nasa.gov/", "https://mars.nasa.gov/msl/multimedia/images/"]
     }, {
@@ -26,19 +32,27 @@ var data = [
     }, {
         "id": "",
         "planetName": "Neptune",
+        "interestingFacts":["", 
+                "", ""],
         "imageURL": "images/planets/neptune.jpg"
     }, {
         "id": "",
         "planetName": "Saturn",
+        "interestingFacts":["", 
+                "", ""],
         "imageURL": "images/planets/saturn.jpg"
     }, {
         "id": "",
         "planetName": "Uranus",
+        "interestingFacts":["", 
+                "", ""],
         "imageURL": "images/planets/uranus.jpg"
     }, {
         "id": "",
         "planetName": "Venus",
         "orderFromTheSun":3,
+        "interestingFacts":["", 
+        "", ""],
         "moons":"",
         "imageURL":"images/planets/venus.jpg",
         "links":["https://www.nasa.gov/venus", "https://solarsystem.nasa.gov/planets/venus/overview/"]
@@ -55,6 +69,12 @@ var generatePlanetList = function(array) {
     array.forEach(function(dataItem) {
         var element = document.createElement("div");
 
+        var listOfFacts = dataItem.interestingFacts;
+        var str = "<ol>"
+        listOfFacts.forEach(function(slide) {
+            str += '<li>' + slide + '</li>';
+        });
+        str += "</ol>";
         element.innerHTML = `
             <div id="planet-${dataItem.id}" class="card">
                 <div class="image-container">
@@ -84,15 +104,13 @@ var generatePlanetList = function(array) {
                     <div class="content">
                         this is a box 
 
-                        <ol>
-                            <li>hi</li>
-                            <li>there</li>
-                        </ol>
+                       ${str}
                         
                     </div>
                 </div>
 
                 <div id="modal-box-button-click">
+                    <h1>STOP</h1>
                     You really didn't think we sold planets, did you?
                 </div>
                 

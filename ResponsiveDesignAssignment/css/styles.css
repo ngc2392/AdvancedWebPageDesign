@@ -251,6 +251,7 @@ nav div:hover {
     background-color: #FFF;
     /* put on top of #full-screen-overlay */
     z-index: 3;
+    overflow-x: auto;
 }
 
 .modal-box .fa-times {
@@ -272,6 +273,9 @@ nav div:hover {
 }
 
 .modal-box .content {
+    position: relative;
+    left: 10%;
+   
 
 }
 
