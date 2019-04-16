@@ -145,14 +145,23 @@ nav div:hover {
     flex-wrap: wrap;
 }
 
+/* UI card Beging*/
 /* First level children */
 .planets-section .planets-container > div {
     /* position the title relative to this.  Position the modal box relative to this as well  */
     position: relative;
     flex: 0 0 30%;
-    height: 250px;
+    height: 300px;
     margin: 0 0px;
     margin-bottom: 50px;
+    padding-bottom: 10px;
+    /*button was overflowing when hight of card was 250px*/
+    /* overflow: hidden; */
+}
+
+.planets-section .planets-container > div:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
 }
 
 .planets-section .planets-container > div .image-container {
@@ -197,8 +206,35 @@ nav div:hover {
     height: 100%;
 }
 
-.card .btn {
+.planets-container .card .btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
 
+.planets-container .card .button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.planets-container .card .button1 {
+    background-color: #FFF;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.planets-container .card .button1:hover {
+    background-color: #4CAF50;
+    color: #FFF;
 }
 
 /* END OF PLANET CARD */
@@ -213,8 +249,88 @@ nav div:hover {
     width: 250px;
     display: none;
     background-color: #FFF;
+    /* put on top of #full-screen-overlay */
+    z-index: 3;
+}
+
+.modal-box .fa-times {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    
+}
+
+.modal-header h3 {
+    text-align: center;
+
 }
 
 .modal-box .content {
 
+}
+
+#full-screen-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#modal-box-button-click-wrapper {
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+}
+
+/* modal box on button click */
+#modal-box-button-click {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 100px;
+    /* Can't use flex on absolute/fixed children: https://www.w3.org/TR/css-flexbox-1/#abspos-items */
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+    width: 50%;
+    overflow: auto;
+    text-align: center;
+    background-color: #FFF; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 1;
+    }
 }

@@ -18,6 +18,9 @@ var data = [
     }, {
         "id": "",
         "planetName": "Mercury",
+        "distanceFromSun": "About 36 million miles",
+        "interestingFacts":["Mercury is the smallest planet in our solar system", 
+                "It is the closest planet to the Sun", "One day on Mercury = 59 days on Earth"],
         "imageURL": "images/planets/mercury.jpg",
         "links": ["https://solarsystem.nasa.gov/planets/mercury/overview/"]
     }, {
@@ -43,11 +46,12 @@ var data = [
 ];
 
 $(document).ready(function() {
-    generateProductList(data);
+
+    generatePlanetList(data);
 
 });
 
-var generateProductList = function(array) {
+var generatePlanetList = function(array) {
     array.forEach(function(dataItem) {
         var element = document.createElement("div");
 
@@ -65,17 +69,34 @@ var generateProductList = function(array) {
                     This is a pic
                 </div>
 
-                <div class="btn">
-                
+                <div class="button-wrapper">
+                    <div class="btn button1">
+                        Purchase Planet
+                    </div>
                 </div>
+               
 
                 <div class="modal-box">
                     <i class="fas fa-times"></i>
+                    <div class="modal-header">
+                        <h3>${dataItem.planetName}</h3>
+                    </div>
                     <div class="content">
                         this is a box 
+
+                        <ol>
+                            <li>hi</li>
+                            <li>there</li>
+                        </ol>
+                        
                     </div>
                 </div>
-            
+
+                <div id="modal-box-button-click">
+                    You really didn't think we sold planets, did you?
+                </div>
+                
+
             </div>
         `
         
@@ -85,12 +106,14 @@ var generateProductList = function(array) {
     });
 };
 
-$(document).on('click', '.card', function(e) {
+// show modal popup when UI card is clicked (when image-container is clicked)
+$(document).on('click', '.card .image-container', function(e) {
     // https://api.jquery.com/eq/
-    console.log($(this).children().eq(3));
+    console.log($(this).siblings().eq(2));
 
-    $(this).children().eq(3).show();
-
+    // show .modal-box
+    $(this).siblings().eq(2).show();
+    document.getElementById("full-screen-overlay").style.display = "block";
   
 });
 
@@ -104,15 +127,27 @@ $(document).mouseup(function(e) {
     // if we click anythign that is not the pop up or inside the popup, close it
     if(!modalPopup.is(clickedElement) && !childrenOfPopup.is(clickedElement)) {
         modalPopup.hide();
+        document.getElementById("full-screen-overlay").style.display = "none";
+        document.getElementById("modal-box-button-click").style.display="none";
     }
 });
 
 
 $(document).on('click', '.fa-times', function(e) {
-    console.log($(this));
+    console.log("hi",$(this).parents().eq(0));
+
+    $(this).parents().eq(0).hide();
 
     $('.modal-box').hide();
+    document.getElementById("full-screen-overlay").style.display = "none";
 
+  
+});
+
+$(document).on('click', '.card .btn', function(e) {
+
+    document.getElementById("modal-box-button-click").style.display = "block";
+    document.getElementById("full-screen-overlay").style.display = "block";
   
 });
 
