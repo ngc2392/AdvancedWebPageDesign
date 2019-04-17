@@ -38,7 +38,7 @@ nav {
     /* https://www.w3.org/TR/css-position-3/ */
     position: absolute;
     display: flex;
-    margin: 0 -5px;
+    margin: 0 -50px;
 }
 
 nav div {
@@ -48,6 +48,47 @@ nav div {
 
 nav div:hover {
     color: #FFF;
+}
+
+/* mobile nav */
+.fa-bars {
+    position: relative;
+    left: 5px;
+    color: #FFF;
+    font-size: 150%;
+}
+
+.mobile-nav-wrapper {
+    position: relative;
+    display: none;
+}
+
+.mobile-nav {
+    position: absolute;
+    /* display: none; */
+    width: 50%;
+    margin: auto;
+    background-color: #555;
+    color: #FFF;
+    border-radius: 10px;
+    height: 0px;
+    /*when this class is visible, hide the text (text is overflowing, since the height is 0px */
+    overflow: hidden;
+    z-index: 5;
+}
+
+.is-active {
+    height: 200px;
+}
+
+.mobile-nav > div {
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.mobile-nav > div:hover {
+    background-color: #ddd;
+    color: #000;
 }
 
 .hero-text {
@@ -104,6 +145,10 @@ nav div:hover {
 }
 
 /* hero image */
+
+.mobile-header-image-container {
+    display: none;
+}
 
 .header-image-container {
     /* relative to <header> */
@@ -246,12 +291,14 @@ nav div:hover {
     top: 0;
     border: 2px solid red;
     height: 250px;
-    width: 250px;
+    /*have to set an explicit height because it is positioned absolutely*/
+    /* width: 600px; */
+    width: 50vw;
     display: none;
     background-color: #FFF;
     /* put on top of #full-screen-overlay */
     z-index: 3;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .modal-box .fa-times {
@@ -260,22 +307,20 @@ nav div:hover {
     right: 0;
 }
 
+.modal-box .content {
+    position: relative;
+    padding: 20px;
+    border: 2px solid blue;
+}
+
 .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-    
 }
 
 .modal-header h3 {
     text-align: center;
-
-}
-
-.modal-box .content {
-    position: relative;
-    left: 10%;
-   
 
 }
 

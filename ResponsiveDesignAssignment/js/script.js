@@ -5,18 +5,21 @@ var data = [
     {
         "id":"",
         "planetName":"Earth",
+        "price": "15,000,000",
         "interestingFacts":["", 
                 "", ""],
         "imageURL":"images/planets/earth.jpg"
     },{
         "id": "",
         "planetName": "Jupiter",
+        "price": "15,000,000",
         "interestingFacts":["", 
                 "", ""],
         "imageURL": "images/planets/jupiter.jpg"
     }, {
         "id": "",
         "planetName": "Mars",
+        "price": "15,000,000",
         "interestingFacts":["", 
                 "", ""],
         "imageURL": "images/planets/mars.jpg", 
@@ -24,6 +27,7 @@ var data = [
     }, {
         "id": "",
         "planetName": "Mercury",
+        "price": "15,000,000",
         "distanceFromSun": "About 36 million miles",
         "interestingFacts":["Mercury is the smallest planet in our solar system", 
                 "It is the closest planet to the Sun", "One day on Mercury = 59 days on Earth"],
@@ -32,24 +36,28 @@ var data = [
     }, {
         "id": "",
         "planetName": "Neptune",
+        "price": "15,000,000",
         "interestingFacts":["", 
                 "", ""],
         "imageURL": "images/planets/neptune.jpg"
     }, {
         "id": "",
         "planetName": "Saturn",
+        "price": "15,000,000",
         "interestingFacts":["", 
                 "", ""],
         "imageURL": "images/planets/saturn.jpg"
     }, {
         "id": "",
         "planetName": "Uranus",
+        "price": "15,000,000",
         "interestingFacts":["", 
                 "", ""],
         "imageURL": "images/planets/uranus.jpg"
     }, {
         "id": "",
         "planetName": "Venus",
+        "price": "15,000,000",
         "orderFromTheSun":3,
         "interestingFacts":["", 
         "", ""],
@@ -86,7 +94,7 @@ var generatePlanetList = function(array) {
                 </div>
 
                 <div class="content">
-                    This is a pic
+                    $${dataItem.price}
                 </div>
 
                 <div class="button-wrapper">
@@ -169,5 +177,48 @@ $(document).on('click', '.card .btn', function(e) {
   
 });
 
-// click button to add to cart.  Have model box go to center of screen "you really didn't think we were going to sell you a planet, did you?"
-// disable vertical scrolling 
+document.getElementById("mobile-nav-button").addEventListener('click', function() {
+
+    var mobileNav = document.querySelector('.mobile-nav');
+
+    if(mobileNav.style.display === "block") {
+        mobileNav.classList.toggle("is-active");
+        // mobileNav.style.display = "none";
+
+      //  $(mobileNav).slideUp('fast');
+    } else {
+       //  $(mobileNav).slideDown('fast');
+        mobileNav.style.transition = 'height 300ms ease-out';
+        mobileNav.classList.toggle("is-active");
+        
+    }
+
+   
+});
+
+// Smooth Scroll.  From https://css-tricks.com/snippets/jquery/smooth-scrolling/
+
+// Scroll to specific values
+// scrollTo is the same
+window.scroll({
+    top: 2500, 
+    left: 0, 
+    behavior: 'smooth'
+  });
+  
+  // Scroll certain amounts from current position 
+  window.scrollBy({ 
+    top: 100, // could be negative value
+    left: 0, 
+    behavior: 'smooth' 
+  });
+  
+  // Scroll to a certain element
+
+  document.getElementsByClassName("btn")[0].addEventListener('click', function() {
+    document.querySelector('.planets-section').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+  });
+
+  

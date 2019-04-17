@@ -5,8 +5,19 @@
     .planets-section .planets-container > div {
         flex: 0 0 40%;
     }
+
+    
 }
 
+@media(max-width: 716px) {
+    nav {
+        margin: 0 -30px;
+    }
+
+    nav > div {
+        margin: 0 30px;
+    }
+}
 
 /*For index.html*/
 
@@ -15,6 +26,26 @@
     .planets-section .planets-container > div {
         flex: 0 0 40%;
     }
+
+    .mobile-header-image-container {
+        display: block;
+    }
+
+    .header-image-container {
+        display: none;
+    }
+
+
+}
+
+@media(max-width: 560px) {
+    nav {
+        display: none;
+    }
+
+    .mobile-nav-wrapper {
+        display: block;
+    }
 }
 
 /* Go to 1 column */
@@ -22,14 +53,4 @@
     .planets-section .planets-container > div {
         flex: 0 0 100%;
     }
-}
-
-
-/*https://stackoverflow.com/a/16647547*/
-/*https://stackoverflow.com/questions/16647380/max-width-vs-min-width*/
-
-
-/*No greater than 650px, no less than 300px*/
-@media only screen and (max-width: 650px) and (min-width: 300px) {
-
 }
