@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+* {
+    /* Get rid of initial stuff */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #C4C4C4;
+    color: #555;
+    font-weight: 300;
+    font-size: 20px;
+    /*When we make the browser smaller, the user won't be able to scroll horizontally*/
+    overflow-x: hidden;
+}
+
+/* Headings */
+
+/*file:///Users/LoganPhillips/Desktop/Tutorials/BuildResponsiveRealWorldWebsites/Omnifood%20-%20Final%20Project/resources/css/style.css*/
+h1 {
+    font-size: 240%;
+}
+
+header {
+    /* position .hero-text relative to the header */
+    position: relative;
+    /*this is default width*/
+    width: auto;
+    height: 100vh;
+    /*https://www.w3schools.com/cssref/pr_pos_overflow.asp*/
+    overflow: hidden;
+    background-color: #000;
+}
+
+nav {
+    /* https://www.w3.org/TR/css-position-3/ */
+    position: absolute;
+    display: flex;
+    margin: 0 -50px;
+}
+
+nav div {
+    margin: 0 50px;
+    cursor: pointer;
+}
+
+nav div:hover {
+    color: #FFF;
+}
+
+/* mobile nav */
+.fa-bars {
+    position: relative;
+    left: 5px;
+    color: #FFF;
+    font-size: 150%;
+}
+
+.mobile-nav-wrapper {
+    position: relative;
+    display: none;
+}
+
+.mobile-nav {
+    position: absolute;
+    /* display: none; */
+    width: 50%;
+    margin: auto;
+    background-color: #555;
+    color: #FFF;
+    border-radius: 10px;
+    height: 0px;
+    /*when this class is visible, hide the text (text is overflowing, since the height is 0px */
+    overflow: hidden;
+    z-index: 5;
+}
+
+.is-active {
+    height: 200px;
+}
+
+.mobile-nav > div {
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.mobile-nav > div:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.hero-text {
+    /*https://www.w3.org/TR/css-position-3/#rel-pos*/
+    /* position: relative; */
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-10%,-50%);
+    /*text-align: center works as well*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid blue; */
+}
+
+/*button*/
+
+.hero-text .btn {
+    border-radius: 4px;
+    background-color: #5ca1e1;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 102%;
+    padding: 16px;
+    width: 50%;
+    /* width: 220px; */
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 36px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.hero-text .btn i {
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    transition: 0.5s;
+    bottom: -20px;
+}
+
+.hero-text .btn:hover {
+    padding-top: 8px;
+    padding-bottom: 24px;
+}
+
+.hero-text .btn:hover i {
+    opacity: 1;
+    bottom: 0;
+}
+
+/* hero image */
+
+.mobile-header-image-container {
+    display: none;
+}
+
+.header-image-container {
+    /* relative to <header> */
+    position: relative;
+    /*move some of it outside the viewport*/
+    left: 50%;
+    height: 100%;
+    /*can also put overflow: hidden here*/
+    /* border: 2px solid red; */
+}
+
+.header-image-container img {
+    /* https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container */
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.about-section {
+
+}
+
+/* planets section */
+
+.planets-section {
+    background-color: #FCDFA6;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.planets-section .planets-container {
+
+    background-color: #FFF;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* UI card Beging*/
+/* First level children */
+.planets-section .planets-container > div {
+    /* position the title relative to this.  Position the modal box relative to this as well  */
+    position: relative;
+    flex: 0 0 30%;
+    height: 300px;
+    margin: 0 0px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    /*button was overflowing when hight of card was 250px*/
+    /* overflow: hidden; */
+}
+
+.planets-section .planets-container > div:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.planets-section .planets-container > div .image-container {
+    /*position .overlay relative to .image-container instead of .card*/
+    position: relative;
+    width: 100%; 
+    height: 200px;
+}
+
+.planets-section .planets-container .card .image-container .overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #7F7F7F;
+}
+
+.planets-section .planets-container .card .image-container:hover .overlay {
+    opacity: .8;
+}
+
+.planets-section .planets-container .card .image-container .overlay .text {
+    color: white;
+    font-size: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card .image-container .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.planets-section .planets-container > div .image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.planets-container .card .btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.planets-container .card .button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.planets-container .card .button1 {
+    background-color: #FFF;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.planets-container .card .button1:hover {
+    background-color: #4CAF50;
+    color: #FFF;
+}
+
+/* END OF PLANET CARD */
+
+/* modal-box */
+
+.modal-box {
+    position: absolute;
+    top: 0;
+    border: 2px solid red;
+    height: 250px;
+    /*have to set an explicit height because it is positioned absolutely*/
+    /* width: 600px; */
+    width: 50vw;
+    display: none;
+    background-color: #FFF;
+    /* put on top of #full-screen-overlay */
+    z-index: 3;
+    /* overflow-x: auto; */
+}
+
+.modal-box .fa-times {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-box .content {
+    position: relative;
+    padding: 20px;
+    border: 2px solid blue;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-header h3 {
+    text-align: center;
+
+}
+
+#full-screen-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#modal-box-button-click-wrapper {
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+}
+
+/* modal box on button click */
+#modal-box-button-click {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 100px;
+    /* Can't use flex on absolute/fixed children: https://www.w3.org/TR/css-flexbox-1/#abspos-items */
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+    width: 50%;
+    overflow: auto;
+    text-align: center;
+    background-color: #FFF; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 1;
+    }
+}

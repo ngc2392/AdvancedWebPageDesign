@@ -1,0 +1,56 @@
+/* Queries have to go from large to small */
+
+/* For mobile navigation */
+@media only screen and (max-width: 767px) {
+    .planets-section .planets-container > div {
+        flex: 0 0 40%;
+    }
+
+    
+}
+
+@media(max-width: 716px) {
+    nav {
+        margin: 0 -30px;
+    }
+
+    nav > div {
+        margin: 0 30px;
+    }
+}
+
+/*For index.html*/
+
+/* Go to 2 columns */
+@media(max-width: 700px) {
+    .planets-section .planets-container > div {
+        flex: 0 0 40%;
+    }
+
+    .mobile-header-image-container {
+        display: block;
+    }
+
+    .header-image-container {
+        display: none;
+    }
+
+
+}
+
+@media(max-width: 560px) {
+    nav {
+        display: none;
+    }
+
+    .mobile-nav-wrapper {
+        display: block;
+    }
+}
+
+/* Go to 1 column */
+@media(max-width: 500px) {
+    .planets-section .planets-container > div {
+        flex: 0 0 100%;
+    }
+}
